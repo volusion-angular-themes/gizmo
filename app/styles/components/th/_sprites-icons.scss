@@ -1,0 +1,23 @@
+@import "sprites/icons/*.png";
+
+.th-icons {
+
+  &--cart {
+    @include icons-sprite(cart);
+    height: icons-sprite-height(cart);
+    width: icons-sprite-width(cart);
+  }
+
+  &--spy-glass {
+    @include icons-sprite(spy-glass);
+    height: icons-sprite-height(spy-glass);
+    width: icons-sprite-width(spy-glass);
+  }
+
+  &--web-exclusive {
+    @include icons-sprite(web-exclusive);
+    height: icons-sprite-height(web-exclusive);
+    width: icons-sprite-width(web-exclusive);
+  }
+
+}

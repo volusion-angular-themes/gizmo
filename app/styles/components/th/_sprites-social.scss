@@ -1,0 +1,29 @@
+@import "sprites/social/*.png";
+
+.th-icons {
+
+  &--facebook {
+    @include social-sprite(facebook);
+    height: social-sprite-height(facebook);
+    width: social-sprite-width(facebook);
+  }
+
+  &--twitter {
+    @include social-sprite(twitter);
+    height: social-sprite-height(twitter);
+    width: social-sprite-width(twitter);
+  }
+
+  &--google {
+    @include social-sprite(google);
+    height: social-sprite-height(google);
+    width: social-sprite-width(google);
+  }
+
+  &--pinterest {
+    @include social-sprite(pinterest);
+    height: social-sprite-height(pinterest);
+    width: social-sprite-width(pinterest);
+  }
+
+}

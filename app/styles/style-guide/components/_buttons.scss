@@ -1,0 +1,21 @@
+.btn {
+  text-transform: uppercase;
+  font-family: $font-family-buttons;
+  letter-spacing: 0.2rem;
+  font-size: 1.1rem;
+  line-height: 2.5;
+  border-width: 2px;
+
+  &.btn-xs {
+    font-size: 0.7rem;
+  }
+
+  &.btn-sm {
+    font-size: 0.9rem;
+  }
+
+  &.btn-lg {
+    font-size: 1.2rem;
+  }
+
+}

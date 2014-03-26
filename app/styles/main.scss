@@ -1,6 +1,5 @@
-@import 'compass';
-
 // Core variables and mixins
+@import 'compass';
 @import 'style-guide/theme-vars'; // Custom Theme Variables & Configuration
 @import 'core/base/mixins';
 
@@ -48,6 +47,9 @@
 
 // Volusion Components
 @import 'components/th/helpers';
+@import 'components/th/sprites-icons';
+@import 'components/th/sprites-social';
+@import 'components/th/sprites-brands';
 
 // Utility classes
 @import 'utilities/utilities';
