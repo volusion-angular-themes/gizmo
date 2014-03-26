@@ -1,0 +1,41 @@
+@import "sprites/brands/*.png";
+
+.th-icons {
+
+  &--apple {
+    @include brands-sprite(apple);
+    height: brands-sprite-height(apple);
+    width: brands-sprite-width(apple);
+  }
+
+  &--beats-audio {
+    @include brands-sprite(beats-audio);
+    height: brands-sprite-height(beats-audio);
+    width: brands-sprite-width(beats-audio);
+  }
+
+  &--lenovo {
+    @include brands-sprite(lenovo);
+    height: brands-sprite-height(lenovo);
+    width: brands-sprite-width(lenovo);
+  }
+
+  &--playstation {
+    @include brands-sprite(playstation);
+    height: brands-sprite-height(playstation);
+    width: brands-sprite-width(playstation);
+  }
+
+  &--windows {
+    @include brands-sprite(windows);
+    height: brands-sprite-height(windows);
+    width: brands-sprite-width(windows);
+  }
+
+  &--xbox {
+    @include brands-sprite(xbox);
+    height: brands-sprite-height(xbox);
+    width: brands-sprite-width(xbox);
+  }
+
+}

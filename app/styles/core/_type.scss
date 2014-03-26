@@ -1,1 +1,24 @@
 @import "bootstrap/type";
+
+@include app-font('Montserrat');
+@include app-font('Montserrat-Bold');
+
+@include app-font('Roboto-Light');
+@include app-font('Roboto-Regular');
+@include app-font('Roboto-Bold');
+@include app-font('Roboto-Light-Italic');
+@include app-font('Roboto-Italic');
+@include app-font('Roboto-Bold-Italic');
+
+@include app-font('Roboto-Condensed-Light');
+@include app-font('Roboto-Condensed-Regular');
+@include app-font('Roboto-Condensed-Bold');
+@include app-font('Roboto-Condensed-Light-Italic');
+@include app-font('Roboto-Condensed-Italic');
+@include app-font('Roboto-Condensed-Bold-Italic');
+
+@include app-font('Source-Sans-Pro-Regular');
+@include app-font('Source-Sans-Pro-Bold');
+@include app-font('Source-Sans-Pro-Light');
+@include app-font('Source-Sans-Pro-Light-Italic');
+@include app-font('Source-Sans-Pro-Bold-Italic');
