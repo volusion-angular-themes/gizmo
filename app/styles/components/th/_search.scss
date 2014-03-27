@@ -1,0 +1,38 @@
+.th-search {
+  @extend %inline-block;
+  position: absolute;
+  top: 0;
+  right: 66px;
+  background-color: map-get($colors, bg--dark);
+  border-left: 1px solid map-get($colors, border--dark);
+  padding: 12px 15px;
+
+  @include respond-to(md-and-up) {
+    right: 80px;
+    padding: 23px 25px;
+  }
+
+  &__input {
+    @extend %border-radius;
+    width: 0;
+    border: 0;
+    padding: 3px 0;
+  }
+
+  &__submit {
+    background: none;
+    border: 0;
+  }
+
+  &:hover {
+    @extend %animate-all;
+    right: 0;
+
+    .th-search__input {
+      @extend %animate-all;
+      width: 150px;
+      padding: 3px 5px;
+    }
+  }
+
+}

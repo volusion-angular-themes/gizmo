@@ -1,0 +1,26 @@
+.th-elist {
+  text-align: center;
+  padding: 15px 0;
+  max-width: 285px;
+  margin: 0 auto;
+
+  @include respond-to(md-and-up) {
+    max-width: 315px;
+  }
+
+  &__title {
+    padding: 10px 0 0;
+    font-family: Roboto-Light;
+    font-size: 3.0rem;
+
+    @include respond-to(md-and-up) {
+      font-size: 3.5rem;
+    }
+
+  }
+
+  &__input {
+    margin: 8px 0;
+  }
+
+}
