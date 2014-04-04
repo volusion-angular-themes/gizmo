@@ -14,6 +14,10 @@
   @include border-radius(3px);
 }
 
+%no-border {
+  @include border-radius(0);
+}
+
 %animate-all {
   @include transition(all, 0.2s, ease-in-out);
 }
@@ -38,6 +42,21 @@
   @include box-shadow(rgba(map-get($colors, bg), 0.1) -27px -27px 27px inset);
 }
 
+%remove-shadow {
+  @include box-shadow(none);
+}
+
+%position-absolute-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .th-no-padding {
   padding: 0;
 }
+
+

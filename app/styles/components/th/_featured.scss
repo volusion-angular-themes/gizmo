@@ -1,0 +1,29 @@
+.th-featured {
+  padding: 15px 0;
+
+  &__title {
+    @extend %inline-block;
+    text-transform: uppercase;
+    font-size: 2.0rem;
+    font-family: Novecentosanswide-Bold;
+    margin-right: 20px;
+
+    @include respond-to(md-and-up) {
+      font-size: 2.5rem;
+      margin-right: 25px;
+    }
+  }
+
+  &__link {
+    @extend %inline-block;
+    padding: 3px 0 0;
+    text-transform: uppercase;
+    color: map-get($colors, brand-primary);
+    font-size: 1.1rem;
+    font-family: Montserrat-Bold;
+
+    @include respond-to(md-and-up) {
+      font-size: 1.3rem;
+    }
+  }
+}

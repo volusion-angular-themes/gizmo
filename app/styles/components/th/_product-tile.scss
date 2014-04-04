@@ -1,0 +1,67 @@
+.th-product-tile {
+  border: 1px solid map-get($colors, border);
+  border-left-width: 0;
+  padding: 20px;
+  position: relative;
+  height: 336px;
+  overflow: hidden;
+
+  @include respond-to(sm-and-up) {
+    height: 405px;
+  }
+
+  &__tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__image {
+
+    img {
+      @extend %position-absolute-center;
+    }
+
+  }
+
+  &__info {
+    @extend %inner-shadow;
+    height: 100%;
+    position: absolute;
+    padding: 20px;
+    top: 0;
+    left: 0;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: Roboto-Condensed-Bold;
+  }
+
+  &__price {
+    font-family: Roboto-Light;
+    font-size: 2.9rem;
+  }
+
+  &:hover {
+    .th-product-tile__info {
+      @extend %animate-all;
+      @extend %remove-shadow;
+      @include translucent-bg(map-get($colors, white), 0.8);
+      height: 336px;
+      width: 100%;
+
+      @include respond-to(sm-and-up) {
+        height: 404px;
+      }
+    }
+
+    .th-product-tile__details {
+      @extend %animate-all;
+      height: auto;
+    }
+
+  }
+
+}

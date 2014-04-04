@@ -1,0 +1,18 @@
+.th-tile-details {
+  height: 0;
+  overflow: hidden;
+
+  &__view-details {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__rating {
+    padding: 7px 0;
+  }
+
+  &__description {
+    max-height: 110px;
+  }
+
+}
