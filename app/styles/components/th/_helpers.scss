@@ -2,10 +2,42 @@
   @include inline-block;
 }
 
-%opacity-80 {
-  @include opacity(0.8);
+%opacity-75 {
+  @include opacity(0.75);
 }
 
-%animate-color-default {
+%opacity-100 {
+  @include opacity(1);
+}
+
+%border-radius {
+  @include border-radius(3px);
+}
+
+%animate-all {
+  @include transition(all, 0.2s, ease-in-out);
+}
+
+%animate-color {
   @include transition(color, 0.2s, ease-in-out);
+}
+
+%placeholder-text {
+  @include input-placeholder {
+    color: map-get($colors, placeholder);
+  }
+}
+
+%placeholder-text-focus {
+  @include input-placeholder {
+    color: map-get($colors, placeholder--focus);
+  }
+}
+
+%inner-shadow {
+  @include box-shadow(rgba(map-get($colors, bg), 0.1) -27px -27px 27px inset);
+}
+
+.th-no-padding {
+  padding: 0;
 }

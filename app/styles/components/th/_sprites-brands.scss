@@ -1,41 +1,46 @@
 @import "sprites/brands/*.png";
 
-.th-icons {
+@mixin sprite--brands($name) {
+  @include brands-sprite($name);
+  height: brands-sprite-height($name);
+  width: brands-sprite-width($name);
+}
 
-  &--apple {
-    @include brands-sprite(apple);
-    height: brands-sprite-height(apple);
-    width: brands-sprite-width(apple);
+@mixin icon--brands($name, $has-large: false) {
+
+  &--#{$name} {
+
+    .th-icon__foreground {
+      @include sprite--brands($name);
+    }
+
+    @if $has-large {
+      &--large {
+        .th-icon__foreground {
+          @include sprite--brands(#{$name}--large);
+        }
+      }
+    }
+
   }
 
-  &--beats-audio {
-    @include brands-sprite(beats-audio);
-    height: brands-sprite-height(beats-audio);
-    width: brands-sprite-width(beats-audio);
+}
+
+.th-icon {
+  @extend %inline-block;
+
+  &__foreground {
+    @extend %opacity-100;
   }
 
-  &--lenovo {
-    @include brands-sprite(lenovo);
-    height: brands-sprite-height(lenovo);
-    width: brands-sprite-width(lenovo);
+  &:hover {
+    .th-icon__foreground {
+      @extend %opacity-75;
+    }
   }
 
-  &--playstation {
-    @include brands-sprite(playstation);
-    height: brands-sprite-height(playstation);
-    width: brands-sprite-width(playstation);
-  }
-
-  &--windows {
-    @include brands-sprite(windows);
-    height: brands-sprite-height(windows);
-    width: brands-sprite-width(windows);
-  }
-
-  &--xbox {
-    @include brands-sprite(xbox);
-    height: brands-sprite-height(xbox);
-    width: brands-sprite-width(xbox);
+  @each $sprite in apple, beats-audio, lenovo, playstation, windows, xbox {
+    @include icon--brands($sprite);
   }
 
 }

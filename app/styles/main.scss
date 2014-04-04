@@ -45,11 +45,20 @@
 @import 'components/js/popovers';
 @import 'components/js/carousel';
 
-// Volusion Components
+// Volusion
+@import 'components/vn/dropzone';
+
+// Theme Components
 @import 'components/th/helpers';
 @import 'components/th/sprites-icons';
 @import 'components/th/sprites-social';
 @import 'components/th/sprites-brands';
+@import 'components/th/search';
+@import 'components/th/cart-summary';
+@import 'components/th/footer';
+@import 'components/th/elist';
+@import 'components/th/social';
+
 
 // Utility classes
 @import 'utilities/utilities';
