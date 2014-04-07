@@ -85,9 +85,26 @@
   color: transparentize($color, 1 - $opacity);
 }
 
-@mixin pull-up-half-height($height) {
-  $negative-half-height: $height  / 2 * -1;
-  margin-top: #{$negative-half-height}px;
+@mixin background($color: null, $image: null, $repeat: null, $attachment: null, $position: null, $size: null) {
+  background: $color $image $repeat $attachment $position;
+  @if $size {
+    @include background-size($size);
+  }
+}
+
+
+@mixin font($weight: null, $style: null, $variant: null, $size: null, $line-height: null, $family: null) {
+  $font: $weight $style $variant;
+  @if $size and $line-height {
+    $font: $font $size/#{$line-height};
+  }
+  @else if $size {
+    $font: $font $size;
+  }
+  font: $font $family;
+  @if $line-height and not $size {
+    line-height: $line-height;
+  }
 }
 
 @mixin center-by($width: 0, $height: 0) {
