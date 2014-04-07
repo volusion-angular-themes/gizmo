@@ -1,1 +1,9 @@
 @import "bootstrap/grid";
+
+.container-fluid {
+
+  &--nopadding {
+    padding: 0;
+  }
+
+}

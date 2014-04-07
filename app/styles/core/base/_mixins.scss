@@ -75,8 +75,34 @@
 
 // example: @include translucent-bg(@includeSmoke, 0.7);
 @mixin translucent-bg($color, $opacity) {
-    background-color: $color;
-    background-color: transparentize($color, 1 - $opacity);
+  background-color: $color;
+  background-color: transparentize($color, 1 - $opacity);
 }
 
+// example: @include translucent-bg(@includeSmoke, 0.7);
+@mixin translucent-text($color, $opacity) {
+  color: $color;
+  color: transparentize($color, 1 - $opacity);
+}
+
+@mixin pull-up-half-height($height) {
+  $negative-half-height: $height  / 2 * -1;
+  margin-top: #{$negative-half-height}px;
+}
+
+@mixin center-by($width: 0, $height: 0) {
+  @if $width == 0 and $height == 0 {
+    @warn "center-by() requires width or height above zero.";
+  }
+  display: block;
+  position: absolute;
+  @if $width > 0 {
+    left: 50%;
+    margin-left: $width / -2;
+  }
+  @if $height > 0 {
+    top: 50%;
+    margin-top: $height / -2;
+  }
+}
 
