@@ -1,0 +1,29 @@
+.th-product-slide {
+
+  &__image {
+    display: block;
+    width: 150px;
+    height: 150px;
+    @include background(
+      $repeat: no-repeat,
+      $position: center center
+    );
+  }
+
+  &__name {
+    @include font(
+      $family: Roboto-Condensed-Bold,
+      $size: 1.5rem
+    );
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    @include font(
+      $family: Roboto-Light,
+      $size: 2.9rem
+    );
+  }
+
+}

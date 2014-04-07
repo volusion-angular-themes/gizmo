@@ -23,9 +23,11 @@
   &__menu {
     @include respond-to(md-and-up) {
       > li > a {
-        font-family: $font-family-main-menu;
+        @include font(
+          $family: $font-family-main-menu,
+          $size: 1.5rem
+        );
         text-transform: uppercase;
-        font-size: 1.5rem;
         padding: 26px 30px 27px;
       }
     }
