@@ -34,14 +34,18 @@
   }
 
   &__name {
-    font-size: 1.5rem;
+    @include font(
+      $size: 1.5rem,
+      $family: (Roboto-Condensed-Bold)
+    );
     text-transform: uppercase;
-    font-family: Roboto-Condensed-Bold;
   }
 
   &__price {
-    font-family: Roboto-Light;
-    font-size: 2.9rem;
+    @include font(
+      $size: 2.9rem,
+      $family: (Roboto-Light)
+    );
   }
 
   &:hover {

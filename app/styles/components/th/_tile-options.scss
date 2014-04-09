@@ -2,8 +2,10 @@
   padding: 10px 0;
 
   &__title {
+    @include font(
+      $size: 1.1rem,
+      $family: (Montserrat-Bold)
+    );
     text-transform: uppercase;
-    font-size: 1.1rem;
-    font-family: Montserrat-Bold;
   }
 }

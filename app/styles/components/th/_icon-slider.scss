@@ -8,9 +8,11 @@
   }
 
   &__title {
+    @include font(
+      $size: 1.8rem,
+      $family: (Roboto-Light)
+    );
     text-transform: uppercase;
-    font-family: Roboto-Light;
-    font-size: 1.8rem;
     color: map-get($colors, text--light);
 
     @include respond-to(sm-and-up) {

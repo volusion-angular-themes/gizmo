@@ -53,9 +53,11 @@
   }
 
   &__body {
-    font-size: 3.3rem;
-    font-family: Novecentosanswide-Bold;
-    line-height: 0.9;
+    @include font(
+      $size: 3.3rem,
+      $line-height: 0.9,
+      $family: (Novecentosanswide-Bold)
+    );
     margin-top: 0;
 
     @include respond-to(sm-and-up) {
@@ -86,13 +88,12 @@
     height: 690px;
   }
 
-  background: {
-    image: image-url("theme/home/cover.jpg");
-    repeat: no-repeat;
-    position: center center;
-  };
-
-  @include background-size(cover);
+  @include background(
+    $image: image-url("theme/home/cover.jpg"),
+    $repeat: no-repeat,
+    $position: center center,
+    $size: cover
+  );
 
   &__header {
     position: absolute;
