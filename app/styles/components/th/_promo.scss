@@ -102,7 +102,7 @@
   }
 
   &__title {
-    @include translucent-text(map-get($colors, text--light), 0.7);
+    @include translucent-text(map-get($colors, text--lighter), 0.7);
     margin: 0;
     font-size: 1.1rem;
 
@@ -117,7 +117,7 @@
 
   &__body {
     font-size: 3.9rem;
-    color: map-get($colors, text--light);
+    color: map-get($colors, text--lighter);
 
     @include respond-to(sm-and-up) {
       font-size: 7.3rem;
@@ -134,7 +134,7 @@
     bottom: 6%;
     left: 50%;
     margin-left: -110px;
-    color: map-get($colors, text--light);
+    color: map-get($colors, text--lighter);
     border-color: map-get($colors, border--light);
 
     &:hover {

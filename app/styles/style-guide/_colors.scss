@@ -6,15 +6,18 @@ $userDefined: ( // User Defined Colors
   text:                               #232325,
   link:                               #232325,
   link-hover:                         #00e395,
+  link-active:                        #00e395,
   headings:                           #2c2c2f,
   btn-text:                           #999,
   btn-bg:                             #fff,
   btn-border:                         #999,
   placeholder:                        #333,
   border:                             #e5e5e5,
+  tab-gradient__color1:               #fff,
+  tab-gradient__color2:               #f2f2f2,
   white:                              #fff,
   black:                              #000,
-  bg:                                 #4b4b51,
+  bg:                                 #4b4b51
 
 );
 
@@ -24,7 +27,8 @@ $userDefined: ( // User Defined Colors
 // Custom Modifiers
 $userDefined: map-merge($userDefined, (
 
-  text--light:                        lighten(map-get($userDefined, text), 85),
+  text--light:                        lighten(map-get($userDefined, text), 40),
+  text--lighter:                      lighten(map-get($userDefined, text), 85),
   btn-text--light:                    lighten(map-get($userDefined, btn-text), 40),
   border--light:                      lighten(map-get($userDefined, border), 40),
   border--dark:                       darken(map-get($userDefined, border), 64%),
@@ -74,7 +78,7 @@ $bootstrap: ( // Bootstrap Colors
   btnDangerColor:                     map-get($userDefined, btn-text--light),
 
   inputBg:                            #fff,
-  inputBorder:                        #fff,
+  inputBorder:                        #e5e5e5,
   inputFocus:                         #00e395,
 
   legendBorderColor:                  #e5e5e5,

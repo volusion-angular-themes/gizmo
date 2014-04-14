@@ -14,7 +14,7 @@
   @include border-radius(3px);
 }
 
-%no-border {
+%no-border-radius {
   @include border-radius(0);
 }
 
@@ -40,6 +40,10 @@
 
 %inner-shadow {
   @include box-shadow(rgba(map-get($colors, bg), 0.1) -27px -27px 27px inset);
+}
+
+%tab-shadow {
+  @include background-image(linear-gradient(map-get($colors, tab-gradient__color1) 57%,map-get($colors, tab-gradient__color2) 95%));
 }
 
 %remove-shadow {
