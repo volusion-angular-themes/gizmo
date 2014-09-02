@@ -1,0 +1,51 @@
+<div class="navbar navbar-inverse navbar-fixed-top th-navbar" role="navigation">
+	<div class="container vn-dropzone">
+		<header class="navbar-header th-navbar__header">
+			<button type="button" class="navbar-toggle th-navbar__toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only" data-translate="index.toggleNav"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="visible-xs visible-sm navbar-brand th-navbar__brand" data-ui-sref="i18n.home"><img src="/images/theme/logo-mobile.png" alt=""></a>
+			<a class="hidden-xs hidden-sm navbar-brand th-navbar__brand" data-ui-sref="i18n.home"><img src="/images/theme/logo.png" alt=""></a>
+		</header>
+		<div class="navbar-collapse collapse th-navbar__collapse">
+			<ul class="nav navbar-nav th-navbar__menu">
+				<li class="active"><a data-ui-sref="i18n.home" data-translate="index.home"></a></li>
+				<li><a data-ui-sref="i18n.about" data-translate="index.about"></a></li>
+				<li><a data-ui-sref="i18n.contact" data-translate="index.contact"></a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span data-translate="index.dropdown"></span> <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#" data-translate="index.action"></a></li>
+						<li><a href="#" data-translate="index.anotherAction"></a></li>
+						<li><a href="#" data-translate="index.somethingElseHere"></a></li>
+						<li class="divider"></li>
+						<li class="dropdown-header" data-translate="index.navHeader"></li>
+						<li><a href="#" data-translate="index.separatedLink"></a></li>
+						<li><a href="#" data-translate="index.oneMoreSeparatedLink"></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div><!--/.nav-collapse -->
+		<div class="th-cart-summary">
+			<a href="#" class="th-cart-summary__link">
+				<div class="th-icon th-icon--cart th-cart-summary__icon">
+					<div class="th-icon__foreground"></div>
+				</div>
+			</a>
+		</div>
+		<div class="th-search">
+			<form>
+				<label class="sr-only" for="search">Search Site</label>
+				<input type="text" class="th-search__input" placeholder="Search...">
+				<button type="submit" class="th-search__submit">
+					<div class="th-icon th-icon--spyglass">
+						<div class="th-icon__foreground"></div>
+					</div>
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
