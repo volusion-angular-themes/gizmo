@@ -1,46 +1,46 @@
 @import "sprites/brands/*.png";
 
 @mixin sprite--brands($name) {
-  @include brands-sprite($name);
-  height: brands-sprite-height($name);
-  width: brands-sprite-width($name);
+	@include brands-sprite($name);
+	height : brands-sprite-height($name);
+	width  : brands-sprite-width($name);
 }
 
-@mixin icon--brands($name, $has-large: false) {
+@mixin icon--brands($name, $has-large : false) {
 
-  &--#{$name} {
+	&--#{$name} {
 
-    .th-icon__foreground {
-      @include sprite--brands($name);
-    }
+		.th-icon__foreground {
+			@include sprite--brands($name);
+		}
 
-    @if $has-large {
-      &--large {
-        .th-icon__foreground {
-          @include sprite--brands(#{$name}--large);
-        }
-      }
-    }
+		@if $has-large {
+			&--large {
+				.th-icon__foreground {
+					@include sprite--brands(#{$name}--large);
+				}
+			}
+		}
 
-  }
+	}
 
 }
 
 .th-icon {
-  @extend %inline-block;
+	@extend %inline-block;
 
-  &__foreground {
-    @extend %opacity-100;
-  }
+	&__foreground {
+		@extend %opacity-100;
+	}
 
-  &:hover {
-    .th-icon__foreground {
-      @extend %opacity-75;
-    }
-  }
+	&:hover {
+		.th-icon__foreground {
+			@extend %opacity-75;
+		}
+	}
 
-  @each $sprite in apple, beats-audio, lenovo, playstation, windows, xbox {
-    @include icon--brands($sprite);
-  }
+	@each $sprite in apple, beats-audio, lenovo, playstation, windows, xbox {
+		@include icon--brands($sprite);
+	}
 
 }

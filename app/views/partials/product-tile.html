@@ -1,0 +1,30 @@
+<div class="th-product-tile">
+	<div class="th-product-tile__image">
+		<a data-ng-href="{{product.url}}">
+			<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="{{ product.name }}">
+		</a>
+	</div>
+	<div class="th-product-tile__info">
+		<a data-ng-href="{{product.url}}">
+			<div class="th-product-tile__name">{{product.name}}</div>
+		</a>
+		<div class="th-product-tile__price">{{product.pricing.regularPrice | currency}}</div>
+		<div class="th-tile-details th-product-tile__details">
+			<div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
+			<div class="th-tile-options th-product-tile__options">
+				<div class="th-tile-options__title">Color Options:</div>
+				<a href="#"><img src="/images/demo/color-1.png" alt=""></a>
+				<a href="#"><img src="/images/demo/color-2.png" alt=""></a>
+				<a href="#"><img src="/images/demo/color-3.png" alt=""></a>
+				<a href="#"><img src="/images/demo/color-4.png" alt=""></a>
+			</div>
+			<div class="th-tile-details__swatches"></div>
+			<div class="th-tile-details__description">
+				<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus
+					commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+			</div>
+			<!--TODO fix button linking-->
+			<button type="button" data-ng-href="{{product.url}}" class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
+		</div>
+	</div>
+</div>

@@ -1,217 +1,44 @@
 <div class="container-fluid container-fluid--nopadding">
-  <div class="th-category-graphic">
-    <div class="container">
-      <div class="th-category-graphic__title">Video Games</div>
-    </div>
-  </div>
+	<div class="th-category-graphic">
+		<div class="container">
+			<div class="th-category-graphic__title">{{category.name}}</div>
+		</div>
+	</div>
 </div>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="th-no-padding col-sm-6 col-md-4 col-lg-3">
-      <div class="th-product-tile">
-        <a href="#"><div class="th-product-tile__image"><img src="/images/demo/product-1.jpg" class="img-responsive" alt=""></div></a>
-        <div class="th-product-tile__info">
-          <a href="#"><div class="th-product-tile__name">Microsoft Surface RT</div></a>
-          <div class="th-product-tile__price">$399</div>
-          <div class="th-tile-details th-product-tile__details">
-            <div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
-            <div class="th-tile-options th-product-tile__options">
-              <div class="th-tile-options__title">Color Options:</div>
-              <a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-            </div>
-            <div class="th-tile-details__swatches"></div>
-            <div class="th-tile-details__description">
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-            <button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
-          </div>
-        </div>
-      </div>
-    </div>
+	<div class="row">
+		<div class="th-no-padding col-sm-6 col-md-4 col-lg-3" data-ng-repeat="product in products track by product.id">
+			<div class="th-product-tile">
+				<a data-ng-href="{{product.url}}">
+					<div class="th-product-tile__image">
+						<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="">
+					</div>
+				</a>
 
-    <div class="th-no-padding col-sm-6 col-md-4 col-lg-3">
-      <div class="th-product-tile">
-        <a href="#"><div class="th-product-tile__image"><img src="/images/demo/product-2.jpg" class="img-responsive" alt=""></div></a>
-        <div class="th-product-tile__info">
-          <a href="#"><div class="th-product-tile__name">ipad Air softcase</div></a>
-          <div class="th-product-tile__price">$39</div>
-          <div class="th-tile-details th-product-tile__details">
-            <div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
-            <div class="th-tile-options th-product-tile__options">
-              <div class="th-tile-options__title">Color Options:</div>
-              <a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-            </div>
-            <div class="th-tile-details__swatches"></div>
-            <div class="th-tile-details__description">
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-            <button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="th-no-padding col-sm-6 col-md-4 col-lg-3">
-      <div class="th-product-tile">
-        <a href="#"><div class="th-product-tile__image"><img src="/images/demo/product-3.jpg" class="img-responsive" alt=""></div></a>
-        <div class="th-product-tile__info">
-          <a href="#"><div class="th-product-tile__name">Beats by Dr. Dre Headphones</div></a>
-          <div class="th-product-tile__price">$199</div>
-          <div class="th-tile-details th-product-tile__details">
-            <div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
-            <div class="th-tile-options th-product-tile__options">
-              <div class="th-tile-options__title">Color Options:</div>
-              <a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-            </div>
-            <div class="th-tile-details__swatches"></div>
-            <div class="th-tile-details__description">
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-            <button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="th-no-padding col-sm-6 col-md-4 col-lg-3">
-      <div class="th-product-tile">
-        <a href="#"><div class="th-product-tile__image"><img src="/images/demo/product-4.jpg" class="img-responsive" alt=""></div></a>
-        <div class="th-product-tile__info">
-          <a href="#"><div class="th-product-tile__name">Sony Playstation 4</div></a>
-          <div class="th-product-tile__price">$399</div>
-          <div class="th-tile-details th-product-tile__details">
-            <div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
-            <div class="th-tile-options th-product-tile__options">
-              <div class="th-tile-options__title">Color Options:</div>
-              <a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-            </div>
-            <div class="th-tile-details__swatches"></div>
-            <div class="th-tile-details__description">
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-            <button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
-          </div>
-        </div>
-        <div class="th-icon th-icon--web-exclusive th-product-tile__tag">
-          <div class="th-icon__foreground"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="th-no-padding col-sm-6 col-md-4 col-lg-3">
-      <div class="th-product-tile">
-        <a href="#"><div class="th-product-tile__image"><img src="/images/demo/product-1.jpg" class="img-responsive" alt=""></div></a>
-        <div class="th-product-tile__info">
-          <a href="#"><div class="th-product-tile__name">Microsoft Surface RT</div></a>
-          <div class="th-product-tile__price">$399</div>
-          <div class="th-tile-details th-product-tile__details">
-            <div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
-            <div class="th-tile-options th-product-tile__options">
-              <div class="th-tile-options__title">Color Options:</div>
-              <a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-            </div>
-            <div class="th-tile-details__swatches"></div>
-            <div class="th-tile-details__description">
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-            <button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="th-no-padding col-sm-6 col-md-4 col-lg-3">
-      <div class="th-product-tile">
-        <a href="#"><div class="th-product-tile__image"><img src="/images/demo/product-2.jpg" class="img-responsive" alt=""></div></a>
-        <div class="th-product-tile__info">
-          <a href="#"><div class="th-product-tile__name">ipad Air softcase</div></a>
-          <div class="th-product-tile__price">$39</div>
-          <div class="th-tile-details th-product-tile__details">
-            <div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
-            <div class="th-tile-options th-product-tile__options">
-              <div class="th-tile-options__title">Color Options:</div>
-              <a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-            </div>
-            <div class="th-tile-details__swatches"></div>
-            <div class="th-tile-details__description">
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-            <button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
-          </div>
-        </div>
-        <div class="th-icon th-icon--web-exclusive th-product-tile__tag">
-          <div class="th-icon__foreground"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="th-no-padding col-sm-6 col-md-4 col-lg-3">
-      <div class="th-product-tile">
-        <a href="#"><div class="th-product-tile__image"><img src="/images/demo/product-3.jpg" class="img-responsive" alt=""></div></a>
-        <div class="th-product-tile__info">
-          <a href="#"><div class="th-product-tile__name">Beats by Dr. Dre Headphones</div></a>
-          <div class="th-product-tile__price">$199</div>
-          <div class="th-tile-details th-product-tile__details">
-            <div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
-            <div class="th-tile-options th-product-tile__options">
-              <div class="th-tile-options__title">Color Options:</div>
-              <a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-            </div>
-            <div class="th-tile-details__swatches"></div>
-            <div class="th-tile-details__description">
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-            <button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="th-no-padding col-sm-6 col-md-4 col-lg-3">
-      <div class="th-product-tile">
-        <a href="#"><div class="th-product-tile__image"><img src="/images/demo/product-4.jpg" class="img-responsive" alt=""></div></a>
-        <div class="th-product-tile__info">
-          <a href="#"><div class="th-product-tile__name">Sony Playstation 4</div></a>
-          <div class="th-product-tile__price">$399</div>
-          <div class="th-tile-details th-product-tile__details">
-            <div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
-            <div class="th-tile-options th-product-tile__options">
-              <div class="th-tile-options__title">Color Options:</div>
-              <a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-              <a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-            </div>
-            <div class="th-tile-details__swatches"></div>
-            <div class="th-tile-details__description">
-              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-            <button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+				<div class="th-product-tile__info">
+					<a data-ng-href="{{product.url}}">
+						<div class="th-product-tile__name">{{product.name}}</div>
+					</a>
+					<div class="th-product-tile__price">{{product.pricing.regularPrice | currency}}</div>
+					<div class="th-tile-details th-product-tile__details">
+						<div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
+						<div class="th-tile-options th-product-tile__options">
+							<div class="th-tile-options__title">Color Options:</div>
+							<a href="#"><img src="/images/demo/color-1.png" alt=""></a>
+							<a href="#"><img src="/images/demo/color-2.png" alt=""></a>
+							<a href="#"><img src="/images/demo/color-3.png" alt=""></a>
+							<a href="#"><img src="/images/demo/color-4.png" alt=""></a>
+						</div>
+						<div class="th-tile-details__swatches"></div>
+						<div class="th-tile-details__description">
+							<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus
+								commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+						</div>
+						<button class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -1,16 +1,14 @@
-@import "bootstrap/scaffolding";
-
 body {
-  @include font-smoothing;
-  font-size: 1.4rem;
-  padding-top: 50px;
+	@include font-smoothing;
+	font-size   : 1.4rem;
+	padding-top : 50px;
 
-  @include respond-to(md-and-up) {
-    padding-top: 73px;
-  }
+	@include respond-to(md-and-up) {
+		padding-top : 73px;
+	}
 
 }
 
 a, a:hover, a:active {
-  text-decoration: none;
+	text-decoration : none;
 }

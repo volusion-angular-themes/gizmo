@@ -1,51 +1,51 @@
 .th-footer {
-  background-color: map-get($colors, bg--darker);
-  color: map-get($colors, white);
+	background-color : map-get($colors, bg--darker);
+	color            : map-get($colors, white);
 
-  &__right {
-    background-color: map-get($colors, bg--dark);
+	&__right {
+		background-color : map-get($colors, bg--dark);
 
-    @include respond-to(md-and-up) {
-      border-left: 1px solid map-get($colors, border--dark);
-    }
+		@include respond-to(md-and-up) {
+			border-left : 1px solid map-get($colors, border--dark);
+		}
 
-  }
+	}
 
-  ul {
-    padding: 0;
-    margin: 50px 0 0;
-    height: 150px;
-    list-style: none;
-  }
+	ul {
+		padding    : 0;
+		margin     : 50px 0 0;
+		height     : 150px;
+		list-style : none;
+	}
 
-  a {
-    color: map-get($colors, white);
+	a {
+		color : map-get($colors, white);
 
-    &:hover {
-      color: map-get($colors, link-hover);
-    }
-  }
+		&:hover {
+			color : map-get($colors, link-hover);
+		}
+	}
 
-  &__links {
-    padding: 20px 0 0;
+	&__links {
+		padding : 20px 0 0;
 
-    &--collapsed {
-      max-width: 285px;
-      margin: 0 auto;
-    }
-  }
+		&--collapsed {
+			max-width : 285px;
+			margin    : 0 auto;
+		}
+	}
 
-  &__copyright {
-    font-size: 1.2rem;
-    padding: 20px 0;
-    text-align: center;
+	&__copyright {
+		font-size  : 1.2rem;
+		padding    : 20px 0;
+		text-align : center;
 
-    @include respond-to(md-and-up) {
-      border-top: 1px solid map-get($colors, border--dark);
-      padding: 13px 5px;
-      margin-right: -15px;
-      text-align: left;
-    }
-  }
+		@include respond-to(md-and-up) {
+			border-top   : 1px solid map-get($colors, border--dark);
+			padding      : 13px 5px;
+			margin-right : -15px;
+			text-align   : left;
+		}
+	}
 
 }

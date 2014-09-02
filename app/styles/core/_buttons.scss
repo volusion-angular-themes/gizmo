@@ -1,11 +1,9 @@
-@import "bootstrap/buttons";
-
 .th-btn--dark {
-  background-color: map-get($colors, bg--dark);
-  color: map-get($colors, text--lighter);
+	background-color : map-get($colors, bg--dark);
+	color            : map-get($colors, text--lighter);
 
-  &:hover {
-    background-color: map-get($colors, brand-primary);
-    color: map-get($colors, text--lighter);
-  }
+	&:hover {
+		background-color : map-get($colors, brand-primary);
+		color            : map-get($colors, text--lighter);
+	}
 }

@@ -1,41 +1,41 @@
 .th-category-graphic {
-  position: relative;
-  height: 117px;
+	position : relative;
+	height   : 117px;
 
-  @include background(
-    $image: image-url('theme/category/cg-video-games.jpg'),
-    $repeat: no-repeat,
-    $position: center center,
-    $size: cover
-  );
+	@include background(
+	$image : image-url('theme/category/cg-video-games.jpg'),
+	$repeat : no-repeat,
+	$position : center center,
+	$size : cover
+	);
 
-  @include respond-to(sm-and-up) {
-    height: 171px;
-  }
+	@include respond-to(sm-and-up) {
+		height : 171px;
+	}
 
-  @include respond-to(md-and-up) {
-    height: 278px;
-  }
+	@include respond-to(md-and-up) {
+		height : 278px;
+	}
 
-  &__title {
-    @include font(
-      $size: 3.5rem,
-      $line-height: 0.9,
-      $family: (Roboto-Light)
-    );
-    padding-top: 45px;
-    text-align: center;
-    color: map-get($colors, text--lighter);
+	&__title {
+		@include font(
+		$size : 3.5rem,
+		$line-height : 0.9,
+		$family : (Roboto-Light)
+		);
+		padding-top : 45px;
+		text-align  : center;
+		color       : map-get($colors, text--lighter);
 
-    @include respond-to(sm-and-up) {
-      font-size: 4.5rem;
-      padding-top: 55px;
-      text-align: right;
-    }
+		@include respond-to(sm-and-up) {
+			font-size   : 4.5rem;
+			padding-top : 55px;
+			text-align  : right;
+		}
 
-    @include respond-to(md-and-up) {
-      padding-top: 105px;
-    }
+		@include respond-to(md-and-up) {
+			padding-top : 105px;
+		}
 
-  }
+	}
 }

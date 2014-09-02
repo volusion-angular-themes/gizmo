@@ -1,72 +1,72 @@
 .th-product-details {
-  padding: 15px 0 0 0;
+	padding : 15px 0 0 0;
 
-  @include respond-to(md-and-up) {
-    padding-top: 50px;
-  }
+	@include respond-to(md-and-up) {
+		padding-top : 50px;
+	}
 
-  &__manufacturer {
-    @include font(
-      $size: 1.5rem,
-      $line-height: 0.9,
-      $family: Roboto-Light
-    );
-    text-transform: uppercase;
+	&__manufacturer {
+		@include font(
+		$size : 1.5rem,
+		$line-height : 0.9,
+		$family : Roboto-Light
+		);
+		text-transform : uppercase;
 
-    @include respond-to(md-and-up) {
-      font-size: 2.0rem;
-    }
+		@include respond-to(md-and-up) {
+			font-size : 2.0rem;
+		}
 
-  }
+	}
 
-  &__name {
-    @include font(
-      $size: 3.5rem,
-      $line-height: 0.9,
-      $family: Roboto-Light
-    );
+	&__name {
+		@include font(
+		$size : 3.5rem,
+		$line-height : 0.9,
+		$family : Roboto-Light
+		);
 
-    @include respond-to(md-and-up) {
-      font-size: 4.6rem;
-    }
+		@include respond-to(md-and-up) {
+			font-size : 4.6rem;
+		}
 
-  }
+	}
 
-  &__price {
-    @include font(
-      $size: 2.9rem,
-      $family: Roboto-Light
-    );
-    color: map-get($colors, brand-primary);
-  }
+	&__price {
+		@include font(
+		$size : 2.9rem,
+		$family : Roboto-Light
+		);
+		color : map-get($colors, brand-primary);
+	}
 
-  &__link {
-    @extend %inline-block;
-    @include font(
-      $size: 1.0rem,
-      $family: Montserrat-bold
-    );
-    text-transform: uppercase;
-    color: map-get($colors, text--light);
-  }
+	&__link {
+		@extend %inline-block;
+		@include font(
+		$size : 1.0rem,
+		$family : Montserrat-bold
+		);
+		text-transform : uppercase;
+		color          : map-get($colors, text--light);
+	}
 
-  &__stock-status {
-    border: 1px solid map-get($colors, border);
-    border-width: 1px 0;
-    padding: 10px 4px;
-  }
+	&__stock-status {
+		border       : 1px solid map-get($colors, border);
+		border-width : 1px 0;
+		padding      : 10px 4px;
+	}
 
-  &__price, &__review-summary, &__description, &__social, &__cta {
-    margin: 12px 0;
+	&__price, &__review-summary, &__description, &__social, &__cta {
+		margin : 12px 0;
 
-    @include respond-to(md-and-up) {
-      margin: 14px 0;
-    }
+		@include respond-to(md-and-up) {
+			margin : 14px 0;
+		}
 
-  }
+	}
 
-  &__button {
-    margin: 10px 0;
-  }
+	&__button {
+		margin : 10px 0;
+	}
 
 }

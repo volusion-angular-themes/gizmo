@@ -1,11 +1,11 @@
 .th-tile-options {
-  padding: 10px 0;
+	padding : 10px 0;
 
-  &__title {
-    @include font(
-      $size: 1.1rem,
-      $family: (Montserrat-Bold)
-    );
-    text-transform: uppercase;
-  }
+	&__title {
+		@include font(
+		$size : 1.1rem,
+		$family : (Montserrat-Bold)
+		);
+		text-transform : uppercase;
+	}
 }
