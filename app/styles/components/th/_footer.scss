@@ -1,4 +1,5 @@
 .th-footer {
+	@extend %font-smoothing;
 	background-color : map-get($colors, bg--darker);
 	color            : map-get($colors, white);
 

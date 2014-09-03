@@ -11,7 +11,7 @@ angular.module('Volusion.directives')
 		'use strict';
 
 		return {
-			templateUrl: '../../views/partials/paginator.html',
+			templateUrl: 'views/partials/paginator.html',
 			restrict   : 'A',
 			scope      : {
 				cursor     : '=',

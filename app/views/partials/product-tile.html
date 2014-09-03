@@ -23,8 +23,9 @@
 				<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac cursus
 					commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 			</div>
-			<!--TODO fix button linking-->
-			<button type="button" data-ng-href="{{product.url}}" class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
+			<a data-ng-href="{{product.url}}">
+				<button type="button" data-ng-href="{{product.url}}" class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
+			</a>
 		</div>
 	</div>
 </div>

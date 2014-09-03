@@ -5,7 +5,7 @@
 			data-robots="seo.enableRobotsMetatags" data-to-append="seo.globallyAppendedMetatags">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="fragment" content="!" />
+	<meta name="fragment" content="!"/>
 	<title>Volusion AngularJS Gizmo Theme</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
@@ -17,40 +17,34 @@
 	<link rel="stylesheet" href="/bower_components/vn-toolbox-common/dist/vn-toolbox-common-styles.css" />
 	<link rel="stylesheet" href="/bower_components/angular-carousel/dist/angular-carousel.css" />
 	<!-- endbower -->
-	<link rel="stylesheet" href="/bower_components/easyzoom/css/easyzoom.css" />
+	<link rel="stylesheet" href="/bower_components/easyzoom/css/easyzoom.css"/>
 	<!-- endbuild -->
 	<link rel="stylesheet" href="/styles/main.css">
 	<link rel="stylesheet" ng-href="{{ overridesCSS }}">
 	<base href="/">
 </head>
 <body role="document" data-ng-controller="MainCtrl">
-	<!--[if lt IE 9]>
-	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>
-		to improve your experience.</p>
-	<![endif]-->
+<!--[if lt IE 9]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+	your browser</a>
+	to improve your experience.</p>
+<![endif]-->
 
-	<!-- Mobile Menu -->
-	<!--<div data-ng-include=" 'views/partials/mobile-menu.html' "></div>-->
+<!-- Mobile Menu -->
+<!--<div data-ng-include=" 'views/partials/mobile-menu.html' "></div>-->
 
-	<div snap-content data-snap-ignore="true">
+<div snap-content data-snap-ignore="true">
 
-		<a id="top"></a>
+	<a id="top"></a>
 
-		<!-- Header -->
-		<div id="header" ng-include=" 'views/partials/header.html' "></div>
+	<!-- Header -->
+	<div id="header" ng-include=" 'views/partials/header.html' "></div>
 
-		<!-- Main Content -->
-		<div class="vn-showcase" role="main" autoscroll="false" ng-view=""></div>
+	<!-- Main Content -->
+	<div class="vn-showcase" role="main" autoscroll="false" ng-view=""></div>
 
-		<!-- Footer -->
-		<div ng-include=" 'views/partials/footer.html' "></div>
-
-	</div>
-
-	<!--[if lt IE 9]>
-	<script src="/bower_components/es5-shim/es5-shim.js"></script>
-	<script src="/bower_components/json3/lib/json3.min.js"></script>
-	<![endif]-->
+	<!-- Footer -->
+	<div ng-include=" 'views/partials/footer.html' "></div>
 
 	<!-- build:js /scripts/vendor.js -->
 	<!-- bower:js -->
@@ -99,6 +93,7 @@
 	<script src="/bower_components/angular-i18n/angular-locale_en-us.js"></script>
 	<!-- endbuild -->
 
+	<!-- build:js({.tmp,app}) /scripts/scripts.js -->
 	<script src="scripts/config.js"></script>
 	<script src="scripts/app.js"></script>
 

@@ -1,4 +1,5 @@
 .th-btn--dark {
+	@extend %font-smoothing;
 	background-color : map-get($colors, bg--dark);
 	color            : map-get($colors, text--lighter);
 
