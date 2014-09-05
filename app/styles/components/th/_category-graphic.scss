@@ -3,7 +3,6 @@
 	height   : 117px;
 
 	@include background(
-	$image : image-url('theme/category/cg-video-games.jpg'),
 	$repeat : no-repeat,
 	$position : center center,
 	$size : cover

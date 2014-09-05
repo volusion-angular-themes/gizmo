@@ -1,5 +1,5 @@
 <div class="container-fluid container-fluid--nopadding">
-	<div class="th-category-graphic">
+	<div class="th-category-graphic" style="background-image: url({{category.bannerImgUrl}})">
 		<!--<img class="banner img img-responsive"
 				 ng-hide="checkForFacetFilters()"
 				 ng-src="{{category.bannerImgUrl}}">-->
@@ -9,12 +9,12 @@
 	</div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
 		<div class="col-sm-3 col-lg-2 vn-faceted-search"
 				 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }"
 				 data-ng-hide="!hasFacetsOrCategories">
-			<h3 data-ng-show="!showMobileSearch">Narrow By</h3>
+			<h3 data-ng-show="!showMobileSearch">{{category.name}}</h3>
 			<div vn-faceted-search
 					 categories="categoryList"
 					 facets="facets"
@@ -38,7 +38,7 @@
 							<div class="th-product-tile__price">
 								<span data-ng-show="product.pricing.regularPrice > 0">
 									<span data-ng-class="{strike: product.pricing.salePrice > 0}">{{product.pricing.regularPrice | currency}}</span>
-								<span data-ng-show="product.pricing.salePrice > 0">
+								<span class="th-product-tile__price--sale" data-ng-show="product.pricing.salePrice > 0">
 									<span>{{product.pricing.salePrice | currency}}</span>
 								</span>
 							</div>

@@ -8,7 +8,14 @@
 		<a data-ng-href="{{product.url}}">
 			<div class="th-product-tile__name">{{product.name}}</div>
 		</a>
-		<div class="th-product-tile__price">{{product.pricing.regularPrice | currency}}</div>
+
+		<div class="th-product-tile__price">
+			<span data-ng-show="product.pricing.regularPrice > 0">
+				<span data-ng-class="{strike: product.pricing.salePrice > 0}">{{product.pricing.regularPrice | currency}}</span>
+			<span class="th-product-tile__price--sale" data-ng-show="product.pricing.salePrice > 0">
+				<span>{{product.pricing.salePrice | currency}}</span>
+			</span>
+		</div>
 		<div class="th-tile-details th-product-tile__details">
 			<div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt=""></div>
 			<div class="th-tile-options th-product-tile__options">
@@ -24,7 +31,9 @@
 					commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 			</div>
 			<a data-ng-href="{{product.url}}">
-				<button type="button" data-ng-href="{{product.url}}" class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details</button>
+				<button type="button" data-ng-href="{{product.url}}"
+								class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details
+				</button>
 			</a>
 		</div>
 	</div>

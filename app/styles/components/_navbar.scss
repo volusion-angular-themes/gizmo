@@ -7,40 +7,43 @@
 		min-height : 73px;
 	}
 
-	&__header, &__collapse {
-		float : left;
+	.th-menu-container {
+
 	}
 
+	// TODO change border color in theme variables
 	&__toggle {
-		float         : left;
-		padding-left  : 0;
-		padding-right : 0;
-		margin-left   : 15px;
-		margin-right  : 0;
+		float        : left;
+		margin-right : 0;
+		padding      : 10px;
 	}
 
 	&__menu {
-		@include respond-to(md-and-up) {
-			> li > a {
+		> li > a {
+			@include respond-to(md-and-up) {
 				@include font($family : $font-family-main-menu, $size : 1.5rem);
 				text-transform : uppercase;
-				padding        : 26px 30px 27px;
+				padding        : 26px 20px 27px;
+			}
+			@include respond-to(lg) {
+				padding : 26px 30px 27px;
 			}
 		}
 	}
 
 	&__brand {
-		padding     : 0 15px;
+		padding : 0 15px;
 
-		@include respond-to(md-and-up) {
-			padding-top : 8px;
-		}
+		@include respond-to(sm-and-down) {
+			float : none;
 
-		img {
-			@include respond-to(sm-and-down) {
+			img {
+				margin     : 0 auto;
 				max-height : 50px;
 			}
 		}
+		@include respond-to(md-and-up) {
+			padding-top : 8px;
+		}
 	}
-
 }

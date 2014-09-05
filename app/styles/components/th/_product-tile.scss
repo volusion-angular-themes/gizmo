@@ -1,6 +1,5 @@
 .th-product-tile {
 	border: 1px solid map-get($colors, border);
-	border-left-width: 0;
 	padding: 20px;
 	position: relative;
 	height: 336px;
@@ -42,10 +41,22 @@
 	}
 
 	&__price {
-		@include font(
-		$size: 2.9rem,
-		$family: (Roboto-Light)
-		);
+		@include font($size: 2.9rem, $family: (Roboto-Light));
+
+		&--sale {
+			color: map-get($colors, sale);
+		}
+
+		.strike:before {
+			color: map-get($colors, sale);
+			content: "_____";
+			display: inline;
+			font-size: 1em;
+			position: absolute;
+			left: 25px;
+			top: 32px;
+			@include rotate(-35deg);
+		}
 	}
 
 	&:hover {

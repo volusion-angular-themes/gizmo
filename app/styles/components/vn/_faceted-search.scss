@@ -1,0 +1,47 @@
+.vn-faceted-search {
+	border-top: 1px solid map-get($colors, border);
+	border-right: 1px solid map-get($colors, border);
+	padding-bottom: 20px;
+
+	h3 {
+		@include font($size: 2.5rem, $family: (Novecentosanswide-Bold));
+		text-transform: uppercase;
+	}
+
+	.vn-category-search__category-items__category-title {
+		border-bottom: 0;
+	}
+
+	.panel-body {
+		padding-top: 10px !important;
+	}
+
+	.panel-default {
+		border: none;
+	}
+
+	.panel-default > .panel-heading {
+		background: none;
+		padding-left: 0;
+
+
+		.panel-title {
+			@include font($size : 1.5rem, $family : (Roboto-Condensed-Bold));
+			text-transform : uppercase;
+		}
+	}
+
+	.vn-category-search__category-items {
+
+		&__category-title {
+			font-size: 1.4rem;
+			padding: 5px 0 5px 0 !important;
+		}
+
+		&__category-item {
+			border-bottom: 0;
+			padding: 5px 0 5px 10px !important;
+		}
+	}
+
+}

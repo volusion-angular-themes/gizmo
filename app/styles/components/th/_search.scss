@@ -10,6 +10,10 @@
 	@include respond-to(md-and-up) {
 		right   : 80px;
 		padding : 23px 25px;
+
+		&:hover {
+			padding: 23px 15px;
+		}
 	}
 
 	&__input {
@@ -30,7 +34,7 @@
 
 		.th-search__input {
 			@extend %animate-all;
-			width   : 150px;
+			width   : 75%;
 			padding : 3px 5px;
 		}
 	}

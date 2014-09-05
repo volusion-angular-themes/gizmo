@@ -1,5 +1,5 @@
 <footer class="th-footer">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-12 col-md-8 th-footer__left">
 				<div class="hidden-xs hidden-sm th-footer__links">
@@ -65,9 +65,9 @@
 			<div class="col-sm-12 col-md-4 th-footer__right">
 				<div class="th-elist">
 					<div class="th-elist__title">Newsletter Sign up</div>
-					<form>
+					<form role="form" name="MailingList" method="post" action="/MailingList_subscribe.asp">
 						<label class="sr-only" for="elist">Enter Email to sign up</label>
-						<input type="email" class="form-control input-lg th-elist__input" placeholder="Email addresss...">
+						<input type="email" name="emailaddress" class="form-control input-lg th-elist__input" placeholder="Get Free Updates">
 						<button type="submit" class="btn btn-primary btn-lg btn-block">Sign Me Up!</button>
 					</form>
 				</div>
