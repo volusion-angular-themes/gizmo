@@ -8,3 +8,31 @@
 		color            : map-get($colors, text--lighter);
 	}
 }
+
+.btn {
+	@include font(
+	$size : 1.1rem,
+	$line-height : 2.5,
+	$family : ($font-family-buttons)
+	);
+	text-transform : uppercase;
+	letter-spacing : 0.2rem;
+	border-width   : 2px;
+
+	&.btn-xs {
+		font-size : 0.7rem;
+	}
+
+	&.btn-sm {
+		font-size : 0.9rem;
+	}
+
+	&.btn-lg {
+		font-size : 1.2rem;
+	}
+
+	&.btn-primary {
+		@extend %font-smoothing;
+	}
+
+}

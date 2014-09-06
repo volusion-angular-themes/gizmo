@@ -1,4 +1,13 @@
 .th-top-bar {
 	background-color : map-get($colors, bg--lighter);
 	padding          : 20px 0;
+
+	.breadcrumb {
+		padding : 0;
+
+		a:hover {
+			color           : $text-color;
+			text-decoration : underline;
+		}
+	}
 }

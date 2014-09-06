@@ -61,8 +61,7 @@
 
 	&:hover {
 		.th-product-tile__info {
-			@extend %animate-all;
-			@extend %remove-shadow;
+			@extend %animate-all, %remove-shadow;
 			@include translucent-bg(map-get($colors, white), 0.8);
 			height: 336px;
 			width: 100%;

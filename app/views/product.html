@@ -1,270 +1,300 @@
 <div class="clearfix" itemscope itemtype="http://schema.org/Product">
-	<div class="visible-md-block visible-lg-block th-top-bar">
-		<div class="container">
-			<ol class="breadcrumb">
-				<li><a href="/">Home</a></li>
-				<li><a href="{{product.categories[0].url}}">{{product.categories[0].name}}</a></li>
-				<!--TODO Refactor to only show if data available-->
-				<li><a href="{{product.categories[1].url}}">{{product.categories[1].name}}</a></li>
-				<li class="active">{{product.name}}</li>
-			</ol>
-		</div>
-	</div>
+<div class="visible-md-block visible-lg-block th-top-bar">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-7">
-				<div class="row">
-					<div class="col-xs-3 col-sm-2">
-						<div class="th-product-views">
-							<a data-ng-click="product.image=image" ng-repeat="image in currentImageCollection | filter: '!youtube.com'">
-								<img data-ng-src="{{ image.medium }}" class="img-responsive th-product-views__image" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-9 col-sm-10">
-						<div class="th-product-views">
-							<img data-ng-src="{{product.image.large}}" class="img-responsive th-product-views__image" alt="{{product.name}}">
-						</div>
-					</div>
-					<div class="visible-md visible-lg text-center th-social-share th-product-details__social">
-						<div class="th-social-share__item">
-							<img src="/images/demo/like.png" alt="">
-						</div>
-						<div class="th-social-share__item">
-							<img src="/images/demo/pin-it.png" alt="">
-						</div>
-						<div class="th-social-share__item">
-							<img src="/images/demo/google-plus.png" alt="">
-						</div>
-						<div class="th-social-share__item">
-							<img src="/images/demo/tweet.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-5">
-				<div class="th-product-details">
-					<div class="th-product-details__manufacturer">Lenovo</div>
-					<div class="th-product-details__name">{{product.name}}</div>
-					<div class="th-product-details__price">{{product.pricing.calculatedPrice | currency}}</div>
-					<div class="th-product-details__model"><b>Model:</b> Lenovo Yoga</div>
-					<div class="th-product-details__product-code"><b>Product ID:</b> {{product.id}}</div>
-					<div class="th-product-details__review-summary">
-						<div class="th-review-stars">
-							<rating ng-model="rate" max="5" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
-							<div class="th-icon th-icon--star th-review-stars__star">
-								<div class="th-icon__foreground"></div>
-							</div>
-							<div class="th-icon th-icon--star th-review-stars__star">
-								<div class="th-icon__foreground"></div>
-							</div>
-							<div class="th-icon th-icon--star th-review-stars__star">
-								<div class="th-icon__foreground"></div>
-							</div>
-							<div class="th-icon th-icon--star th-review-stars__star">
-								<div class="th-icon__foreground"></div>
-							</div>
-							<div class="th-icon th-icon--star-inactive th-review-stars__star">
-								<div class="th-icon__foreground"></div>
-							</div>
-						</div>
-						<a href="#" class="th-product-details__link">(45) See Reviews</a>
-						|
-						<a href="#" class="th-product-details__link">Write a review</a>
-					</div>
-					<div class="th-product-details__stock-status">In stock. Ships in 24 hours. Limit 5 per customer.</div>
-					<div class="th-product-details__description" itemprop="description"
-							 data-ng-bind-html="product.descriptions.short | legacyLinkify | html">
-					</div>
-
-					<div class="th-product-details__quantity">
-						<form class="form-inline" role="form">
-							<div class="form-group">
-								<label class="control-label" for="quantity">Qty: </label>
-								<input type="number" class="form-control" id="quantity">
-							</div>
-						</form>
-					</div>
-					<div class="th-product-details__quantity">
-						<div data-vn-product-option
-								 data-ng-repeat="option in product.options"
-								 data-option="option"
-								 data-product="product"
-								 data-save-to="cartItem.options">
-						</div>
-					</div>
-					<div class="th-product-details__cta">
-						<div class="row">
-							<div class="col-sm-6">
-								<button class="btn btn-primary btn-lg btn-block th-product-details__button"
-												data-ng-class="{ '-disabled' : buttonDisabled }"
-												data-translate="product.addToCart"
-												data-ng-click="addToCart()"
-												data-popover="{{ popoverText }}"
-												data-popover-placement="bottom"
-												data-analytics-category="element click"
-												data-analytics-label="Add to Cart"
-												data-analytics-location="body-product"
-												data-analytics-description="Add to Cart Button">
-									Add to Cart
-								</button>
-							</div>
-							<div class="col-sm-6">
-								<button class="btn btn-default btn-lg btn-block th-product-details__button">Add to Wishlist</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<ol class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li><a href="{{product.categories[0].url}}">{{product.categories[0].name}}</a></li>
+			<!--TODO Refactor to only show if data available-->
+			<li><a href="{{product.categories[1].url}}">{{product.categories[1].name}}</a></li>
+			<li class="active">{{product.name}}</li>
+		</ol>
 	</div>
-
-	<div class="container">
-		<div class="th-product-panels">
-			<tabset justified="true">
-				<tab heading="Product Info">
-					<div class="th-product-panels__panel">
-						<div class="th-product-features">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-6">
-										<ul class="th-features-list">
-											<li class="th-features-list__item" data-ng-show="product.descriptions.detail">
-												<div class="th-feature">
-													<h3 class="th-feature__title" data-translate="product.description">Description</h3>
-													<p class="th-feature__description" itemprop="description"
-														 data-ng-bind-html="product.descriptions.detail | legacyLinkify | html"></p>
-												</div>
-											</li>
-											<li class="th-features-list__item" data-ng-show="product.descriptions.features">
-												<div class="th-feature">
-													<h3 class="th-feature__title" data-translate="product.features">Features</h3>
-													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.features | legacyLinkify | html"></p>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="col-md-6">
-										<img data-ng-src="{{product.image.large}}" class="img-responsive" alt="{{product.name}}">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</tab>
-				<tab heading="Tech Specs">
-					<div class="th-product-panels__panel">
-						<div class="th-product-features">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-6">
-										<ul class="th-features-list">
-											<li class="th-features-list__item" data-ng-show="product.descriptions.techSpecs">
-												<div class="th-feature">
-													<h3 class="th-feature__title" data-translate="product.techSpecs">Tech Specs</h3>
-													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.techSpecs | legacyLinkify | html"></p>
-												</div>
-											</li>
-											<li class="th-features-list__item" data-ng-show="product.descriptions.features">
-												<div class="th-feature">
-													<h3 class="th-feature__title" data-translate="product.extendedInfo">Extended Info</h3>
-													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.extendedInfo | legacyLinkify | html"></p>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="col-md-6">
-										<img data-ng-src="{{product.image.large}}" class="img-responsive" alt="{{product.name}}">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</tab>
-				<tab heading="Reviews">
-					<div class="th-product-panels__panel">
-						<div class="th-product-features">
-							<div class="container-fluid">
-								<div class="row">
-									<!-- REVIEWS -->
-									<div class="th-reviews" data-ng-if="config.general.enableCustomerReviews">
-										<div class="th-reviews__heading" data-translate="product.reviews">Reviews</div>
-										<div class="th-reviews__totals">
-											<div class="th-reviews__totals--left" data-ng-if="ratingsAndReviews.data.reviews.length > 0">
-												<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="th-reviews__count"><meta itemprop="worstRating" content="1">This product has recieved <span itemprop="ratingValue" data-ng-bind="ratingsAndReviews.data.avgRating"></span> out of <span itemprop="bestRating" data-ng-bind="ratingsAndReviews.data.maxRating"></span> stars based on <span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span> customer reviews</div>
-												<div class="th-reviews__avg">
-													<div data-vn-rating rating-value="ratingsAndReviews.data.avgRating"
-															 maximum="ratingsAndReviews.data.maxRating"
-															 editable="isEditable" title=""></div>
-												</div>
-											</div>
-											<div class="th-reviews__totals--right">
-												<a legacy-link="/reviewnew.asp?productcode={{product.code}}" class="btn btn-default btn-grey-sm" data-translate="product.writeAReview">Write a Review &gt;</a>
-											</div>
-										</div>
-										<div data-ng-if="ratingsAndReviews.data.reviews.length > 0" class="th-reviews" itemprop="review" itemscope itemtype="http://schema.org/Review" data-ng-repeat="review in ratingsAndReviews.data.reviews">
-											<div class="th-reviews__helpful"><span data-ng-bind="review.helpful"></span> people found the following review helpful</div>
-											<div class="th-reviews__ratings">
-												<div class="th-reviews__star-group"
-														 data-vn-rating rating-value="review.rating"
-														 maximum="ratingsAndReviews.data.maxRating"
-														 title="" editable="isEditable"></div>
-												<span class="th-rating-text" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"><meta itemprop="worstRating" content="1"><span itemprop="ratingValue" data-ng-bind="review.rating"></span> out of <span itemprop="bestRating" data-ng-bind="ratingsAndReviews.data.maxRating"></span></span> By <span itemprop="author" class="th-review__ratings__author" data-ng-bind="review.nameOfReviewer || 'Anonymous'"></span>
-												<div itemprop="datePublished" class="th-rating-date hidden-xs pull-right" data-ng-bind="review.date"></div>
-											</div>
-											<div itemprop="name" class="th-reviews__title" data-ng-bind="review.title"></div>
-											<div itemprop="description" class="th-rating-description" data-ng-bind="review.body">
-											</div>
-											<div class="th-reviews__helpful">
-												<span data-translate="product.wasThisReviewHelpfulToYou">Was this review helpful for you?</span>
-												<a legacy-link="/reviewhelpful.asp?ProductCode={{product.code}}&ID={{review.id}}&yes=yes" class="btn btn-default btn-grey-sm" data-translate="common.yes">Yes</a>
-												<a legacy-link="/reviewhelpful.asp?ProductCode={{product.code}}&ID={{review.id}}&yes=no" class="btn btn-default btn-grey-sm" data-translate="common.no">No</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</tab>
-			</tabset>
-		</div>
-	</div>
-
-	<hr>
-
-	<div class="container-fluid container-fluid--nopadding">
-		<div class="th-slider">
-			<div class="th-slider__title">Our Customers also liked:</div>
-			<div class="th-slider__belt">
-				<a href="#">
-					<div class="th-icon th-icon--next th-slider__next">
-						<div class="th-icon__foreground"></div>
-					</div>
-				</a>
-				<a href="#">
-					<div class="th-icon th-icon--previous th-slider__previous">
-						<div class="th-icon__foreground"></div>
-					</div>
-				</a>
-
-				<div class="th-slider__slide" data-ng-repeat="product in relatedProducts | filter: '!' + product.id">
-					<div class="th-product-slide">
-						<a data-ng-href="{{ product.url }}" class="th-product-slide__image">
-							<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive"
-									 alt="{{ product.name }}">
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-7">
+			<div class="row">
+				<div class="col-xs-3 col-sm-2">
+					<div class="th-product-views">
+						<a data-ng-click="product.image=image" ng-repeat="image in currentImageCollection | filter: '!youtube.com'">
+							<img data-ng-src="{{ image.medium }}" class="img-responsive th-product-views__image" alt="">
 						</a>
-						<div class="th-product-slide__name">
-							<a data-ng-href="{{ product.url }}">{{product.name}}</a>
+					</div>
+				</div>
+				<div class="col-xs-9 col-sm-10">
+					<div class="th-product-views">
+						<img data-ng-src="{{product.image.large}}" class="img-responsive th-product-views__image"
+								 alt="{{product.name}}">
+					</div>
+				</div>
+				<div class="visible-md visible-lg text-center th-social-share th-product-details__social">
+					<div class="th-social-share__item">
+						<img src="/images/demo/like.png" alt="">
+					</div>
+					<div class="th-social-share__item">
+						<img src="/images/demo/pin-it.png" alt="">
+					</div>
+					<div class="th-social-share__item">
+						<img src="/images/demo/google-plus.png" alt="">
+					</div>
+					<div class="th-social-share__item">
+						<img src="/images/demo/tweet.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-5">
+			<div class="th-product-details">
+				<div class="th-product-details__manufacturer">Lenovo</div>
+				<div class="th-product-details__name">{{product.name}}</div>
+				<div class="th-product-details__price">{{product.pricing.calculatedPrice | currency}}</div>
+				<div class="th-product-details__model"><b>Model:</b> Lenovo Yoga</div>
+				<div class="th-product-details__product-code"><b>Product ID:</b> {{product.id}}</div>
+				<div class="th-product-details__review-summary">
+					<div class="th-review-stars">
+						<rating ng-model="rate" max="5" readonly="isReadonly" on-hover="hoveringOver(value)"
+										on-leave="overStar = null"></rating>
+						<div class="th-icon th-icon--star th-review-stars__star">
+							<div class="th-icon__foreground"></div>
 						</div>
-						<div class="th-product-slide__price">{{product.pricing.calculatedPrice | currency}}</div>
+						<div class="th-icon th-icon--star th-review-stars__star">
+							<div class="th-icon__foreground"></div>
+						</div>
+						<div class="th-icon th-icon--star th-review-stars__star">
+							<div class="th-icon__foreground"></div>
+						</div>
+						<div class="th-icon th-icon--star th-review-stars__star">
+							<div class="th-icon__foreground"></div>
+						</div>
+						<div class="th-icon th-icon--star-inactive th-review-stars__star">
+							<div class="th-icon__foreground"></div>
+						</div>
+					</div>
+					<a href="#" class="th-product-details__link">(45) See Reviews</a>
+					|
+					<a href="#" class="th-product-details__link">Write a review</a>
+				</div>
+				<div class="th-product-details__stock-status">
+					<span ng-show="(product.availability.quantityInStock > 0)">In Stock.</span>
+					<span ng-hide="(product.availability.quantityInStock > 0)">Out of Stock.</span>
+					&nbsp;{{product.availability.description}}
+				</div>
+				<div class="th-product-details__description" itemprop="description"
+						 data-ng-bind-html="product.descriptions.short | legacyLinkify | html">
+				</div>
+
+				<div class="th-product-details__quantity">
+					<form class="form-inline" role="form">
+						<div class="form-group">
+							<label class="control-label" for="quantity">Qty: </label>
+							<input type="number" class="form-control" id="quantity">
+						</div>
+					</form>
+				</div>
+				<div class="th-product-details__quantity">
+					<div data-vn-product-option
+							 data-ng-repeat="option in product.options"
+							 data-option="option"
+							 data-product="product"
+							 data-save-to="cartItem.options">
+					</div>
+				</div>
+				<div class="th-product-details__cta">
+					<div class="row">
+						<div class="col-sm-6 pull-right">
+							<button class="btn btn-primary btn-lg btn-block th-product-details__button"
+											data-ng-class="{ '-disabled' : buttonDisabled }"
+											data-translate="product.addToCart"
+											data-ng-click="addToCart()"
+											data-popover="{{ popoverText }}"
+											data-popover-placement="bottom"
+											data-analytics-category="element click"
+											data-analytics-label="Add to Cart"
+											data-analytics-location="body-product"
+											data-analytics-description="Add to Cart Button">
+								Add to Cart
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="container">
+	<div class="th-product-panels">
+		<tabset justified="true">
+			<tab heading="Product Info">
+				<div class="th-product-panels__panel">
+					<div class="th-product-features">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-md-6">
+									<ul class="th-features-list">
+										<li class="th-features-list__item" data-ng-show="product.descriptions.detail">
+											<div class="th-feature">
+												<h3 class="th-feature__title" data-translate="product.description">Description</h3>
+
+												<p class="th-feature__description" itemprop="description"
+													 data-ng-bind-html="product.descriptions.detail | legacyLinkify | html"></p>
+											</div>
+										</li>
+										<li class="th-features-list__item" data-ng-show="product.descriptions.features">
+											<div class="th-feature">
+												<h3 class="th-feature__title" data-translate="product.features">Features</h3>
+
+												<p class="th-feature__description"
+													 data-ng-bind-html="product.descriptions.features | legacyLinkify | html"></p>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<img data-ng-src="{{product.image.large}}" class="img-responsive" alt="{{product.name}}">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</tab>
+			<tab heading="Tech Specs">
+				<div class="th-product-panels__panel">
+					<div class="th-product-features">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-md-6">
+									<ul class="th-features-list">
+										<li class="th-features-list__item" data-ng-show="product.descriptions.techSpecs">
+											<div class="th-feature">
+												<h3 class="th-feature__title" data-translate="product.techSpecs">Tech Specs</h3>
+
+												<p class="th-feature__description"
+													 data-ng-bind-html="product.descriptions.techSpecs | legacyLinkify | html"></p>
+											</div>
+										</li>
+										<li class="th-features-list__item" data-ng-show="product.descriptions.features">
+											<div class="th-feature">
+												<h3 class="th-feature__title" data-translate="product.extendedInfo">Extended Info</h3>
+
+												<p class="th-feature__description"
+													 data-ng-bind-html="product.descriptions.extendedInfo | legacyLinkify | html"></p>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<img data-ng-src="{{product.image.large}}" class="img-responsive" alt="{{product.name}}">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</tab>
+			<tab heading="Reviews">
+				<div class="th-product-panels__panel">
+					<div class="th-product-features">
+						<div class="container-fluid">
+							<div class="row">
+								<!-- REVIEWS -->
+								<div class="th-reviews" data-ng-if="config.general.enableCustomerReviews">
+									<div class="th-reviews__heading" data-translate="product.reviews">Reviews</div>
+									<div class="th-reviews__totals">
+										<div class="th-reviews__totals--left" data-ng-if="ratingsAndReviews.data.reviews.length > 0">
+											<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"
+													 class="th-reviews__count">
+												<meta itemprop="worstRating" content="1">
+												This product has recieved <span itemprop="ratingValue"
+																												data-ng-bind="ratingsAndReviews.data.avgRating"></span> out of
+												<span itemprop="bestRating" data-ng-bind="ratingsAndReviews.data.maxRating"></span> stars based
+												on <span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span> customer
+												reviews
+											</div>
+											<div class="th-reviews__avg">
+												<div data-vn-rating rating-value="ratingsAndReviews.data.avgRating"
+														 maximum="ratingsAndReviews.data.maxRating"
+														 editable="isEditable" title=""></div>
+											</div>
+										</div>
+										<div class="th-reviews__totals--right">
+											<a legacy-link="/reviewnew.asp?productcode={{product.code}}" class="btn btn-default btn-grey-sm"
+												 data-translate="product.writeAReview">Write a Review &gt;</a>
+										</div>
+									</div>
+									<div data-ng-if="ratingsAndReviews.data.reviews.length > 0" class="th-reviews" itemprop="review"
+											 itemscope itemtype="http://schema.org/Review"
+											 data-ng-repeat="review in ratingsAndReviews.data.reviews">
+										<div class="th-reviews__helpful"><span data-ng-bind="review.helpful"></span> people found the
+											following review helpful
+										</div>
+										<div class="th-reviews__ratings">
+											<div class="th-reviews__star-group"
+													 data-vn-rating rating-value="review.rating"
+													 maximum="ratingsAndReviews.data.maxRating"
+													 title="" editable="isEditable"></div>
+											<span class="th-rating-text" itemprop="reviewRating" itemscope
+														itemtype="http://schema.org/Rating"><meta itemprop="worstRating" content="1"><span
+													itemprop="ratingValue" data-ng-bind="review.rating"></span> out of <span itemprop="bestRating"
+																																																	 data-ng-bind="ratingsAndReviews.data.maxRating"></span></span>
+											By <span itemprop="author" class="th-review__ratings__author"
+															 data-ng-bind="review.nameOfReviewer || 'Anonymous'"></span>
+
+											<div itemprop="datePublished" class="th-rating-date hidden-xs pull-right"
+													 data-ng-bind="review.date"></div>
+										</div>
+										<div itemprop="name" class="th-reviews__title" data-ng-bind="review.title"></div>
+										<div itemprop="description" class="th-rating-description" data-ng-bind="review.body">
+										</div>
+										<div class="th-reviews__helpful">
+											<span data-translate="product.wasThisReviewHelpfulToYou">Was this review helpful for you?</span>
+											<a legacy-link="/reviewhelpful.asp?ProductCode={{product.code}}&ID={{review.id}}&yes=yes"
+												 class="btn btn-default btn-grey-sm" data-translate="common.yes">Yes</a>
+											<a legacy-link="/reviewhelpful.asp?ProductCode={{product.code}}&ID={{review.id}}&yes=no"
+												 class="btn btn-default btn-grey-sm" data-translate="common.no">No</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</tab>
+		</tabset>
+	</div>
+</div>
+
+<hr>
+
+<div class="container-fluid container-fluid--nopadding">
+	<div class="th-slider">
+		<div class="th-slider__title">Our Customers also liked:</div>
+		<div class="th-slider__belt">
+			<a href="#">
+				<div class="th-icon th-icon--next th-slider__next">
+					<div class="th-icon__foreground"></div>
+				</div>
+			</a>
+			<a href="#">
+				<div class="th-icon th-icon--previous th-slider__previous">
+					<div class="th-icon__foreground"></div>
+				</div>
+			</a>
+
+			<div class="th-slider__slide" data-ng-repeat="product in relatedProducts | filter: '!' + product.id">
+				<div class="th-product-slide">
+					<a data-ng-href="{{ product.url }}" class="th-product-slide__image">
+						<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive"
+								 alt="{{ product.name }}">
+					</a>
+
+					<div class="th-product-slide__name">
+						<a data-ng-href="{{ product.url }}">{{product.name}}</a>
+					</div>
+					<div class="th-product-slide__price">{{product.pricing.calculatedPrice | currency}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 </div>

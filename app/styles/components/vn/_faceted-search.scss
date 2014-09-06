@@ -1,6 +1,6 @@
 .vn-faceted-search {
 	border-top: 1px solid map-get($colors, border);
-	border-right: 1px solid map-get($colors, border);
+	left: 1px; // TODO fix this hack which smooths border btwn faceted search and main panel
 	padding-bottom: 20px;
 
 	h3 {

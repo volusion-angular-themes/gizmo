@@ -3,7 +3,7 @@
 		 data-ng-show="snapMenuState"
 		 data-ng-controller="HeaderCtrl">
 
-	<div class="hidden-md hidden-lg th-search"
+	<div class="hidden-md hidden-lg th-search th-search--mobile-menu"
 			 ng-controller="SearchCtrl">
 		<form class="th-search__form"
 					role='search'
@@ -22,23 +22,23 @@
 		</form>
 	</div>
 	<div class="th-mobile-menu__list">
-		<ul class="nav navbar-nav th-mobile-list">
-			<li class="th-mobile-list__item th-mobile-list__item--header">Categories</li>
-			<li class="dropdown th-mobile-list__item" ng-repeat="category in smartCategories">
-				<a href="#" class="dropdown-toggle navbar-link th-dropdown-toggle th-mobile-list__link" ng-if="category.subCategories.length" data-toggle="dropdown">
+		<ul class="nav navbar-nav">
+			<li class="th-mobile-menu__list__item th-mobile-menu__list__header">Categories</li>
+			<li class="dropdown th-mobile-menu__item" ng-repeat="category in smartCategories">
+				<a href="#" class="dropdown-toggle navbar-link th-dropdown-toggle th-mobile-menu__list__link" ng-if="category.subCategories.length" data-toggle="dropdown">
 					{{category.name}} <span class="pull-right caret"></span>
 				</a>
-				<a data-ng-href="{{category.url}}" class="navbar-link th-dropdown-toggle th-mobile-list__link" ng-if="!category.subCategories.length">
+				<a data-ng-href="{{category.url}}" class="navbar-link th-dropdown-toggle th-mobile-menu__list__link" ng-if="!category.subCategories.length">
 					{{category.name}}
 				</a>
-				<ul class="dropdown-menu th-mobile-list th-mobile-list--sub" data-ng-if="category.subCategories.length">
+				<ul class="dropdown-menu" data-ng-if="category.subCategories.length">
 					<li>
-						<a data-ng-href="{{category.url}}" class="th-mobile-list__link th-mobile-list__link--sub">
+						<a data-ng-href="{{category.url}}" class="th-mobile-menu__list__link">
 							All {{category.name}}
 						</a>
 					</li>
 					<li data-ng-repeat="subCategory in category.subCategories">
-						<a class="th-mobile-list__link th-mobile-list__link--sub"
+						<a class="th-mobile-menu__list__link"
 							 data-ng-href="{{subCategory.url}}">{{subCategory.name}}</a>
 					</li>
 				</ul>
@@ -46,8 +46,8 @@
 		</ul>
 	</div>
 
-	<div class="th-mobile-menu__list th-mobile-menu__list--footer" data-ng-bind-html="themeSettings.general.footer.content.column1 | legacyLinkify | html"></div>
-	<div class="th-mobile-menu__list th-mobile-menu__list--footer" data-ng-bind-html="themeSettings.general.footer.content.column2 | legacyLinkify | html"></div>
-	<div class="th-mobile-menu__list th-mobile-menu__list--footer" data-ng-bind-html="themeSettings.general.footer.content.column3 | legacyLinkify | html"></div>
+	<div class="th-mobile-menu__footer" data-ng-bind-html="themeSettings.general.footer.content.column1 | legacyLinkify | html"></div>
+	<div class="th-mobile-menu__footer" data-ng-bind-html="themeSettings.general.footer.content.column2 | legacyLinkify | html"></div>
+	<div class="th-mobile-menu__footer" data-ng-bind-html="themeSettings.general.footer.content.column3 | legacyLinkify | html"></div>
 
 </div>
