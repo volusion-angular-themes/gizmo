@@ -17,11 +17,11 @@ $font-family-main-menu:  "Roboto-Condensed-Bold";
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-darker:            map-get($colors, grayDarker) !default; // #222
-$gray-dark:              map-get($colors, grayDark) !default;   // #333
-$gray:                   map-get($colors, gray) !default; // #555
-$gray-light:             map-get($colors, grayLight) !default;   // #999
-$gray-lighter:           map-get($colors, grayLighter) !default; // #eee
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 46.7%) !default; // #777
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
 $brand-primary:          map-get($colors, brandPrimary) !default;
 $brand-success:          map-get($colors, brandSuccess) !default;

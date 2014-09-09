@@ -63,8 +63,14 @@
 	}
 }
 
-@mixin font-smoothing($value : antialiased) {
-	-webkit-font-smoothing : $value;
+@mixin font-smoothing($value: true) {
+	@if $value {
+		-moz-osx-font-smoothing : grayscale;
+		-webkit-font-smoothing  : antialiased;
+	} @else {
+		-moz-osx-font-smoothing : auto;
+		-webkit-font-smoothing  : auto;
+	}
 }
 
 // example: @include translucent-bg(@includeSmoke, 0.7);

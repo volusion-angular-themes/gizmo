@@ -1,46 +1,92 @@
 .vn-faceted-search {
-	border-top: 1px solid map-get($colors, border);
-	left: 1px; // TODO fix this hack which smooths border btwn faceted search and main panel
-	padding-bottom: 20px;
+	border-top     : 1px solid map-get($colors, border);
+	left           : 1px; // TODO fix this hack which smooths border btwn faceted search and main panel
+	padding : 0 25px 20px;
 
 	h3 {
-		@include font($size: 2.5rem, $family: (Novecentosanswide-Bold));
-		text-transform: uppercase;
+		@include font($size : 2.5rem, $family : (Novecentosanswide-Bold));
+		text-transform : uppercase;
 	}
 
-	.vn-category-search__category-items__category-title {
-		border-bottom: 0;
+	label {
+		font-weight: normal;
 	}
 
 	.panel-body {
-		padding-top: 10px !important;
+		padding-top : 10px !important;
+
+		.facet-properties {
+			margin : 0;
+
+			.name {
+				cursor: pointer;
+			}
+			.count {
+				@include font-smoothing(false);
+				color            : $gray-light;
+				background-color : inherit;
+				display          : inline;
+				float            : right;
+				margin-left      : 0;
+				position         : relative;
+				top              : 0px;
+
+				&:before {
+					content : "(";
+				}
+				&:after {
+					content : ")";
+				}
+			}
+		}
 	}
 
 	.panel-default {
-		border: none;
+		border : none;
+		box-shadow: none;
 	}
 
 	.panel-default > .panel-heading {
-		background: none;
-		padding-left: 0;
-
+		background   : none;
+		padding-left : 0;
+		padding-right: 5px;
 
 		.panel-title {
 			@include font($size : 1.5rem, $family : (Roboto-Condensed-Bold));
 			text-transform : uppercase;
+
+			.glyphicon {
+				@include font-smoothing(false);
+				top: 5px;
+			}
 		}
 	}
 
-	.vn-category-search__category-items {
-
-		&__category-title {
-			font-size: 1.4rem;
-			padding: 5px 0 5px 0 !important;
+	.vn-category-search {
+		&__category-items {
+			&__category-title {
+				border-bottom : 0;
+				font-size : 1.4rem;
+				padding   : 5px 0 5px 0 !important;
+			}
+			&__category-item {
+				border-bottom : 0;
+				padding       : 5px 0 5px 10px !important;
+			}
 		}
+	}
 
-		&__category-item {
-			border-bottom: 0;
-			padding: 5px 0 5px 10px !important;
+	.facet-item__by-price {
+		&__inputs {
+			padding : 0;
+
+			input {
+				width : 40px;
+			}
+		}
+		&__button {
+			line-height: normal;
+			padding: 5px 8px !important;
 		}
 	}
 

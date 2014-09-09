@@ -10,14 +10,6 @@
 					 query-products="queryProducts()"
 					 ng-if="products.length > 0"></div>
 
-			<img class="banner img img-responsive"
-					 ng-hide="checkForFacetFilters()"
-					 ng-src="{{category.bannerImgUrl}}">
-
-			<div class="description" itemprop="description"
-					 ng-hide="checkForFacetFilters()"
-					 data-ng-bind-html="category.description | legacyLinkify | html"></div>
-
 			<!-- Mobile Filtering & Sorting Controls -->
 			<div class="row mobile-filters" data-ng-hide="mobileDisplay"
 					 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }">
@@ -25,8 +17,8 @@
 					<button class="btn btn-default pull-right vn-facet-search-control">Filter</button>
 				</a>
 
+				<!-- TODO Remove if unused -->
 				<div class="col-xs-6 vn-sort-mobile-search-control" vn-sort-search query-products="queryProducts()"></div>
-				<!-- place sort by button here -->
 			</div>
 		</div>
 	</div>

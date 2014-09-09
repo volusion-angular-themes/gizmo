@@ -3,9 +3,9 @@
 	<div class="container">
 		<ol class="breadcrumb">
 			<li><a href="/">Home</a></li>
-			<li><a href="{{product.categories[0].url}}">{{product.categories[0].name}}</a></li>
-			<!--TODO Refactor to only show if data available-->
-			<li><a href="{{product.categories[1].url}}">{{product.categories[1].name}}</a></li>
+			<li ng-if="product.categories.length > 0"><a href="{{product.categories[0].url}}">{{product.categories[0].name}}</a></li>
+			<!--TODO See if this can be refactored my dynamically by iterating through array object -->
+			<li ng-if="product.categories.length > 1"><a href="{{product.categories[1].url}}">{{product.categories[1].name}}</a></li>
 			<li class="active">{{product.name}}</li>
 		</ol>
 	</div>

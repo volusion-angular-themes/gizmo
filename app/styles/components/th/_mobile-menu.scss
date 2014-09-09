@@ -14,7 +14,7 @@
 
 	&__list {
 		margin-top    : 20px;
-		margin-bottom : 20px;
+		margin-bottom : 30px;
 
 		&__header {
 			@include font($size : 1.6rem, $family : (Novecentosanswide-Bold));
@@ -50,7 +50,7 @@
 		}
 	}
 
-	&__footer {
+	&__footer-link-block {
 		margin-top    : 15px;
 		margin-bottom : 15px;
 		&:last-child {
@@ -59,6 +59,7 @@
 
 		li {
 			&:first-child {
+				font-family: 'Source-Sans-Pro-Bold';
 				padding : 6px 15px
 			}
 
