@@ -12,3 +12,8 @@ a, a:hover, a:active {
 .dropdown-menu {
 	@extend %font-smoothing;
 }
+
+.fa.fa-star,
+.fa.fa-star-o {
+	color: gold;
+}

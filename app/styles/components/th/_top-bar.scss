@@ -10,4 +10,17 @@
 			text-decoration : underline;
 		}
 	}
+
+	@include respond-to(xs) {
+		h1 {
+			font-size: 2.8rem;
+			margin-top: 10px;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+	}
+
+	.mobile-filters {
+		text-align: left;
+	}
 }

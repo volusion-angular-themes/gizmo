@@ -1,7 +1,11 @@
 .vn-faceted-search {
 	border-top     : 1px solid map-get($colors, border);
 	left           : 1px; // TODO fix this hack which smooths border btwn faceted search and main panel
-	padding : 0 25px 20px;
+	padding : 0;
+
+	@include respond-to(sm-and-up) {
+		padding : 0 25px 20px;
+	}
 
 	h3 {
 		@include font($size : 2.5rem, $family : (Novecentosanswide-Bold));
@@ -14,6 +18,10 @@
 
 	.panel-body {
 		padding-top : 10px !important;
+		@include respond-to(xs) {
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+		}
 
 		.facet-properties {
 			margin : 0;
@@ -42,8 +50,12 @@
 	}
 
 	.panel-default {
-		border : none;
-		box-shadow: none;
+		border-top     : 1px solid map-get($colors, border);
+		border-bottom     : 1px solid map-get($colors, border);
+		@include respond-to(sm-and-up) {
+			border : none;
+			box-shadow: none;
+		}
 	}
 
 	.panel-default > .panel-heading {
@@ -54,6 +66,9 @@
 		.panel-title {
 			@include font($size : 1.5rem, $family : (Roboto-Condensed-Bold));
 			text-transform : uppercase;
+			@include respond-to(xs) {
+				padding: 0 15px;
+			}
 
 			.glyphicon {
 				@include font-smoothing(false);
@@ -87,7 +102,22 @@
 		&__button {
 			line-height: normal;
 			padding: 5px 8px !important;
+
+			@include respond-to(sm) {
+				padding: 5px !important;
+			}
 		}
 	}
 
+	&-footer .__clear-action {
+		width: 100%;
+	}
+}
+
+.vn-faceted-search-header {
+	@include respond-to(xs) {
+		button.btn {
+			margin: 15px 10px;
+		}
+	}
 }

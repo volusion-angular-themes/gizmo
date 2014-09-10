@@ -51,10 +51,9 @@
 			color: map-get($colors, sale);
 			content: "_____";
 			display: inline;
-			font-size: 1em;
+			font-size: 3rem;
 			position: absolute;
-			left: 25px;
-			top: 32px;
+			margin-top: -10px;
 			@include rotate(-35deg);
 		}
 	}

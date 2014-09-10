@@ -127,6 +127,7 @@
 	}
 
 	&__cta {
+		@extend %font-smoothing;
 		background   : transparent;
 		position     : absolute;
 		bottom       : 6%;

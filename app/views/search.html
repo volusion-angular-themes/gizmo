@@ -1,11 +1,12 @@
-<div class="hidden-xs th-top-bar">
+<div class="th-top-bar">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-9 col-md-7 col-md-offset-3 col-lg-8 col-lg-offset-2">
+			<div class="col-xs-12 col-sm-9 col-md-7 col-md-offset-3 col-lg-8 col-lg-offset-2"
+					 ng-class="{ 'isMobileAndHidden': true == !isMobileAndHidden }">
 				<h1><span ng-if="products.length <= 0">No</span> Search results for "{{searchTerms}}"</h1>
 			</div>
 			<div vn-sort-search
-					 class="col-sm-2 vn-sort-desktop-search"
+					 class="col-sm-2 hidden-xs vn-sort-desktop-search"
 					 data-ng-show="mobileDisplay"
 					 query-products="queryProducts()"
 					 ng-if="products.length > 0"></div>
@@ -13,12 +14,10 @@
 			<!-- Mobile Filtering & Sorting Controls -->
 			<div class="row mobile-filters" data-ng-hide="mobileDisplay"
 					 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }">
-				<a class="col-xs-6 col-sm-3 col-md-3 col-lg-2" href data-ng-click="toggleSearch()">
+				<div class="col-xs-6 visible-xs-block" data-ng-click="toggleSearch()">
 					<button class="btn btn-default pull-right vn-facet-search-control">Filter</button>
-				</a>
-
-				<!-- TODO Remove if unused -->
-				<div class="col-xs-6 vn-sort-mobile-search-control" vn-sort-search query-products="queryProducts()"></div>
+				</div>
+				<div class="col-xs-6 visible-xs-block vn-sort-mobile-search-control" vn-sort-search query-products="queryProducts()"></div>
 			</div>
 		</div>
 	</div>
@@ -29,7 +28,7 @@
 		<div class="col-sm-3 col-lg-2 vn-faceted-search"
 				 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }"
 				 data-ng-hide="!hasFacetsOrCategories">
-			<h3 data-ng-show="!showMobileSearch">{{category.name}}</h3>
+			<h3 data-ng-show="!showMobileSearch">Refine By</h3>
 
 			<div vn-faceted-search
 					 categories="categoryList"
@@ -38,15 +37,16 @@
 					 class="vn-faceted-search-control">
 			</div>
 		</div>
-		<div class="col-sm-9 col-lg-10">
+		<div class="col-sm-9 col-lg-10" ng-class="{ 'isMobileAndHidden': true == !isMobileAndHidden }">
 			<div class="row">
 				<div class="th-no-padding col-sm-6 col-md-4 col-lg-3" data-ng-repeat="product in products track by product.id">
 					<div class="th-product-tile">
-						<a data-ng-href="{{product.url}}">
-							<div class="th-product-tile__image">
-								<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="">
-							</div>
-						</a>
+						<!-- TODO Style and test this code from Method
+						<span class="th-product__sale" data-ng-show="product.pricing.salePrice > 0"></span>
+						-->
+						<div class="th-product-tile__image">
+							<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="">
+						</div>
 
 						<div class="th-product-tile__info">
 							<a data-ng-href="{{product.url}}">
@@ -56,6 +56,7 @@
 							<div class="th-product-tile__price">
 								<span data-ng-show="product.pricing.regularPrice > 0">
 									<span data-ng-class="{strike: product.pricing.salePrice > 0}">{{product.pricing.regularPrice | currency}}</span>
+								</span>
 								<span class="th-product-tile__price--sale" data-ng-show="product.pricing.salePrice > 0">
 									<span>{{product.pricing.salePrice | currency}}</span>
 								</span>
@@ -63,14 +64,6 @@
 							<div class="th-tile-details th-product-tile__details">
 								<div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt="">
 								</div>
-								<div class="th-tile-options th-product-tile__options">
-									<div class="th-tile-options__title">Color Options:</div>
-									<a href="#"><img src="/images/demo/color-1.png" alt=""></a>
-									<a href="#"><img src="/images/demo/color-2.png" alt=""></a>
-									<a href="#"><img src="/images/demo/color-3.png" alt=""></a>
-									<a href="#"><img src="/images/demo/color-4.png" alt=""></a>
-								</div>
-								<div class="th-tile-details__swatches"></div>
 								<div class="th-tile-details__description">
 									<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Fusce dapibus, tellus ac
 										cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>

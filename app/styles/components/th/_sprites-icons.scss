@@ -7,9 +7,7 @@
 }
 
 @mixin icon--icons($name, $has-large : false) {
-
 	&--#{$name} {
-
 		.th-icon__foreground {
 			@include sprite--icons($name);
 		}
@@ -21,9 +19,7 @@
 				}
 			}
 		}
-
 	}
-
 }
 
 .th-icon {
@@ -39,7 +35,7 @@
 		}
 	}
 
-	@each $sprite in cart, web-exclusive, spyglass, next, previous {
+	@each $sprite in cart, spyglass, next, previous, web-exclusive {
 		@include icon--icons($sprite);
 	}
 

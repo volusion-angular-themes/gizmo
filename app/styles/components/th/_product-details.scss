@@ -33,11 +33,21 @@
 	}
 
 	&__price {
-		@include font(
-		$size : 2.9rem,
-		$family : Roboto-Light
-		);
+		@include font($size : 2.9rem,$family : Roboto-Light);
 		color : map-get($colors, brand-primary);
+
+		.strike {
+			color: $text-color;
+			&:before {
+				color: map-get($colors, sale);
+				content: "_____";
+				display: inline;
+				font-size: 3rem;
+				margin-top: -10px;
+				position: absolute;
+				@include rotate(-35deg);
+			}
+		}
 	}
 
 	&__link {
