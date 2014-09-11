@@ -9,17 +9,21 @@
 	&__image {
 		@extend %inline-block;
 		margin : 10px auto 0;
-		border : 1px solid map-get($colors, border);
-
-		&:hover {
-			@extend %animate-color;
-			border-color : map-get($colors, brand-primary);
-		}
+		max-height : 500px;
 
 		@include respond-to(sm-and-up) {
 			margin-top : 20px;
 		}
 
+		&--thumbnail {
+			border : 1px solid map-get($colors, border);
+			max-height : 125px;
+
+				&:hover {
+				@extend %animate-color;
+				border-color : map-get($colors, brand-primary);
+			}
+		}
 	}
 }
 

@@ -1,4 +1,6 @@
 .th-category-graphic {
+	@include font-smoothing(true); // remove if using dark color and light background
+	color       : map-get($colors, text--lighter);
 	position : relative;
 	height   : 117px;
 
@@ -24,7 +26,6 @@
 		);
 		padding-top : 45px;
 		text-align  : center;
-		color       : map-get($colors, text--lighter);
 
 		@include respond-to(sm-and-up) {
 			font-size   : 4.5rem;
@@ -35,6 +36,6 @@
 		@include respond-to(md-and-up) {
 			padding-top : 105px;
 		}
-
 	}
+
 }

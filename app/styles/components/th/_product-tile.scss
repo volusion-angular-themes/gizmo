@@ -30,13 +30,11 @@
 		padding: 20px;
 		top: 0;
 		left: 0;
+		width: 100%;
 	}
 
 	&__name {
-		@include font(
-		$size: 1.5rem,
-		$family: (Roboto-Condensed-Bold)
-		);
+		@include font( $size: 1.5rem, $family: (Roboto-Condensed-Bold) );
 		text-transform: uppercase;
 	}
 
@@ -54,7 +52,7 @@
 			font-size: 3rem;
 			position: absolute;
 			margin-top: -10px;
-			@include rotate(-35deg);
+			@include rotate(-30deg);
 		}
 	}
 
@@ -74,7 +72,6 @@
 			@extend %animate-all;
 			height: auto;
 		}
-
 	}
 
 }
