@@ -31,20 +31,6 @@
 	&__price {
 		@include font($size : 2.9rem, $family : Roboto-Light);
 		color : map-get($colors, brand-primary);
-
-		.strike {
-			color: $text-color;
-			position: relative;
-		}
-		.strike:before {
-			position: absolute;
-			content: "";
-			left: 0;
-			top: 50%;
-			right: 0;
-			border-top: 2px solid map-get($colors, sale);
-			@include rotate(-10deg);
-		}
 	}
 
 	&__product-code {
@@ -84,6 +70,8 @@
 		margin-bottom : 15px;
 
 		input {
+			border-width: 2px;
+			color: #999;
 			height     : 43px;
 			text-align : center;
 		}
@@ -91,42 +79,6 @@
 
 	&__options {
 
-		// TODO Move this to overrides
-		.vn-product-option {
-			@extend .col-sm-6;
-		}
-
-		.vn-labeled-radio {
-			@extend .btn, .btn-default;
-			margin-right : 5px;
-			margin-bottom: 5px;
-
-			&:active, &:focus {
-				border-color: $link-hover-color;
-				opacity: 0.9;
-			}
-
-			&.-disabled {
-				@extend .disabled, .bg-danger;
-			}
-
-			.checked {
-				// TODO fix selected state of buying options
-			}
-		}
-
-		.vn-product-option__select ul {
-			left: 0;
-		}
-
-		label {
-			font-family : 'Source-Sans-Pro-Bold';
-			font-weight : normal;
-		}
-
-		input[type="radio"] {
-			display : none;
-		}
 	}
 
 }

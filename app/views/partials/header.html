@@ -68,7 +68,8 @@
 					<a legacy-link="{{ viewCart() }}" class="th-cart-summary__link">
 						<div class="th-icon th-icon--cart th-cart-summary__icon">
 							<div class="th-icon__foreground"></div>
-							<!-- TODO Determine placement of cart item count if requested
+							<!-- TODO Determine placement of cart item count and switch to icon font
+							<span class="glyphicon glyphicon-shopping-cart"></span>
 							<span class="th-cart-summary__number">{{ getCartItemsCount() }}</span>-->
 						</div>
 					</a>
@@ -82,6 +83,7 @@
 						<span>
 							<input type="text" data-ng-model='searchLocal' class="th-search__input" placeholder="Search...">
 							<button type="button" data-ng-click="doSearch()" class="th-search__submit">
+								<!-- TODO Add icon font <span class="glyphicon glyphicon-search"></span>-->
 								<div class="th-icon th-icon--spyglass">
 									<div class="th-icon__foreground"></div>
 								</div>

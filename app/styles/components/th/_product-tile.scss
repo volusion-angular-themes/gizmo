@@ -39,23 +39,24 @@
 	}
 
 	&__price {
-		@include font($size: 2.9rem, $family: (Roboto-Light));
+		@include font($size : 2.9rem, $family : (Roboto-Light));
 
 		&--sale {
-			color: map-get($colors, sale);
+			color : map-get($colors, sale);
 		}
 
 		.strike {
-			position: relative;
-		}
-		.strike:before {
-			position: absolute;
-			content: "";
-			left: 0;
-			top: 50%;
-			right: 0;
-			border-top: 2px solid map-get($colors, sale);
-			@include rotate(-10deg);
+			position : relative;
+
+			&:before {
+				position   : absolute;
+				content    : "";
+				left       : 0;
+				top        : 50%;
+				right      : 0;
+				border-top : 2px solid map-get($colors, sale);
+				@include rotate(-10deg);
+			}
 		}
 	}
 

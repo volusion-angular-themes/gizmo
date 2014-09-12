@@ -1,0 +1,59 @@
+.vn-product-option {
+
+
+	label {
+		font-family : 'Source-Sans-Pro-Bold';
+		font-weight : normal;
+	}
+
+	input[type="radio"] {
+		display : none;
+	}
+}
+
+.vn-labeled-radio {
+	@extend .btn, .btn-default;
+	margin-right : 5px;
+	margin-bottom: 5px;
+
+	&__content {
+		letter-spacing: normal;
+		line-height: normal;
+		white-space: normal;
+	}
+
+	&.-disabled {
+		@extend .disabled;
+		position: relative;
+		&:hover { cursor: not-allowed }
+
+		&:before {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 50%;
+			right: 0;
+			border-top: 1px solid $gray-light;
+			@include rotate(-25deg);
+		}
+		&:after {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 50%;
+			right: 0;
+			border-top: 1px solid $gray-light;
+			@include rotate(25deg);
+		}
+	}
+
+	&--tiles__border.checked {
+		// TODO fix selected state of buying options
+		border-color: $link-hover-color;
+		height: 100%;
+	}
+}
+
+.vn-product-option__select ul {
+	left: 0;
+}
