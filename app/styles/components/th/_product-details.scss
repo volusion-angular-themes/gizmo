@@ -1,17 +1,16 @@
 .th-product-details {
 	padding : 15px 0 0 0;
 
-	@include respond-to(md-and-up) {
-		padding-top : 40px;
-	}
+	@include respond-to(xs) { text-align: center }
+	@include respond-to(md-and-up) { padding-top : 40px }
 
 	&__manufacturer {
-		@include font($size : 1.5rem,$line-height : 0.9,$family : Roboto-Light);
+		@include font($size : 1.5rem, $line-height : 0.9, $family : Roboto-Light);
 		text-transform : uppercase;
 
 		@include respond-to(md-and-up) {
-			font-size : 2.0rem;
-			margin-bottom: 5px;
+			font-size     : 2.0rem;
+			margin-bottom : 5px;
 		}
 
 	}
@@ -30,25 +29,30 @@
 	}
 
 	&__price {
-		@include font($size : 2.9rem,$family : Roboto-Light);
+		@include font($size : 2.9rem, $family : Roboto-Light);
 		color : map-get($colors, brand-primary);
 
 		.strike {
-			color: $text-color;
+			color : $text-color;
 			&:before {
-				color: map-get($colors, sale);
-				content: "_____";
-				display: inline;
-				font-size: 3rem;
-				margin-top: -10px;
-				position: absolute;
+				color      : map-get($colors, sale);
+				content    : "_____";
+				display    : inline;
+				font-size  : 3rem;
+				margin-top : -10px;
+				position   : absolute;
 				@include rotate(-30deg);
 			}
 		}
 	}
 
+	&__product-code {
+		margin-top    : 5px;
+		margin-bottom : 5px;
+	}
+
 	&__link {
-		@include font($size : 1.0rem,$family : 'Montserrat-Bold');
+		@include font($size : 1.0rem, $family : 'Montserrat-Bold');
 		text-transform : uppercase;
 		color          : map-get($colors, text--light);
 	}
@@ -56,10 +60,10 @@
 	&__stock-status {
 		border       : 1px solid map-get($colors, border);
 		border-width : 1px 0;
-		padding      : 10px 4px;
+		padding      : 10px 0;
 	}
 
-	&__price, &__review-summary, &__description, &__social, &__cta {
+	&__price, &__review-summary, &__description, &__social {
 		margin : 12px 0;
 
 		@include respond-to(md-and-up) {
@@ -68,8 +72,60 @@
 
 	}
 
-	&__button {
-		margin : 10px 0;
+	&__cta {
+		margin-top    : 10px;
+		margin-bottom : 10px;
+	}
+
+	&__quantity {
+		@include font($size : 1.6rem, $family : 'Montserrat-Bold');
+		margin-top    : 15px;
+		margin-bottom : 15px;
+
+		input {
+			height     : 43px;
+			text-align : center;
+		}
+	}
+
+	&__options {
+
+		// TODO Move this to overrides
+		.vn-product-option {
+			@extend .col-sm-6;
+		}
+
+		.vn-labeled-radio {
+			@extend .btn, .btn-default;
+			margin-right : 5px;
+			margin-bottom: 5px;
+
+			&:active, &:focus {
+				border-color: $link-hover-color;
+				opacity: 0.9;
+			}
+
+			&.-disabled {
+				@extend .disabled, .bg-danger;
+			}
+
+			.checked {
+				// TODO fix selected state of buying options
+			}
+		}
+
+		.vn-product-option__select ul {
+			left: 0;
+		}
+
+		label {
+			font-family : 'Source-Sans-Pro-Bold';
+			font-weight : normal;
+		}
+
+		input[type="radio"] {
+			display : none;
+		}
 	}
 
 }

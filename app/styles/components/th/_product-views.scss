@@ -8,7 +8,7 @@
 
 	&__image {
 		@extend %inline-block;
-		margin : 10px auto 0;
+		margin : 10px auto;
 		max-height : 500px;
 
 		@include respond-to(sm-and-up) {

@@ -11,14 +11,18 @@
 		}
 	}
 
-	@include respond-to(xs) {
-		h1 {
+	h1 {
+		@include respond-to(xs) {
 			font-size: 2.8rem;
 			margin-top: 10px;
 			margin-bottom: 20px;
 			text-align: center;
 		}
+		@include respond-to(sm) {
+			margin-left: 10px;
+		}
 	}
+
 
 	.mobile-filters {
 		text-align: left;

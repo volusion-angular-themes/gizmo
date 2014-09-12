@@ -1,9 +1,10 @@
 .vn-faceted-search {
 	border-top     : 1px solid map-get($colors, border);
-	left           : 1px; // TODO fix this hack which smooths border btwn faceted search and main panel
-	padding : 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
 
 	@include respond-to(sm-and-up) {
+		left           : 1px; // TODO fix this hack which softens border btwn faceted search and main panel
 		padding : 0 25px 20px;
 	}
 
@@ -28,6 +29,7 @@
 
 			.name {
 				cursor: pointer;
+				&:hover { color: $link-hover-color }
 			}
 			.count {
 				@include font-smoothing(false);
@@ -118,6 +120,26 @@
 	@include respond-to(xs) {
 		button.btn {
 			margin: 15px 10px;
+		}
+	}
+}
+
+.vn-faceted-search {
+	.vn-sort-mobile-search-control {
+		text-align: left;
+
+		.dropdown-menu {
+			text-align: center;
+			@include respond-to(sm-and-up) {
+				width: 100%;
+			}
+		}
+		button {
+			@include respond-to(sm-and-up) {
+				margin-bottom: 2px;
+				margin-top: 10px;
+				width: 100%;
+			}
 		}
 	}
 }

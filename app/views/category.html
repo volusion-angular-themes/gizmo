@@ -16,13 +16,25 @@
 		<div class="col-sm-3 col-lg-2 vn-faceted-search"
 				 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }"
 				 data-ng-hide="!hasFacetsOrCategories">
-			<h3 data-ng-show="!showMobileSearch">{{category.name}}</h3>
 
+			<!--Sort By button-->
+			<div class="vn-sort-mobile-search-control hidden-xs" vn-sort-search query-products="queryProducts()"></div>
+
+			<h3 data-ng-show="!showMobileSearch">{{category.name}}</h3>
 			<div vn-faceted-search
 					 categories="categoryList"
 					 facets="facets"
 					 data-ng-show="mobileDisplay"
 					 class="vn-faceted-search-control">
+			</div>
+
+			<!-- Mobile Filtering & Sorting Controls -->
+			<div class="row mobile-filters" data-ng-hide="mobileDisplay"
+					 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }">
+				<div class="col-xs-6 visible-xs-block" data-ng-click="toggleSearch()">
+					<button class="btn btn-default pull-right vn-facet-search-control">Filter</button>
+				</div>
+				<div class="col-xs-6 visible-xs-block vn-sort-mobile-search-control" vn-sort-search query-products="queryProducts()"></div>
 			</div>
 		</div>
 		<div class="col-sm-9 col-lg-10">
@@ -52,9 +64,9 @@
 								</span>
 							</div>
 							<div class="th-tile-details th-product-tile__details">
-								<div class="th-review-stars">
+								<div class="th-review-stars" ng-if="product.avgRating">
 									<span class="th-reviews__avg">
-										<span data-vn-rating rating-value="ratingsAndReviews.data.avgRating"
+										<span data-vn-rating rating-value="product.avgRating"
 													maximum="ratingsAndReviews.data.maxRating"
 													editable="isEditable" title=""></span>
 									</span>

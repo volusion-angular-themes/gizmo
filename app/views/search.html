@@ -6,10 +6,11 @@
 				<h1><span ng-if="products.length <= 0">No</span> Search results for "{{searchTerms}}"</h1>
 			</div>
 			<div vn-sort-search
-					 class="col-sm-2 hidden-xs vn-sort-desktop-search"
+					 class="hidden-xs col-sm-3 col-md-2 vn-sort-desktop-search"
 					 data-ng-show="mobileDisplay"
 					 query-products="queryProducts()"
-					 ng-if="products.length > 0"></div>
+					 ng-if="products.length > 0">
+			</div>
 
 			<!-- Mobile Filtering & Sorting Controls -->
 			<div class="row mobile-filters" data-ng-hide="mobileDisplay"
@@ -29,7 +30,6 @@
 				 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }"
 				 data-ng-hide="!hasFacetsOrCategories">
 			<h3 data-ng-show="!showMobileSearch">Refine By</h3>
-
 			<div vn-faceted-search
 					 categories="categoryList"
 					 facets="facets"
@@ -62,7 +62,12 @@
 								</span>
 							</div>
 							<div class="th-tile-details th-product-tile__details">
-								<div class="th-tile-details__rating"><img src="/images/demo/rating.png" class="img-responsive" alt="">
+								<div class="th-review-stars" ng-if="product.avgRating">
+									<span class="th-reviews__avg">
+										<span data-vn-rating rating-value="product.avgRating"
+													maximum="ratingsAndReviews.data.maxRating"
+													editable="isEditable" title=""></span>
+									</span>
 								</div>
 								<div class="th-tile-details__description">
 									<span>{{product.descriptions.short}}</span>

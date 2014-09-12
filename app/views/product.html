@@ -47,7 +47,7 @@
 			</div>
 			<div class="col-sm-5">
 				<div class="th-product-details">
-					<div class="th-product-details__manufacturer">{{product.productManufacturer}}</div>
+					<div ng-if="product.productManufacturer" class="th-product-details__manufacturer">{{product.productManufacturer}}</div>
 					<div class="th-product-details__name">{{product.name}}</div>
 					<div class="th-product-details__price">
 							<span data-ng-show="product.pricing.regularPrice > 0">
@@ -60,7 +60,7 @@
 					</div>
 					<!--<div class="th-product-details__model"><b>Model:</b> Lenovo Yoga</div>-->
 					<div class="th-product-details__product-code"><b>SKU:</b> {{product.code}}</div>
-					<div class="th-product-details__review-summary">
+					<div class="th-product-details__review-summary" ng-hide="!ratingsAndReviews.data.avgRating">
 						<span class="th-review-stars">
 							<span class="th-reviews__avg">
 								<span data-vn-rating rating-value="ratingsAndReviews.data.avgRating"
@@ -68,36 +68,55 @@
 										 editable="isEditable" title=""></span>
 							</span>
 						</span>
-						<a href="#" data-ng-click="tabs[2].active = true" class="th-product-details__link">See Reviews (<span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span>)</a>
+						<!-- TODO Link this with the reviews tab // data-ng-click="tabs[2].active = true"-->
+						<a href="#" class="th-product-details__link">See Reviews (<span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span>)</a>
 					</div>
 					<div class="th-product-details__stock-status">
 						<span ng-if="(product.availability.quantityInStock > 0)">In Stock.</span>
-						<span ng-if="(product.availability.quantityInStock <= 0)">Out of Stock.</span>
+						<span ng-if="(product.availability.quantityInStock <= 0)" class="text-danger">Out of Stock.</span>
 						&nbsp;{{product.availability.description}}
 					</div>
 					<div class="th-product-details__description" itemprop="description"
 							 data-ng-bind-html="product.descriptions.short | legacyLinkify | html">
 					</div>
 
-					<div class="th-product-details__quantity">
-						<form class="form-inline" role="form">
-							<div class="form-group">
-								<label class="control-label" for="quantity">Qty: </label>
-								<input type="number" class="form-control" id="quantity">
+					<div class="row">
+						<div class="th-product-details__options">
+							<div data-vn-product-option
+									 data-ng-repeat="option in product.options"
+									 data-option="option"
+									 data-product="product"
+									 data-save-to="cartItem.options">
 							</div>
-						</form>
-					</div>
-					<div class="th-product-details__quantity">
-						<div data-vn-product-option
-								 data-ng-repeat="option in product.options"
-								 data-option="option"
-								 data-product="product"
-								 data-save-to="cartItem.options">
 						</div>
 					</div>
-					<div class="th-product-details__cta">
-						<div class="row">
-							<div class="col-sm-6">
+				<div class="row">
+					<div class="col-md-6 th-product-details__quantity">
+						<div data-vn-block="th-qty-counter" class="input-group">
+								<span class="input-group-btn">
+									<button data-vn-element="btn" class="btn btn-default"
+													data-ng-click="decrementQty()"
+													data-ng-disabled="cartItem.qty <= 1">
+										<span class="glyphicon glyphicon-minus"></span>
+									</button>
+								</span>
+							<input data-vn-element="input"
+										 class="form-control"
+										 data-ng-model="cartItem.qty"
+										 data-ng-change="changeQty()">
+								<span class="input-group-btn">
+									<button data-vn-element="btn"
+													class="btn btn-default"
+													data-ng-click="incrementQty()">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</span>
+						</div>
+					</div>
+
+					<div class="th-product-details__cta col-md-6">
+
+
 								<button class="btn btn-primary btn-lg btn-block th-product-details__button"
 												data-ng-class="{ '-disabled' : buttonDisabled }"
 												data-translate="product.addToCart"
@@ -110,9 +129,12 @@
 												data-analytics-description="Add to Cart Button">
 									Add to Cart
 								</button>
-							</div>
-						</div>
+
+
 					</div>
+
+				</div>
+
 				</div>
 			</div>
 		</div>
@@ -179,7 +201,7 @@
 						</div>
 					</div>
 				</tab>
-				<tab heading="Customer Reviews">
+				<tab heading="Reviews">
 					<div class="th-product-panels__panel">
 						<div class="th-product-features">
 							<div class="container-fluid">
@@ -211,7 +233,7 @@
 												<span itemprop="datePublished" class="th-reviews__date hidden-xs" data-ng-bind="review.date"></span>
 											</div>
 											<div itemprop="name" class="th-reviews__title" data-ng-bind="review.title"></div>
-											<div itemprop="description" class="th-rating-description" data-ng-bind="review.body">
+											<div itemprop="description" class="th-reviews__body" data-ng-bind="review.body">
 											</div>
 											<div class="th-reviews__helpful">
 												<span data-translate="product.wasThisReviewHelpfulToYou">Was this review helpful for you?</span>

@@ -3,17 +3,13 @@
 		float: right;
 	}
 	.dropdown-menu {
-		left: -35px;
+		@extend .dropdown-menu-right;
+		margin-top: 16px;
 		min-width: 140px;
 		text-align: right;
-		top: 58px;
 	}
 	button {
 		position: relative;
 		top: 15px;
 	}
-}
-
-.vn-sort-mobile-search-control {
-	text-align: left;
 }
