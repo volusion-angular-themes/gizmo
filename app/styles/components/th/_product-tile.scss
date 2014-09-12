@@ -45,14 +45,17 @@
 			color: map-get($colors, sale);
 		}
 
+		.strike {
+			position: relative;
+		}
 		.strike:before {
-			color: map-get($colors, sale);
-			content: "_____";
-			display: inline;
-			font-size: 3rem;
 			position: absolute;
-			margin-top: -10px;
-			@include rotate(-30deg);
+			content: "";
+			left: 0;
+			top: 50%;
+			right: 0;
+			border-top: 2px solid map-get($colors, sale);
+			@include rotate(-10deg);
 		}
 	}
 

@@ -33,16 +33,17 @@
 		color : map-get($colors, brand-primary);
 
 		.strike {
-			color : $text-color;
-			&:before {
-				color      : map-get($colors, sale);
-				content    : "_____";
-				display    : inline;
-				font-size  : 3rem;
-				margin-top : -10px;
-				position   : absolute;
-				@include rotate(-30deg);
-			}
+			color: $text-color;
+			position: relative;
+		}
+		.strike:before {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 50%;
+			right: 0;
+			border-top: 2px solid map-get($colors, sale);
+			@include rotate(-10deg);
 		}
 	}
 
