@@ -10,10 +10,7 @@
 	}
 
 	&__title {
-		@include font(
-		$size : 3.0rem,
-		$family : (Roboto-Light)
-		);
+		@include font($size : 3.0rem,$family : (Roboto-Light));
 		padding : 10px 0 0;
 
 		@include respond-to(md-and-up) {

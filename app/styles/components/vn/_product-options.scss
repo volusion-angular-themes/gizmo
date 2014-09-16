@@ -57,3 +57,9 @@
 .vn-product-option__select ul {
 	left: 0;
 }
+
+.checked {
+	.vn-labeled-radio & {
+		border-color: $link-hover-color;
+	}
+}

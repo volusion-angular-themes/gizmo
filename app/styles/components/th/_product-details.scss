@@ -16,11 +16,7 @@
 	}
 
 	&__name {
-		@include font(
-		$size : 3.5rem,
-		$line-height : 0.9,
-		$family : Roboto-Light
-		);
+		@include font( $size : 3.5rem, $line-height : 0.9, $family : Roboto-Light );
 
 		@include respond-to(md-and-up) {
 			font-size : 4.6rem;
@@ -31,6 +27,25 @@
 	&__price {
 		@include font($size : 2.9rem, $family : Roboto-Light);
 		color : map-get($colors, brand-primary);
+
+		&--sale {
+			color : map-get($colors, brand-primary);
+		}
+
+		.strike {
+			color: $text-color;
+			position : relative;
+
+			&:before {
+				position   : absolute;
+				content    : "";
+				left       : 0;
+				top        : 50%;
+				right      : 0;
+				border-top : 2px solid $text-color;
+				@include rotate(-10deg);
+			}
+		}
 	}
 
 	&__product-code {
@@ -66,12 +81,13 @@
 
 	&__quantity {
 		@include font($size : 1.6rem, $family : 'Montserrat-Bold');
+		color : map-get($colors, btn-text);
 		margin-top    : 15px;
 		margin-bottom : 15px;
 
 		input {
 			border-width: 2px;
-			color: #999;
+			border-color: map-get($colors, btn-border);
 			height     : 43px;
 			text-align : center;
 		}

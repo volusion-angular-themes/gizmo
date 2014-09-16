@@ -10,11 +10,8 @@
 }
 
 .btn {
-	@include font(
-	$size : 1.1rem,
-	$line-height : 2.5,
-	$family : ($font-family-buttons)
-	);
+	@extend %animate-all;
+	@include font($size : 1.1rem,$line-height : 2.5,$family : ($font-family-buttons));
 	text-transform : uppercase;
 	letter-spacing : 0.2rem;
 	border-width   : 2px;

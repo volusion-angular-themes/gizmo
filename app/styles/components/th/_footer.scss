@@ -5,9 +5,7 @@
 
 	a {
 		color : map-get($colors, white);
-		&:hover {
-			color : map-get($colors, link-hover);
-		}
+		&:hover { color: $link-hover-color };
 	}
 
 	&__newsletter-block {
