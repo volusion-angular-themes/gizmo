@@ -1,49 +1,54 @@
-@import "bootstrap/navbar";
-
 .th-navbar {
-  border: 0;
-  margin: 0;
+	@extend %font-smoothing;
+	border : 0;
+	margin : 0;
 
-  @include respond-to(md-and-up) {
-    min-height: 73px;
-  }
+	@include respond-to(md-and-up) {
+		min-height : 73px;
+	}
 
-  &__header, &__collapse {
-    float: left;
-  }
+	.th-menu-container {
 
-  &__toggle {
-    float: left;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 15px;
-    margin-right: 0;
-  }
+	}
 
-  &__menu {
-    @include respond-to(md-and-up) {
-      > li > a {
-        @include font(
-          $family: $font-family-main-menu,
-          $size: 1.5rem
-        );
-        text-transform: uppercase;
-        padding: 26px 30px 27px;
-      }
-    }
-  }
+	// TODO change border color in theme variables
+	&__toggle {
+		float        : left;
+		margin-right : 0;
+		padding      : 8px 10px;
+	}
 
-  &__brand {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    line-height: 18px;
-    height: 50px;
+	&__menu {
+		> li > a {
+			@extend %animate-all;
+			@include respond-to(md-and-up) {
+				@include font($family : $font-family-main-menu, $size : 1.5rem);
+				text-transform : uppercase;
+				padding        : 26px 20px 27px;
+			}
+			@include respond-to(lg) {
+				padding : 26px 30px 27px;
+			}
 
-    @include respond-to(md-and-up) {
-      padding-top: 18px;
-      padding-bottom: 18px;
-      line-height: 34px;
-      height: 73px;
-    }
-  }
+			.caret {
+				margin-left: 8px;
+			}
+		}
+	}
+
+	&__brand {
+		padding : 0 15px;
+
+		@include respond-to(sm-and-down) {
+			float : none;
+
+			img {
+				margin     : 0 auto;
+				max-height : 50px;
+			}
+		}
+		@include respond-to(md-and-up) {
+			padding-top : 8px;
+		}
+	}
 }

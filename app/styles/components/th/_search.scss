@@ -1,38 +1,66 @@
 .th-search {
-  @extend %inline-block;
-  position: absolute;
-  top: 0;
-  right: 66px;
-  background-color: map-get($colors, bg--dark);
-  border-left: 1px solid map-get($colors, border--dark);
-  padding: 12px 15px;
+	@extend %inline-block;
+	position         : absolute;
+	top              : 0;
+	right            : 66px;
+	background-color : map-get($colors, bg--dark);
+	border-left      : 1px solid map-get($colors, border--dark);
+	padding          : 12px 15px;
 
-  @include respond-to(md-and-up) {
-    right: 80px;
-    padding: 23px 25px;
-  }
+	@include respond-to(md-and-up) {
+		right   : 80px;
+		padding : 23px 25px;
 
-  &__input {
-    @extend %border-radius;
-    width: 0;
-    border: 0;
-    padding: 3px 0;
-  }
+		&:hover {
+			padding : 23px 15px;
+		}
+	}
 
-  &__submit {
-    background: none;
-    border: 0;
-  }
+	&__input {
+		@extend %border-radius;
+		width   : 0;
+		border  : 0;
+		outline: 0;
+		padding : 3px 0;
+	}
 
-  &:hover {
-    @extend %animate-all;
-    right: 0;
+	&__submit {
+		color: white;
+		background : none;
+		border     : 0;
+	}
 
-    .th-search__input {
-      @extend %animate-all;
-      width: 150px;
-      padding: 3px 5px;
-    }
-  }
+	&:hover {
+		@extend %animate-all;
+		right : 0;
+
+		.th-search__input {
+			@extend %animate-all;
+			width   : 75%;
+			padding : 3px 5px;
+		}
+	}
+
+
+	&--mobile-menu,
+	&--mobile-menu:hover {
+		border-left : 0;
+		height      : 50px;
+		padding     : 10px 15px;
+		position    : relative;
+		right       : 0;
+		width       : 100%;
+
+		.th-search__input {
+			color   : $text-color;
+			width   : 85%;
+			padding : 5px;
+		}
+
+		.th-search__submit {
+			float   : right;
+			padding : 5px;
+		}
+	}
 
 }

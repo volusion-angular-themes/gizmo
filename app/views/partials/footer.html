@@ -1,0 +1,66 @@
+<footer class="th-footer">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-md-4 col-md-push-8 th-footer__newsletter-block">
+				<div class="th-elist">
+					<div class="th-elist__title">Newsletter Sign up</div>
+					<form role="form"
+					      name="MailingList"
+					      method="post"
+					      action="/MailingList_subscribe.asp"
+								novalidate>
+						<label class="sr-only" for="elist">Enter Email to sign up</label>
+						<input type="email" name="emailaddress" class="form-control input-lg th-elist__input"
+									 placeholder="Get Free Updates">
+						<button type="submit" class="btn btn-primary btn-lg btn-block">Sign Me Up!</button>
+					</form>
+				</div>
+				<div class="th-social">
+					<a href="#">
+						<div class="th-icon th-icon--facebook th-social__icon">
+							<div class="th-icon__foreground"></div>
+						</div>
+					</a>
+					<a href="#">
+						<div class="th-icon th-icon--twitter th-social__icon">
+							<div class="th-icon__foreground"></div>
+						</div>
+					</a>
+					<a href="#">
+						<div class="th-icon th-icon--pinterest th-social__icon">
+							<div class="th-icon__foreground"></div>
+						</div>
+					</a>
+					<a href="#">
+						<div class="th-icon th-icon--google th-social__icon">
+							<div class="th-icon__foreground"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-sm-12 col-md-8 col-md-pull-4 hidden-sm hidden-xs">
+				<div class="row">
+					<div class="col-md-3 col-md-offset-1 th-footer__link-block">
+						<div data-ng-bind-html="themeSettings.general.footer.content.column1 | legacyLinkify | html"></div>
+					</div>
+					<div class="col-md-3 th-footer__link-block">
+						<div data-ng-bind-html="themeSettings.general.footer.content.column2 | legacyLinkify | html"></div>
+					</div>
+					<div class="col-md-3 th-footer__link-block">
+						<div data-ng-bind-html="themeSettings.general.footer.content.column3 | legacyLinkify | html"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row th-footer__subfooter">
+			<div class="col-sm-12 col-md-8">
+				<div class="row">
+					<div class="col-md-offset-1 th-footer__subfooter__text">
+						Copyright &copy; 2014 | <a href="/">www.gizmo.com</a>. Built with <a href="//:www/volusion.com">Volusion</a>.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

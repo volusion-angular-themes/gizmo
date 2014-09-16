@@ -1,10 +1,10 @@
 .th-social {
-  text-align: center;
-  padding: 10px 0 24px;
+	text-align : center;
+	padding    : 10px 0 24px;
 
-  &__icon {
-    @extend %inline-block;
-    margin: 0 8px;
-    padding: 3px;
-  }
+	&__icon {
+		@extend %inline-block;
+		margin  : 0 8px;
+		padding : 3px;
+	}
 }

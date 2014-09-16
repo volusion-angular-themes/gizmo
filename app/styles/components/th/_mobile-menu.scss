@@ -1,0 +1,81 @@
+.snap-content {
+	background-color: $body-bg;
+}
+
+.snap-drawer {
+	width: 266px;
+}
+
+.th-mobile-menu {
+	@extend %font-smoothing;
+	color            : white;
+	background-color : #1b1c1e;
+	border-right     : none;
+
+	&__list {
+		margin-top    : 20px;
+		margin-bottom : 30px;
+
+		&__header {
+			@include font($size : 1.6rem, $family : (Novecentosanswide-Bold));
+			letter-spacing : 1px;
+			margin-bottom  : 15px;
+			padding-left   : 15px;
+			text-transform : uppercase;
+		}
+
+		ul {
+			list-style : none;
+			margin     : 0;
+			padding    : 0;
+		}
+
+		&__link {
+			border-bottom  : thin inset map-get($colors, border--dark);
+			color          : white;
+			display        : inline-block;
+			font-size      : 1.4rem;
+			line-height    : 17px;
+			padding        : 10px 10px 10px 0;
+			position       : relative;
+			text-transform : uppercase;
+			&:hover,
+			&:focus {
+				background-color : map-get($colors, border--dark);
+			}
+		}
+
+		span.caret {
+			margin : 6px 10px 0 0;
+		}
+	}
+
+	&__footer-link-block {
+		margin-top    : 15px;
+		margin-bottom : 15px;
+		&:last-child {
+			margin-bottom : 30px
+		}
+
+		li {
+			&:first-child {
+				font-family: 'Source-Sans-Pro-Bold';
+				padding : 6px 15px
+			}
+
+			a {
+				color   : white;
+				padding : 3px 20px;
+				&:last-child {
+					padding-bottom : 0
+				}
+
+				&:focus,
+				&:hover {
+					background : none;
+					color      : $link-hover-color;
+				}
+			}
+		}
+	}
+}

@@ -1,218 +1,135 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" data-ng-app="volusionApp"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" data-ng-app="volusionApp"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" data-ng-app="volusionApp"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" data-ng-app="volusionApp"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="fragment" content="!" />
-    <title data-translate="head.title"></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css({.tmp,app}) /styles/app.css -->
-    <link rel="stylesheet" href="/styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body role="document" data-ng-controller="IndexCtrl">
-    <!--[if lt IE 7]>
-      <p class="browse-happy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<html class="no-js" ng-app="methodApp" data-ng-strict-di>
+<head data-vn-meta-tags data-title="seo.metaTagTitle"
+			data-description="seo.metaTagDescription" data-keywords="seo.metaTagKeywords"
+			data-robots="seo.enableRobotsMetatags" data-to-append="seo.globallyAppendedMetatags">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="fragment" content="!"/>
+	<title>Volusion AngularJS Gizmo Theme</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css({.tmp,app}) /styles/app.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="/bower_components/angular-snap/angular-snap.css" />
+	<link rel="stylesheet" href="/bower_components/fontawesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="/bower_components/vn-toolbox-common/dist/vn-toolbox-common-styles.css" />
+	<link rel="stylesheet" href="/bower_components/angular-carousel/dist/angular-carousel.css" />
+	<!-- endbower -->
+	<link rel="stylesheet" href="/bower_components/easyzoom/css/easyzoom.css"/>
+	<!-- endbuild -->
+	<link rel="stylesheet" href="/styles/main.css">
+	<link rel="stylesheet" ng-href="{{ overridesCSS }}">
+	<base href="/">
+</head>
+<body role="document" data-ng-controller="MainCtrl">
+<!--[if lt IE 9]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+	your browser</a>
+	to improve your experience.</p>
+<![endif]-->
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top th-navbar" role="navigation">
-      <div class="container vn-dropzone">
-        <header class="navbar-header th-navbar__header">
-          <button type="button" class="navbar-toggle th-navbar__toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only" data-translate="index.toggleNav"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="visible-xs visible-sm navbar-brand th-navbar__brand" data-ui-sref="i18n.home"><img src="/images/theme/logo-mobile.png" alt=""></a>
-          <a class="hidden-xs hidden-sm navbar-brand th-navbar__brand" data-ui-sref="i18n.home"><img src="/images/theme/logo.png" alt=""></a>
-        </header>
-        <div class="navbar-collapse collapse th-navbar__collapse">
-          <ul class="nav navbar-nav th-navbar__menu">
-            <li class="active"><a data-ui-sref="i18n.home" data-translate="index.home"></a></li>
-            <li><a data-ui-sref="i18n.about" data-translate="index.about"></a></li>
-            <li><a data-ui-sref="i18n.contact" data-translate="index.contact"></a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span data-translate="index.dropdown"></span> <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#" data-translate="index.action"></a></li>
-                <li><a href="#" data-translate="index.anotherAction"></a></li>
-                <li><a href="#" data-translate="index.somethingElseHere"></a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header" data-translate="index.navHeader"></li>
-                <li><a href="#" data-translate="index.separatedLink"></a></li>
-                <li><a href="#" data-translate="index.oneMoreSeparatedLink"></a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-        <div class="th-cart-summary">
-          <a href="#" class="th-cart-summary__link">
-            <div class="th-icon th-icon--cart th-cart-summary__icon">
-              <div class="th-icon__foreground"></div>
-            </div>
-          </a>
-        </div>
-        <div class="th-search">
-          <form>
-            <label class="sr-only" for="search">Search Site</label>
-            <input type="text" class="th-search__input" placeholder="Search...">
-            <button type="submit" class="th-search__submit">
-              <div class="th-icon th-icon--spyglass">
-                <div class="th-icon__foreground"></div>
-              </div>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+<!-- Mobile Menu -->
+<div data-ng-include=" 'views/partials/mobile-menu.html' "></div>
 
-    <!-- Add your site or application content here -->
-    <div class="theme-showcase" role="main" data-ui-view="" data-autoscroll="false"></div>
+<div snap-content data-snap-ignore="true">
 
-    <footer class="th-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-8 th-footer__left">
-            <div class="hidden-xs hidden-sm th-footer__links">
-              <div class="row">
-                <div class="col-md-3">
-                  <ul>
-                    <li><a data-ui-sref="i18n.about">About Us</a></li>
-                    <li><a data-ui-sref="i18n.contact">Contact Us</a></li>
-                    <li><a href="#">Order Status</a></li>
-                    <li><a href="#">Shipping</a> &amp; <a href="#">Returns</a></li>
-                  </ul>
-                </div>
-                <div class="col-md-3">
-                  <ul>
-                    <li><a href="#">Login</a> / <a href="#">Register</a></li>
-                    <li><a href="#">Order History</a></li>
-                    <li><a href="#">Shipping Satus</a></li>
-                    <li><a href="#">Returns History</a></li>
-                  </ul>
-                </div>
-                <div class="col-md-3">
-                  <ul>
-                    <li><a href="#">Helpful Info</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                    <li><a href="#">Wish List</a></li>
-                  </ul>
-                </div>
-                <div class="col-md-3">
-                  <ul>
-                    <li><a href="#">Registry</a></li>
-                    <li><a href="#">Product Reviews</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Manage Subscriptions</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="visible-xs visible-sm th-footer__links th-footer__links--collapsed">
-              <select class="form-control">
-                <option value="About Us">About Us</option>
-                <option value="Contact Us">Contact Us</option>
-                <option value="Order Status">Order Status</option>
-                <option value="Shipping &amp; Returns">Shipping &amp; Returns</option>
-                <option value="Login/Register">Login/Register</option>
-                <option value="Order History">Order History</option>
-                <option value="Shipping Status">Shipping Status</option>
-                <option value="Returns History">Returns History</option>
-                <option value="Helpful Info">Helpful Info</option>
-                <option value="Privacy Policy">Privacy Policy</option>
-                <option value="Gift Cards">Gift Cards</option>
-                <option value="Wish List">Wish List</option>
-                <option value="Registry">Registry</option>
-                <option value="Product Reviews">Product Reviews</option>
-                <option value="Blog">Blog</option>
-                <option value="Manage Subscriptions">Manage Subscriptions</option>
-              </select>
-            </div>
-            <div class="th-footer__copyright">
-              Copyright &copy; 2014 | <a href="/">www.gizmo.com</a>. Built with <a href="//:www/volusion.com">Volusion</a>.
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 th-footer__right">
-            <div class="th-elist">
-              <div class="th-elist__title">Newsletter Sign up</div>
-              <form>
-                <label class="sr-only" for="elist">Enter Email to sign up</label>
-                <input type="email" class="form-control input-lg th-elist__input" placeholder="Email addresss...">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Me Up!</button>
-              </form>
-            </div>
-            <div class="th-social">
-              <a href="#">
-                <div class="th-icon th-icon--facebook th-social__icon">
-                  <div class="th-icon__foreground"></div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="th-icon th-icon--twitter th-social__icon">
-                  <div class="th-icon__foreground"></div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="th-icon th-icon--pinterest th-social__icon">
-                  <div class="th-icon__foreground"></div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="th-icon th-icon--google th-social__icon">
-                  <div class="th-icon__foreground"></div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+	<a id="top"></a>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	<!-- Header -->
+	<div id="header" ng-include=" 'views/partials/header.html' "></div>
 
-      ga('create', 'UA-XXXXX-X');
-      ga('send', 'pageview');
-    </script>
+	<!-- Main Content -->
+	<div class="vn-showcase" role="main" autoscroll="false" ng-view=""></div>
 
-    <!--[if lt IE 9]>
-    <script src="/bower_components/es5-shim/es5-shim.js"></script>
-    <script src="/bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+	<!-- Footer -->
+	<div ng-include=" 'views/partials/footer.html' "></div>
 
-    <!-- build:js /scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/es5-shim/es5-shim.js"></script>
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-resource/angular-resource.js"></script>
-    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/bower_components/angular-seo/angular-seo.js"></script>
-    <script src="/bower_components/angular-translate/angular-translate.js"></script>
-    <script src="/bower_components/angular-translate-handler-log/angular-translate-handler-log.js"></script>
-    <script src="/bower_components/messageformat/messageformat.js"></script>
-    <script src="/bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
-    <script src="/bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
-    <script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
-    <script src="/bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/bower_components/json3/lib/json3.min.js"></script>
-    <!-- endbower -->
-    <script src="/bower_components/angular-i18n/angular-locale_en-us.js"></script>
-    <!-- endbuild -->
+	<!-- build:js /scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/bower_components/angular/angular.js"></script>
+	<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="/bower_components/angular-resource/angular-resource.js"></script>
+	<script src="/bower_components/angular-route/angular-route.js"></script>
+	<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="/bower_components/angular-animate/angular-animate.js"></script>
+	<script src="/bower_components/angular-touch/angular-touch.js"></script>
+	<script src="/bower_components/snapjs/snap.js"></script>
+	<script src="/bower_components/angular-snap/angular-snap.js"></script>
+	<script src="/bower_components/angular-seo/angular-seo.js"></script>
+	<script src="/bower_components/jquery-waypoints/waypoints.js"></script>
+	<script src="/bower_components/angulartics/src/angulartics.js"></script>
+	<script src="/bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="/bower_components/easyzoom/dist/easyzoom.js"></script>
+	<script src="/bower_components/enquire/dist/enquire.js"></script>
+	<script src="/bower_components/angular-translate/angular-translate.js"></script>
+	<script src="/bower_components/angular-translate-handler-log/angular-translate-handler-log.js"></script>
+	<script src="/bower_components/messageformat/messageformat.js"></script>
+	<script src="/bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+	<script src="/bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+	<script src="/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+	<script src="/bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+	<script src="/bower_components/firebase/firebase.js"></script>
+	<script src="/bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+	<script src="/bower_components/angularfire/angularfire.js"></script>
+	<script src="/bower_components/vn-toolbox-common/dist/vn-toolbox-common.js"></script>
+	<script src="/bower_components/textAngular/dist/textAngular.min.js"></script>
+	<script src="/bower_components/angular-carousel/dist/angular-carousel.js"></script>
+	<!-- endbower -->
+	<script src="/bower_components/angular-i18n/angular-locale_en-us.js"></script>
+	<!-- endbuild -->
 
-    <script src="/scripts/scripts.js"></script>
+	<!-- build:js({.tmp,app}) /scripts/scripts.js -->
+	<script src="scripts/config.js"></script>
+	<script src="scripts/app.js"></script>
+
+	<script src="scripts/controllers/main.js"></script>
+	<script src="scripts/controllers/header.js"></script>
+	<script src="scripts/controllers/footer.js"></script>
+	<script src="scripts/controllers/home.js"></script>
+	<script src="scripts/controllers/category.js"></script>
+	<script src="scripts/controllers/product.js"></script>
+	<script src="scripts/controllers/search.js"></script>
+	<script src="scripts/controllers/article.js"></script>
+	<script src="scripts/controllers/page.js"></script>
+	<script src="scripts/controllers/theme-settings.js"></script>
+
+	<script src="scripts/directives/easy-zoom.js"></script>
+	<script src="scripts/directives/legacy-link.js"></script>
+	<script src="scripts/directives/show-on-dropdown-hover.js"></script>
+	<script src="scripts/directives/scroll-to-anchor.js"></script>
+	<script src="scripts/directives/paginator.js"></script>
+	<script src="scripts/directives/search-form.js"></script>
+
+	<script src="scripts/filters/cache-bust.js"></script>
+	<script src="scripts/filters/html.js"></script>
+	<script src="scripts/filters/legacy-linkify.js"></script>
+	<script src="scripts/filters/seo-friendly.js"></script>
+
+	<!--<script src="scripts/services/api-provider.js"></script>-->
+	<script src="scripts/services/app-config.js"></script>
+	<script src="scripts/services/content-mgr.js"></script>
+	<script src="scripts/services/site-config.js"></script>
+	<script src="scripts/services/cart.js"></script>
+	<script src="scripts/services/storage.js"></script>
+	<script src="scripts/services/theme-settings.js"></script>
+	<script src="scripts/services/token-generator.js"></script>
+	<script src="scripts/services/translate-provider.js"></script>
+	<!-- endbuild -->
+
 </body>
 </html>

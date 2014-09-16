@@ -1,47 +1,47 @@
 @import 'sprites/social/*.png';
 
 @mixin sprite--social($name) {
-  @include social-sprite($name);
-  height: social-sprite-height($name);
-  width: social-sprite-width($name);
+	@include social-sprite($name);
+	height : social-sprite-height($name);
+	width  : social-sprite-width($name);
 }
 
-@mixin icon--social($name, $has-large: false) {
+@mixin icon--social($name, $has-large : false) {
 
-  &--#{$name} {
+	&--#{$name} {
 
-    .th-icon__foreground {
-      @include sprite--social($name);
-    }
+		.th-icon__foreground {
+			@include sprite--social($name);
+		}
 
-    @if $has-large {
-      &--large {
-        .th-icon__foreground {
-          @include sprite--social(#{$name}--large);
-        }
-      }
-    }
+		@if $has-large {
+			&--large {
+				.th-icon__foreground {
+					@include sprite--social(#{$name}--large);
+				}
+			}
+		}
 
-  }
+	}
 
 }
 
 .th-icon {
-  @extend %inline-block;
+	@extend %inline-block;
 
-  &__foreground {
-    @extend %opacity-100;
-  }
+	&__foreground {
+		@extend %opacity-100;
+	}
 
-  &:hover {
-    .th-icon__foreground {
-      @extend %opacity-75;
-    }
-  }
+	&:hover {
+		.th-icon__foreground {
+			@extend %opacity-75;
+		}
+	}
 
-  @each $sprite in facebook, twitter, pinterest, google {
-    @include icon--social($sprite);
-  }
+	@each $sprite in facebook, twitter, pinterest, google {
+		@include icon--social($sprite);
+	}
 
 }
 

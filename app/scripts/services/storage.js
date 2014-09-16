@@ -1,54 +1,74 @@
 'use strict';
 
-module.exports = [
-  '$window',
-  '$cookieStore',
-  function(
-    $window,
-    $cookieStore) {
+///**
+// * @ngdoc service
+// * @name methodApp.starage
+// * @description
+// * # starage
+// * Factory in the methodApp.
+// */
+//angular.module('methodApp')
+//  .factory('storage', function () {
+//    // Service logic
+//    // ...
+//
+//    var meaningOfLife = 42;
+//
+//    // Public API here
+//    return {
+//      someMethod: function () {
+//        return meaningOfLife;
+//      }
+//    };
+//  });
 
-    function createLocalStorageAdapter() {
-      return {
-        get: function(key) {
-          var value = $window.localStorage.getItem(key);
-          if (value === null) {
-            return resolveCookieValue(key);
-          }
-          return value;
-        },
-        set: function(key, value) {
-          return $window.localStorage.setItem(key, value);
-        },
-        remove: function(key) {
-          return $window.localStorage.removeItem(key);
-        }
-      };
-    }
+angular.module('Volusion.services')
+	.factory('storage', [
+		'$window', '$cookieStore',
+		function($window, $cookieStore) {
 
-    function resolveCookieValue(key) {
-      var value = $cookieStore.get(key);
-      return (typeof value === 'undefined') ? null : value;
-    }
+			function createLocalStorageAdapter() {
+				return {
+					get: function(key) {
+						var value = $window.localStorage.getItem(key);
+						if (value === null) {
+							return resolveCookieValue(key);
+						}
+						return value;
+					},
+					set: function(key, value) {
+						return $window.localStorage.setItem(key, value);
+					},
+					remove: function(key) {
+						return $window.localStorage.removeItem(key);
+					}
+				};
+			}
 
-    function createCookieStorageFacade() {
-      return {
-        get: function(key) {
-          return resolveCookieValue(key);
-        },
-        set: function(key, value) {
-          return $cookieStore.put(key, value);
-        },
-        remove: function(key) {
-          return $cookieStore.remove(key);
-        }
-      };
-    }
+			function resolveCookieValue(key) {
+				var value = $cookieStore.get(key);
+				return (typeof value === 'undefined') ? null : value;
+			}
 
-    if ('localStorage' in $window && $window.localStorage !== null) {
-      return createLocalStorageAdapter();
-    } else {
-      return createCookieStorageFacade();
-    }
+			function createCookieStorageFacade() {
+				return {
+					get: function(key) {
+						return resolveCookieValue(key);
+					},
+					set: function(key, value) {
+						return $cookieStore.put(key, value);
+					},
+					remove: function(key) {
+						return $cookieStore.remove(key);
+					}
+				};
+			}
 
-  }
-];
+			if ('localStorage' in $window && $window.localStorage !== null) {
+				return createLocalStorageAdapter();
+			} else {
+				return createCookieStorageFacade();
+			}
+
+		}
+	]);

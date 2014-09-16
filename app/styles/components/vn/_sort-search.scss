@@ -1,0 +1,15 @@
+.vn-sort-desktop-search {
+	.dropdown {
+		float: right;
+	}
+	.dropdown-menu {
+		@extend .dropdown-menu-right;
+		margin-top: 16px;
+		min-width: 140px;
+		text-align: right;
+	}
+	button {
+		position: relative;
+		top: 15px;
+	}
+}

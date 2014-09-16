@@ -1,46 +1,42 @@
 @import "sprites/icons/*.png";
 
 @mixin sprite--icons($name) {
-  @include icons-sprite($name);
-  height: icons-sprite-height($name);
-  width: icons-sprite-width($name);
+	@include icons-sprite($name);
+	height : icons-sprite-height($name);
+	width  : icons-sprite-width($name);
 }
 
-@mixin icon--icons($name, $has-large: false) {
+@mixin icon--icons($name, $has-large : false) {
+	&--#{$name} {
+		.th-icon__foreground {
+			@include sprite--icons($name);
+		}
 
-  &--#{$name} {
-
-    .th-icon__foreground {
-      @include sprite--icons($name);
-    }
-
-    @if $has-large {
-      &--large {
-        .th-icon__foreground {
-          @include sprite--icons(#{$name}--large);
-        }
-      }
-    }
-
-  }
-
+		@if $has-large {
+			&--large {
+				.th-icon__foreground {
+					@include sprite--icons(#{$name}--large);
+				}
+			}
+		}
+	}
 }
 
 .th-icon {
-  @extend %inline-block;
+	@extend %inline-block;
 
-  &__foreground {
-    @extend %opacity-100;
-  }
+	&__foreground {
+		@extend %opacity-100;
+	}
 
-  &:hover {
-    .th-icon__foreground {
-      @extend %opacity-75;
-    }
-  }
+	&:hover {
+		.th-icon__foreground {
+			@extend %opacity-75;
+		}
+	}
 
-  @each $sprite in cart, web-exclusive, spyglass, next, previous {
-    @include icon--icons($sprite);
-  }
+	@each $sprite in cart, spyglass, next, previous, web-exclusive {
+		@include icon--icons($sprite);
+	}
 
 }

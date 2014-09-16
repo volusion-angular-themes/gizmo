@@ -17,11 +17,11 @@ $font-family-main-menu:  "Roboto-Condensed-Bold";
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-darker:            map-get($colors, grayDarker) !default; // #222
-$gray-dark:              map-get($colors, grayDark) !default;   // #333
-$gray:                   map-get($colors, gray) !default; // #555
-$gray-light:             map-get($colors, grayLight) !default;   // #999
-$gray-lighter:           map-get($colors, grayLighter) !default; // #eee
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 46.7%) !default; // #777
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
 $brand-primary:          map-get($colors, brandPrimary) !default;
 $brand-success:          map-get($colors, brandSuccess) !default;
@@ -227,7 +227,7 @@ $dropdown-divider-bg:            map-get($colors, dropdownDividerBg) !default;
 //** Dropdown link text color.
 $dropdown-link-color:            map-get($colors, dropdownLinkColor) !default;
 //** Hover color for dropdown links.
-$dropdown-link-hover-color:      map-get($colors, dropdownLinkHoverColor) !default;
+$dropdown-link-hover-color:      $link-hover-color !default;
 //** Hover background for dropdown links.
 $dropdown-link-hover-bg:         map-get($colors, dropdownLinkHoverBg) !default;
 
@@ -375,7 +375,7 @@ $navbar-inverse-border:                     map-get($colors, navbarInverseBorder
 
 // Inverted navbar links
 $navbar-inverse-link-color:                 map-get($colors, navbarInverseLinkColor) !default;
-$navbar-inverse-link-hover-color:           map-get($colors, navbarInverseLinkHoverColor) !default;
+$navbar-inverse-link-hover-color:           $link-hover-color !default;
 $navbar-inverse-link-hover-bg:              map-get($colors, navbarInverseLinkHoverBg) !default;
 $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color !default;
 $navbar-inverse-link-active-bg:             map-get($colors, navbarInverseLinkActiveBg) !default;
@@ -399,7 +399,7 @@ $navbar-inverse-toggle-border-color:        map-get($colors, navbarInverseToggle
 
 //=== Shared nav styles
 $nav-link-padding:                          10px 15px !default;
-$nav-link-hover-bg:                         $gray-lighter !default;
+$nav-link-hover-bg:                         map-get($colors, border--dark);
 
 $nav-disabled-link-color:                   $gray-light !default;
 $nav-disabled-link-hover-color:             $gray-light !default;

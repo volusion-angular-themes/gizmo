@@ -1,29 +1,26 @@
 .th-elist {
-  text-align: center;
-  padding: 15px 0;
-  max-width: 285px;
-  margin: 0 auto;
+	text-align : center;
+	padding    : 15px 0;
+	max-width  : 285px;
+	margin     : 0 auto;
 
-  @include respond-to(md-and-up) {
-    max-width: 315px;
+	@include respond-to(md-and-up) {
+		max-width : 315px;
 
-  }
+	}
 
-  &__title {
-    @include font(
-      $size: 3.0rem,
-      $family: (Roboto-Light)
-    );
-    padding: 10px 0 0;
+	&__title {
+		@include font($size : 3.0rem,$family : (Roboto-Light));
+		padding : 10px 0 0;
 
-    @include respond-to(md-and-up) {
-      font-size: 3.5rem;
-    }
+		@include respond-to(md-and-up) {
+			font-size : 3.5rem;
+		}
 
-  }
+	}
 
-  &__input {
-    margin: 8px 0;
-  }
+	&__input {
+		margin : 8px 0;
+	}
 
 }

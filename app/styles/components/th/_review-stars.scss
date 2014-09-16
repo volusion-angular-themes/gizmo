@@ -1,4 +1,13 @@
 .th-review-stars {
-  @extend %inline-block;
-  margin-right: 10px;
+	@extend %inline-block;
+	margin-right : 10px;
+
+	// TODO Move to Overrides? / Not sure what this element is doing
+	.vn-rating {
+		display: inline-block;
+
+		&-title {
+			margin-bottom: 0;
+		}
+	}
 }

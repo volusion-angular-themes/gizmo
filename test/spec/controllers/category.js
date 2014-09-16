@@ -1,34 +1,22 @@
 'use strict';
 
-// ReSharper disable WrongExpressionStatement
-describe('Controller: CategoryCtrl', function () {
+describe('Controller: CategoryCtrl', function() {
 
-  // load the controller's module
-  beforeEach(module('volusionApp'));
+	// load the controller's module
+	beforeEach(module('methodApp'));
 
-  // ReSharper disable once InconsistentNaming
-  var controller;
-  var scope;
-  var category = {
-    data: {
-      id: 1,
-      name: 'Category 1',
-      subCategories: [],
-      products: []
-    }
-  };
+	var CategoryCtrl;
+	var scope;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    controller = $controller('CategoryCtrl', {
-      $scope: scope,
-      category: category
-    });
-  }));
+	// Initialize the controller and a mock scope
+	beforeEach(inject(function($controller, $rootScope) {
+		scope = $rootScope.$new();
+		CategoryCtrl = $controller('CategoryCtrl', {
+			$scope: scope
+		});
+	}));
 
-  it('should attach the product data to the scope', function () {
-    expect(scope.category).to.deep.equal(category.data);
-  });
-
+	xit('should attach a list of awesomeThings to the scope', function() {
+		expect(scope.awesomeThings.length).toBe('');
+	});
 });

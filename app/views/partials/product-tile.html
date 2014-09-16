@@ -1,0 +1,38 @@
+<div class="th-product-tile">
+	<!-- TODO Style and test this code from Method
+	<span class="th-product__sale" data-ng-show="product.isOnSale"></span>
+	<span class="th-product__new" data-ng-show="product.isNew"></span>-->
+	<div class="th-product-tile__image">
+		<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="">
+	</div>
+	<div class="th-product-tile__info">
+		<a data-ng-href="{{product.url}}">
+			<div class="th-product-tile__name">{{product.name}}</div>
+		</a>
+
+		<div class="th-product-tile__price">
+								<span data-ng-show="product.pricing.regularPrice > 0">
+									<span data-ng-class="{strike: product.pricing.salePrice > 0}">{{product.pricing.regularPrice | currency}}</span>
+								</span>
+								<span class="th-product-tile__price--sale" data-ng-show="product.pricing.salePrice > 0">
+									<span>{{product.pricing.salePrice | currency}}</span>
+								</span>
+		</div>
+		<div class="th-tile-details th-product-tile__details">
+			<div class="th-review-stars" ng-if="product.avgRating">
+									<span class="th-reviews__avg">
+										<span data-vn-rating rating-value="product.avgRating"
+													maximum="ratingsAndReviews.data.maxRating"
+													editable="isEditable" title=""></span>
+									</span>
+			</div>
+			<div class="th-tile-details__description">
+				<span>{{product.descriptions.short}}</span>
+			</div>
+			<a data-ng-href="{{product.url}}">
+				<button type="button" class="btn btn-lg th-btn--dark th-tile-details__view-details">View Details
+				</button>
+			</a>
+		</div>
+	</div>
+</div>

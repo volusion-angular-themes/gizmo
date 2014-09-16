@@ -1,47 +1,47 @@
 @import 'sprites/stars/*.png';
 
 @mixin sprite--stars($name) {
-  @include stars-sprite($name);
-  height: stars-sprite-height($name);
-  width: stars-sprite-width($name);
+	@include stars-sprite($name);
+	height : stars-sprite-height($name);
+	width  : stars-sprite-width($name);
 }
 
-@mixin icon--stars($name, $has-large: false) {
+@mixin icon--stars($name, $has-large : false) {
 
-  &--#{$name} {
+	&--#{$name} {
 
-    .th-icon__foreground {
-      @include sprite--stars($name);
-    }
+		.th-icon__foreground {
+			@include sprite--stars($name);
+		}
 
-    @if $has-large {
-      &--large {
-        .th-icon__foreground {
-          @include sprite--stars(#{$name}--large);
-        }
-      }
-    }
+		@if $has-large {
+			&--large {
+				.th-icon__foreground {
+					@include sprite--stars(#{$name}--large);
+				}
+			}
+		}
 
-  }
+	}
 
 }
 
 .th-icon {
-  @extend %inline-block;
+	@extend %inline-block;
 
-  &__foreground {
-    @extend %opacity-100;
-  }
+	&__foreground {
+		@extend %opacity-100;
+	}
 
-  &:hover {
-    .th-icon__foreground {
-      @extend %opacity-75;
-    }
-  }
+	&:hover {
+		.th-icon__foreground {
+			@extend %opacity-75;
+		}
+	}
 
-  @each $sprite in star, star-inactive, star-half {
-    @include icon--stars($sprite, true);
-  }
+	@each $sprite in star, star-inactive, star-half {
+		@include icon--stars($sprite, true);
+	}
 
 }
 

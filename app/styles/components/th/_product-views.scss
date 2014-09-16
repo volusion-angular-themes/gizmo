@@ -1,25 +1,29 @@
 .th-product-views {
-  text-align: center;
-  margin-top: 10px;
+	text-align : center;
+	margin-top : 10px;
 
-  @include respond-to(sm-and-up) {
-    margin-top: 20px;
-  }
+	@include respond-to(sm-and-up) {
+		margin-top : 20px;
+	}
 
-  &__image {
-    @extend %inline-block;
-    margin: 10px auto 0;
-    border: 1px solid map-get($colors, border);
+	&__image {
+		@extend %inline-block;
+		margin : 10px auto;
+		max-height : 500px;
 
-    &:hover {
-      @extend %animate-color;
-      border-color: map-get($colors, brand-primary);
-    }
+		@include respond-to(sm-and-up) {
+			margin-top : 20px;
+		}
 
-    @include respond-to(sm-and-up) {
-      margin-top: 20px;
-    }
+		&--thumbnail {
+			border : 1px solid map-get($colors, border);
+			max-height : 125px;
 
-  }
+				&:hover {
+				@extend %animate-color;
+				border-color : map-get($colors, brand-primary);
+			}
+		}
+	}
 }
 

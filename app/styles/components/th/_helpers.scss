@@ -1,66 +1,69 @@
 %inline-block {
-  @include inline-block;
+	@include inline-block;
 }
 
 %opacity-75 {
-  @include opacity(0.75);
+	@include opacity(0.75);
 }
 
 %opacity-100 {
-  @include opacity(1);
+	@include opacity(1);
 }
 
 %border-radius {
-  @include border-radius(3px);
+	@include border-radius(3px);
 }
 
 %no-border-radius {
-  @include border-radius(0);
+	@include border-radius(0);
 }
 
 %animate-all {
-  @include transition(all, 0.2s, ease-in-out);
+	@include transition(all, 0.2s, ease-in-out);
 }
 
 %animate-color {
-  @include transition(color, 0.2s, ease-in-out);
+	@include transition(color, 0.2s, ease-in-out);
 }
 
 %placeholder-text {
-  @include input-placeholder {
-    color: map-get($colors, placeholder);
-  }
+	@include input-placeholder {
+		color : map-get($colors, placeholder);
+	}
 }
 
 %placeholder-text-focus {
-  @include input-placeholder {
-    color: map-get($colors, placeholder--focus);
-  }
+	@include input-placeholder {
+		color : map-get($colors, placeholder--focus);
+	}
 }
 
 %inner-shadow {
-  @include box-shadow(rgba(map-get($colors, bg), 0.1) -27px -27px 27px inset);
+	@include box-shadow(rgba(map-get($colors, bg), 0.1) -27px -27px 27px inset);
 }
 
 %tab-shadow {
-  @include background-image(linear-gradient(map-get($colors, tab-gradient__color1) 57%,map-get($colors, tab-gradient__color2) 95%));
+	@include background-image(linear-gradient(map-get($colors, tab-gradient__color1) 57%, map-get($colors, tab-gradient__color2) 95%));
 }
 
 %remove-shadow {
-  @include box-shadow(none);
+	@include box-shadow(none);
 }
 
 %position-absolute-center {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+	position : absolute;
+	top      : 0;
+	left     : 0;
+	right    : 0;
+	bottom   : 0;
+	margin   : auto;
+}
+
+%font-smoothing {
+	-moz-osx-font-smoothing : grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 
 .th-no-padding {
-  padding: 0;
+	padding : 0;
 }
-
-

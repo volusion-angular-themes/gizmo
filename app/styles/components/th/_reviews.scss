@@ -1,0 +1,85 @@
+.th-reviews {
+	color       : $text-color;
+	font-size   : 1.3rem;
+	padding: 10px 15px 15px 0;
+
+	&__summary {
+		border-bottom     : 1px solid map-get($colors, border);
+		margin-bottom: 15px;
+		padding: 10px 0;
+	}
+
+	&__submit-btn {
+		margin-bottom: 5px;
+		padding: 2px 20px;
+		letter-spacing: normal;
+	}
+
+	&__heading {
+		@include font($size : 1.8rem,$family : Roboto-Condensed-Bold);
+		font-size      : 1.8rem;
+		overflow       : hidden;
+		padding        : 5px 0;
+		text-transform : uppercase;
+	}
+
+	&__count {
+		@include respond-to(xs) { display: block }
+	}
+
+	// Review blocks
+
+	&__helpful {
+		color          : map-get($colors, text--light);
+		margin-top: 5px;
+
+		span {
+			vertical-align: middle;
+		}
+
+		a {
+			border-width: 1px;
+			letter-spacing: normal;
+			line-height: 1.5;
+			margin-left: 5px;
+			padding: 1px 6px;
+		}
+	}
+
+	&__star-group {
+		display      : inline-block;
+		margin-right : 10px;
+	}
+
+	&__star {
+		@extend %inline-block;
+		margin-right : 1px;
+	}
+
+	// TODO Move to Overrides? / Not sure what this element is doing
+	.vn-rating {
+		display: inline-block;
+
+		&-title {
+			margin-bottom: 0;
+		}
+	}
+
+	&__date {
+		color          : map-get($colors, text--light);
+		margin-left: 5px;
+	}
+
+	&__title {
+		@include font($size : 1.8rem,$family : 'Source-Sans-Pro-Bold');
+		font-size     : 1.4rem;
+		font-weight   : normal;
+		margin-top    : 5px;
+		margin-bottom : 5px;
+	}
+
+	&__body {
+		margin-right: 15px;
+	}
+
+}

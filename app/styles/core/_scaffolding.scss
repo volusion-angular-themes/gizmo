@@ -1,16 +1,19 @@
-@import "bootstrap/scaffolding";
-
 body {
-  @include font-smoothing;
-  font-size: 1.4rem;
-  padding-top: 50px;
-
-  @include respond-to(md-and-up) {
-    padding-top: 73px;
-  }
-
+	font-size   : 1.4rem;
 }
 
 a, a:hover, a:active {
-  text-decoration: none;
+	text-decoration : none;
+}
+
+// Necessary for Angular-UI-Bootstrap Elements
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.dropdown-menu {
+	@extend %font-smoothing;
+}
+
+.fa.fa-star,
+.fa.fa-star-o {
+	color: gold;
 }
