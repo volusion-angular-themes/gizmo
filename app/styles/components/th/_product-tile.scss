@@ -1,9 +1,10 @@
 .th-product-tile {
 	border: 1px solid map-get($colors, border);
-	padding: 20px;
-	position: relative;
+	color: $text-color;
 	height: 336px;
 	overflow: hidden;
+	padding: 20px;
+	position: relative;
 
 	@include respond-to(sm-and-up) {
 		height: 405px;
@@ -11,16 +12,14 @@
 
 	&__tag {
 		position: absolute;
-		top: 0;
 		right: 0;
+		top: 0;
 	}
 
 	&__image {
-
 		img {
 			@extend %position-absolute-center;
 		}
-
 	}
 
 	&__info {
@@ -49,13 +48,13 @@
 			position : relative;
 
 			&:before {
-				position   : absolute;
-				content    : "";
-				left       : 0;
-				top        : 50%;
-				right      : 0;
-				border-top : 2px solid map-get($colors, sale);
 				@include rotate(-10deg);
+				border-top : 2px solid map-get($colors, sale);
+				content    : "";
+				position   : absolute;
+				left       : 0;
+				right      : 0;
+				top        : 50%;
 			}
 		}
 	}
@@ -77,5 +76,4 @@
 			height: auto;
 		}
 	}
-
 }

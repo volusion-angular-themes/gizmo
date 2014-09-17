@@ -1,11 +1,9 @@
-.th-tile-details {
-	height   : 0;
-	overflow : hidden;
+// Details shown on product-tile hover
 
-	&__view-details {
-		display : block;
-		margin  : 0 auto;
-	}
+.th-tile-details {
+	color: $text-color;
+	height   : 0;         // Initialize to zero height before hover
+	overflow : hidden;
 
 	&__rating {
 		padding : 7px 0;
@@ -15,5 +13,4 @@
 		margin-top: 5px;
 		margin-bottom: 15px;
 	}
-
 }
