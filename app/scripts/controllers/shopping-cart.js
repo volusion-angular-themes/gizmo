@@ -1,6 +1,6 @@
 /**
  * @ngdoc function
- * @name methodApp.controller:ShoppingCartCtrl
+ * @name gizmoApp.controller:ShoppingCartCtrl
  * @description
  * # ShoppingCartCtrl
  * Controller of the gizmoApp

@@ -1,9 +1,9 @@
 /**
  * @ngdoc function
- * @name methodApp.controller:FooterCtrl
+ * @name gizmoApp.controller:FooterCtrl
  * @description
  * # FooterCtrl
- * Controller of the methodApp
+ * Controller of the gizmoApp
  */
 
 angular.module('Volusion.controllers')

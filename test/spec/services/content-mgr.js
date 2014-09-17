@@ -3,7 +3,7 @@
 describe('Service: vnContentMgr', function () {
 
 	// load the service's module
-	beforeEach(module('methodApp'));
+	beforeEach(module('gizmoApp'));
 
 	// instantiate service
 	var ContentMgr;
