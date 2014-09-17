@@ -1,9 +1,9 @@
 /**
  * @ngdoc function
- * @name methodApp.controller:HeaderCtrl
+ * @name gizmoApp.controller:HeaderCtrl
  * @description
  * # HeaderCtrl
- * Controller of the methodApp
+ * Controller of the gizmoApp
  */
 
 angular.module('Volusion.controllers')

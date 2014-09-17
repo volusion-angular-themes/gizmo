@@ -1,4 +1,4 @@
-angular.module('methodApp')
+angular.module('gizmoApp')
 	.controller('ThemeSettingsCtrl', ['$scope', '$http', '$location', 'ContentMgr',
 		function ($scope, $http, $location, ContentMgr) {
 

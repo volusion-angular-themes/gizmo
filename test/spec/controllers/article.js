@@ -5,7 +5,7 @@
 describe('Controller: ArticleCtrl', function() {
 
 	// load the controller's module
-	beforeEach(module('methodApp'));
+	beforeEach(module('gizmoApp'));
 
 	// ReSharper disable once InconsistentNaming
 	var controller,

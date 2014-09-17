@@ -1,11 +1,11 @@
 /**
  * @ngdoc function
- * @name methodApp.controller:SearchCtrl
+ * @name gizmoApp.controller:SearchCtrl
  * @description
  * # SearchCtrl
- * Controller of the methodApp
+ * Controller of the gizmoApp
  */
-angular.module('methodApp')
+angular.module('gizmoApp')
 	.controller('SearchCtrl', ['$rootScope', '$scope', '$routeParams', '$location', '$window', '$filter', 'vnApi', 'vnProductParams', 'ContentMgr', 'themeSettings', 'vnAppRoute',
 		function ($rootScope, $scope, $routeParams, $location, $window, $filter, vnApi, vnProductParams, ContentMgr, themeSettings, vnAppRoute) {
 

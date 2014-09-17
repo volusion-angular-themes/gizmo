@@ -4,7 +4,7 @@ angular.module('Volusion.templates', []);
 angular.module('Volusion.services', []);
 angular.module('Volusion.controllers', []);
 
-angular.module('methodApp', [
+angular.module('gizmoApp', [
 	'ngAnimate',
 	'ngCookies',
 	'ngResource',
