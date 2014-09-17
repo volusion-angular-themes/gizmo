@@ -22,7 +22,7 @@ angular.module('Volusion.controllers')
 			};
 			$scope.couponsEmpty = false;
 
-			translate.addParts('shopping-card');
+			translate.addParts('shopping-cart');
 
 			function displayErrors(errors) {
 				var vnMsg,

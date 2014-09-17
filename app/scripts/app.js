@@ -148,7 +148,7 @@ angular.module('methodApp', [
 			});
 
 			$rootScope.$on('VN_HTTP_500_ERROR', function () {
-				vnModalService.showError('views/server-error.html');
+				vnModalService.showError();
 			});
 
 			$rootScope.$watch(
