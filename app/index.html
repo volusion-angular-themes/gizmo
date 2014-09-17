@@ -1,21 +1,21 @@
 <!doctype html>
 <html class="no-js" ng-app="methodApp" data-ng-strict-di>
 <head data-vn-meta-tags data-title="seo.metaTagTitle"
-			data-description="seo.metaTagDescription" data-keywords="seo.metaTagKeywords"
-			data-robots="seo.enableRobotsMetatags" data-to-append="seo.globallyAppendedMetatags">
+	data-description="seo.metaTagDescription" data-keywords="seo.metaTagKeywords"
+	data-robots="seo.enableRobotsMetatags" data-to-append="seo.globallyAppendedMetatags"
+	data-social-page-title="social.pageTitle" data-social-page-url="social.pageUrl"
+	data-social-image-url="social.imageUrl">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="fragment" content="!"/>
 	<title>Volusion AngularJS Gizmo Theme</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<!-- build:css({.tmp,app}) /styles/app.css -->
+	<!-- build:css /styles/vendor.css -->
 	<!-- bower:css -->
 	<link rel="stylesheet" href="/bower_components/angular-snap/angular-snap.css" />
 	<link rel="stylesheet" href="/bower_components/fontawesome/css/font-awesome.css" />
 	<link rel="stylesheet" href="/bower_components/vn-toolbox-common/dist/vn-toolbox-common-styles.css" />
-	<link rel="stylesheet" href="/bower_components/angular-carousel/dist/angular-carousel.css" />
 	<!-- endbower -->
 	<link rel="stylesheet" href="/bower_components/easyzoom/css/easyzoom.css"/>
 	<!-- endbuild -->
@@ -30,23 +30,28 @@
 	to improve your experience.</p>
 <![endif]-->
 
-<!-- Mobile Menu -->
-<div data-ng-include=" 'views/partials/mobile-menu.html' "></div>
+	<div data-snap-drawers>
+		<!-- Mobile Menu -->
+		<div data-ng-include=" 'views/partials/mobile-menu.html' "></div>
 
-<div snap-content data-snap-ignore="true">
+		<!-- Checkout -->
+		<div data-ng-include=" 'views/partials/shopping-card.html' "></div>
+	</div>
 
-	<a id="top"></a>
+	<div snap-content data-snap-ignore="true">
 
-	<!-- Header -->
-	<div id="header" ng-include=" 'views/partials/header.html' "></div>
+		<a id="top"></a>
 
-	<!-- Main Content -->
-	<div class="vn-showcase" role="main" autoscroll="false" ng-view=""></div>
+		<!-- Header -->
+		<div id="header" ng-include=" 'views/partials/header.html' "></div>
 
-	<!-- Footer -->
-	<div ng-include=" 'views/partials/footer.html' "></div>
+		<!-- Main Content -->
+		<div class="vn-showcase" role="main" autoscroll="false" ng-view=""></div>
+		<!-- Footer -->
+		<div ng-include=" 'views/partials/footer.html' "></div>
+	</div>
 
-	<!-- build:js /scripts/vendor.js -->
+	<!-- build:js scripts/vendor.js -->
 	<!-- bower:js -->
 	<script src="/bower_components/jquery/dist/jquery.js"></script>
 	<script src="/bower_components/angular/angular.js"></script>
@@ -87,10 +92,7 @@
 	<script src="/bower_components/firebase-simple-login/firebase-simple-login.js"></script>
 	<script src="/bower_components/angularfire/angularfire.js"></script>
 	<script src="/bower_components/vn-toolbox-common/dist/vn-toolbox-common.js"></script>
-	<script src="/bower_components/textAngular/dist/textAngular.min.js"></script>
-	<script src="/bower_components/angular-carousel/dist/angular-carousel.js"></script>
-	<!-- endbower -->
-	<script src="/bower_components/angular-i18n/angular-locale_en-us.js"></script>
+	<script src='/bower_components/textAngular/dist/textAngular.min.js'></script>
 	<!-- endbuild -->
 
 	<!-- build:js({.tmp,app}) /scripts/scripts.js -->
@@ -105,30 +107,11 @@
 	<script src="scripts/controllers/product.js"></script>
 	<script src="scripts/controllers/search.js"></script>
 	<script src="scripts/controllers/article.js"></script>
-	<script src="scripts/controllers/page.js"></script>
 	<script src="scripts/controllers/theme-settings.js"></script>
 
-	<script src="scripts/directives/easy-zoom.js"></script>
-	<script src="scripts/directives/legacy-link.js"></script>
-	<script src="scripts/directives/show-on-dropdown-hover.js"></script>
-	<script src="scripts/directives/scroll-to-anchor.js"></script>
-	<script src="scripts/directives/paginator.js"></script>
-	<script src="scripts/directives/search-form.js"></script>
-
-	<script src="scripts/filters/cache-bust.js"></script>
-	<script src="scripts/filters/html.js"></script>
-	<script src="scripts/filters/legacy-linkify.js"></script>
-	<script src="scripts/filters/seo-friendly.js"></script>
 
 	<!--<script src="scripts/services/api-provider.js"></script>-->
-	<script src="scripts/services/app-config.js"></script>
 	<script src="scripts/services/content-mgr.js"></script>
-	<script src="scripts/services/site-config.js"></script>
-	<script src="scripts/services/cart.js"></script>
-	<script src="scripts/services/storage.js"></script>
-	<script src="scripts/services/theme-settings.js"></script>
-	<script src="scripts/services/token-generator.js"></script>
-	<script src="scripts/services/translate-provider.js"></script>
 	<!-- endbuild -->
 
 </body>

@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 				tasks: ['wiredep']
 			},
 			html: {
-				files: ['<%= yeoman.app %>/*.html', '<%= yeoman.app %>/views/{,*/}*.html'],
+				files: ['<%= yeoman.app %>/*.html', '<%= yeoman.app %>/views/**/*.html'],
 				tasks: ['htmlmin:server'],
 				options: {
 					livereload: true
@@ -113,11 +113,11 @@ module.exports = function(grunt) {
 					livereload: '<%= connect.options.livereload %>'
 				},
 				files: [
-					'<%= yeoman.app %>/{,*/}*.html',
-					'.tmp/styles/{,*/}*.css',
-					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-					'<%= yeoman.app %>/translations/{,*/}*.json',
-					'<%= yeoman.app %>/settings/{,*/}*'
+						'<%= yeoman.app %>/{,*/}*.html',
+						'.tmp/styles/{,*/}*.css',
+						'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+						'<%= yeoman.app %>/translations/{,*/}*.json',
+						'<%= yeoman.app %>/settings/{,*/}*'
 				]
 			}
 		},
@@ -201,15 +201,15 @@ module.exports = function(grunt) {
 		clean: {
 			dist: {
 				files: [
-					{
-						dot: true,
-						src: [
-							'.tmp',
-							'<%= yeoman.dist %>/*',
-							'!<%= yeoman.dist %>/.git*'//,
+						{
+							dot: true,
+							src: [
+								'.tmp',
+								'<%= yeoman.dist %>/*',
+								'!<%= yeoman.dist %>/.git*'//,
 //								'<%= yeoman.app %>/scripts/config.js'
-						]
-					}
+							]
+						}
 				]
 			},
 			configure: {
@@ -232,12 +232,12 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: [
-					{
-						expand: true,
-						cwd: '.tmp/styles/',
-						src: '{,*/}*.css',
-						dest: '.tmp/styles/'
-					}
+						{
+							expand: true,
+							cwd: '.tmp/styles/',
+							src: '{,*/}*.css',
+							dest: '.tmp/styles/'
+						}
 				]
 			}
 		},
@@ -539,7 +539,7 @@ module.exports = function(grunt) {
 			'clean:server',
 			'wiredep',
 			'compass:server',
-					'configure:' + target,
+			'configure:' + target,
 			'autoprefixer',
 			'htmlmin:server',
 			'connect:livereload',
@@ -568,7 +568,7 @@ module.exports = function(grunt) {
 			'clean:dist',
 			'clean:configure',
 			'newer:jshint:all',
-					'configure:' + target,
+			'configure:' + target,
 			'test',
 			'wiredep',
 			'useminPrepare',
