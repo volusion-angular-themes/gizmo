@@ -77,7 +77,7 @@
 						&nbsp;{{product.availability.description}}
 					</div>
 					<div class="th-product-details__description" itemprop="description"
-							 data-ng-bind-html="product.descriptions.short | legacyLinkify | html">
+							 data-ng-bind-html="product.descriptions.short | vnLegacyLinkify | html">
 					</div>
 
 					<div class="row">
@@ -154,14 +154,14 @@
 												<div class="th-feature">
 													<h3 class="th-feature__title" data-translate="product.description">Description</h3>
 													<p class="th-feature__description" itemprop="description"
-														 data-ng-bind-html="product.descriptions.detail | legacyLinkify | html"></p>
+														 data-ng-bind-html="product.descriptions.detail | vnLegacyLinkify | html"></p>
 												</div>
 											</li>
 											<li class="th-features-list__item" data-ng-show="product.descriptions.features">
 												<div class="th-feature">
 													<h3 class="th-feature__title" data-translate="product.features">Features</h3>
 													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.features | legacyLinkify | html"></p>
+														 data-ng-bind-html="product.descriptions.features | vnLegacyLinkify | html"></p>
 												</div>
 											</li>
 										</ul>
@@ -183,7 +183,7 @@
 													<h3 class="th-feature__title" data-translate="product.techSpecs">Tech Specs</h3>
 
 													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.techSpecs | legacyLinkify | html"></p>
+														 data-ng-bind-html="product.descriptions.techSpecs | vnLegacyLinkify | html"></p>
 												</div>
 											</li>
 											<li class="th-features-list__item" data-ng-show="product.descriptions.features">
@@ -191,7 +191,7 @@
 													<h3 class="th-feature__title" data-translate="product.extendedInfo">Extended Info</h3>
 
 													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.extendedInfo | legacyLinkify | html"></p>
+														 data-ng-bind-html="product.descriptions.extendedInfo | vnLegacyLinkify | html"></p>
 												</div>
 											</li>
 										</ul>
