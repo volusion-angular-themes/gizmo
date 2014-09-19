@@ -3,42 +3,49 @@
 		 data-ng-show="snapMenuState"
 		 data-ng-controller="HeaderCtrl">
 
-	<div class="hidden-md hidden-lg th-search th-search--mobile-menu"
+	<div class="hidden-md hidden-lg container-fluid th-search--mobile-menu"
 			 ng-controller="SearchCtrl">
-		<form class="th-search__form"
-					role='search'
-					name="frmSearch"
-					data-ng-submit="doSearch()"
-					novalidate>
-			<input type="text"
-						 class="th-search__input"
-						 placeholder="Search..."
-						 data-ng-model='searchLocal'>
-			<button type="submit"
-							class="th-search__submit"
-							data-ng-click="doSearch()">
-				<span class="glyphicon glyphicon-search th-search__icon"></span>
-			</button>
-		</form>
+	<div class="row">
+			<div class="col-xs-12">
+			<form class="form-inline th-search--mobile-menu__form"
+							role="search"
+							name="frmSearch"
+							data-ng-submit="doSearch()"
+							novalidate>
+					<label class="sr-only" for="search">Search</label>
+					<input type="text" id="search"
+								 class="form-control th-search--mobile-menu__input"
+								 placeholder="Search..."
+								 data-ng-model='searchLocal'>
+					<button type="submit"
+									class="th-search--mobile-menu__submit"
+									data-ng-click="doSearch()">
+						<span class="glyphicon glyphicon-search th-search--mobile-menu__icon"></span>
+					</button>
+				</form>
+			</div>
+		</div>
 	</div>
-	<div class="th-mobile-menu__list">
-		<ul class="nav navbar-nav">
-			<li class="th-mobile-menu__list__item th-mobile-menu__list__header">Categories</li>
-			<li class="dropdown th-mobile-menu__item" ng-repeat="category in smartCategories">
-				<a href="#" class="dropdown-toggle navbar-link th-dropdown-toggle th-mobile-menu__list__link" ng-if="category.subCategories.length" data-toggle="dropdown">
-					{{category.name}} <span class="pull-right caret"></span>
+	<div class="th-mobile-menu__category-list">
+		<ul class="nav navbar-nav list-unstyled">
+			<li class="dropdown" ng-repeat="category in smartCategories">
+				<a href="#" class="dropdown-toggle navbar-link th-mobile-menu__category-list__link"
+				   ng-if="category.subCategories.length"
+				   data-toggle="dropdown">
+					{{category.name}}
+					<span class="glyphicon pull-right"></span>
 				</a>
-				<a data-ng-href="{{category.url}}" class="navbar-link th-dropdown-toggle th-mobile-menu__list__link" ng-if="!category.subCategories.length">
+				<a data-ng-href="{{category.url}}" class="navbar-link th-mobile-menu__category-list__link" ng-if="!category.subCategories.length">
 					{{category.name}}
 				</a>
 				<ul class="dropdown-menu" data-ng-if="category.subCategories.length">
 					<li>
-						<a data-ng-href="{{category.url}}" class="th-mobile-menu__list__link">
+						<a data-ng-href="{{category.url}}" class="th-mobile-menu__category-list__sublink">
 							All {{category.name}}
 						</a>
 					</li>
 					<li data-ng-repeat="subCategory in category.subCategories">
-						<a class="th-mobile-menu__list__link"
+						<a class="th-mobile-menu__category-list__sublink"
 							 data-ng-href="{{subCategory.url}}">{{subCategory.name}}</a>
 					</li>
 				</ul>
