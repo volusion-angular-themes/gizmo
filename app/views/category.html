@@ -1,10 +1,15 @@
 <div class="container-fluid container-fluid--nopadding">
-	<div data-ng-if="category.bannerImgUrl" class="th-category-graphic" style="background-image: url({{category.bannerImgUrl}})">
+	<div data-ng-if="category.bannerImgUrl"
+	     class="th-category-graphic"
+	     style="background-image: url({{category.bannerImgUrl}})">
 		<div class="container">
 			<div class="th-category-graphic__title">{{category.name}}</div>
 		</div>
 	</div>
-	<div data-ng-if="!category.bannerImgUrl" class="th-category-graphic" style="background-image: url('images/theme/category/cg-temp.jpg')">
+	<!--TODO Look into refactoring so not using inline styles-->
+	<div data-ng-if="!category.bannerImgUrl"
+	     class="th-category-graphic"
+	     style="background-image: url('images/theme/category/category-header-bg.jpg')">
 		<div class="container">
 			<div class="th-category-graphic__title">{{category.name}}</div>
 		</div>
