@@ -4,18 +4,25 @@
 	margin : 0;
 
 	@include respond-to(md-and-up) {
-		min-height : 73px;
+		min-height : 73px
 	}
 
-	.th-menu-container {
-
-	}
-
-	// TODO change border color in theme variables
 	&__toggle {
-		float        : left;
-		margin-right : 0;
-		padding      : 8px 10px;
+		background-color : map-get($colors, bg--dark) !important;
+		border           : 0;
+		border-right     : 1px solid map-get($colors, border--dark) !important;
+		border-radius    : 0;
+		margin           : 0;
+		position         : absolute;
+		top              : 0;
+		left             : 0;
+		padding          : 18px 21px;
+
+		&:hover {
+			.icon-bar {
+				@extend %opacity-75
+			}
+		}
 	}
 
 	&__menu {
@@ -31,7 +38,7 @@
 			}
 
 			.caret {
-				margin-left: 8px;
+				margin-left : 8px;
 			}
 		}
 	}
