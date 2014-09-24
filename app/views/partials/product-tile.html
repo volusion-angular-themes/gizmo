@@ -7,10 +7,10 @@
 
 		<div class="th-product-tile__price">
 			<span data-ng-show="product.pricing.regularPrice > 0">
-				<span data-ng-class="{strike: product.pricing.salePrice > 0}">{{product.pricing.regularPrice | currency}}</span>
+				<span data-ng-class="{strike: product.pricing.salePrice > 0}" ng-bind-html="product.pricing.regularPrice | vnFormattedCurrency"></span>
 			</span>
 			<span class="th-product-tile__price--sale" data-ng-show="product.pricing.salePrice > 0">
-				<span>{{product.pricing.salePrice | currency}}</span>
+				<span ng-bind-html="product.pricing.salePrice | vnFormattedCurrency"></span>
 			</span>
 		</div>
 		<div class="th-tile-details th-product-tile__details">

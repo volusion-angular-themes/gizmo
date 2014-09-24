@@ -51,11 +51,11 @@
 					<div class="th-product-details__name">{{product.name}}</div>
 					<div class="th-product-details__price">
 						<span data-ng-show="product.pricing.regularPrice > 0">
-							<span
-									data-ng-class="{strike: product.pricing.salePrice > 0}">{{product.pricing.regularPrice | currency}}</span>
+							<span data-ng-class="{strike: product.pricing.salePrice > 0}"
+							      ng-bind-html="product.pricing.regularPrice | vnFormattedCurrency"></span>
 						</span>
 						<span class="th-product-details__price--sale" data-ng-show="product.pricing.salePrice > 0">
-							<span>{{product.pricing.salePrice | currency}}</span>
+							<span ng-bind-html="product.pricing.salePrice | vnFormattedCurrency"></span>
 						</span>
 					</div>
 					<!--<div class="th-product-details__model"><b>Model:</b> Lenovo Yoga</div>-->
@@ -64,8 +64,8 @@
 						<span class="th-review-stars">
 							<span class="th-reviews__avg">
 								<span data-vn-rating rating-value="ratingsAndReviews.data.avgRating"
-										 maximum="ratingsAndReviews.data.maxRating"
-										 editable="isEditable" title=""></span>
+										  maximum="ratingsAndReviews.data.maxRating"
+										  editable="isEditable" title=""></span>
 							</span>
 						</span>
 						<!-- TODO Link this with the reviews tab // data-ng-click="tabs[2].active = true"-->
@@ -113,7 +113,6 @@
 									</span>
 							</div>
 						</div>
-
 						<div class="th-product-details__cta col-md-6">
 							<button class="btn btn-primary btn-lg btn-block th-product-details__button"
 											data-ng-class="{ '-disabled' : buttonDisabled }"
@@ -235,18 +234,15 @@
 						<div class="th-icon__foreground"></div>
 					</div>
 				</a>
-
 				<div class="th-slider__slide" data-ng-repeat="product in relatedProducts | filter: '!' + product.id">
 					<div class="th-product-slide">
 						<a data-ng-href="{{ product.url }}" class="th-product-slide__image">
-							<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive"
-									 alt="{{ product.name }}">
+							<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="{{ product.name }}">
 						</a>
-
 						<div class="th-product-slide__name">
 							<a data-ng-href="{{ product.url }}">{{product.name}}</a>
 						</div>
-						<div class="th-product-slide__price">{{product.pricing.calculatedPrice | currency}}</div>
+						<div class="th-product-slide__price" ng-bind-html="product.pricing.calculatedPrice | vnFormattedCurrency"></div>
 					</div>
 				</div>
 			</div>

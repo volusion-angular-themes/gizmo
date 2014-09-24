@@ -30,6 +30,7 @@
 
 		&--sale {
 			color : $brand-primary;
+			margin-left : 5px;
 		}
 
 		.strike {
@@ -37,13 +38,15 @@
 			position : relative;
 
 			&:before {
-				position   : absolute;
+				@include rotate(-20deg);
+				border-top : 2px solid $text-color;
 				content    : "";
 				left       : 0;
+				margin-left : -5px;
+				margin-right : -5px;
+				position   : absolute;
 				top        : 50%;
 				right      : 0;
-				border-top : 2px solid $text-color;
-				@include rotate(-10deg);
 			}
 		}
 	}
@@ -60,8 +63,8 @@
 	}
 
 	&__stock-status {
-		border       : 1px solid $legend-border-color;
-		border-width : 1px 0;
+		border       : 1px 0 solid $legend-border-color;
+//		border-width : 1px 0;
 		padding      : 10px 0;
 	}
 
