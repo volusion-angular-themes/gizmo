@@ -1,4 +1,5 @@
-@import "bootstrap/type";
+// Declare Custom Fonts Here (update any .svg file's id to 'font'!)
+// Set to font's file name
 
 @include app-font('Montserrat');
 @include app-font('Montserrat-Bold');
@@ -21,3 +22,12 @@
 @include app-font('Source-Sans-Pro-Bold-Italic');
 
 @include app-font('Novecentosanswide-Bold');
+
+
+// Custom Font Variables
+$font-family-buttons:    "Montserrat-Bold";
+$font-family-main-menu:  "Roboto-Condensed-Bold";
+
+// $font-family-glyphs: 				"Glyphicons Halflings";
+
+// Primary Fonts are assigned to Bootstrap variables. See file '_bootstrap-style.scss'

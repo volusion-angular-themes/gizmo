@@ -26,10 +26,10 @@
 
 	&__price {
 		@include font($size : 2.9rem, $family : Roboto-Light);
-		color : map-get($colors, brand-primary);
+		color : $brand-primary;
 
 		&--sale {
-			color : map-get($colors, brand-primary);
+			color : $brand-primary;
 		}
 
 		.strike {

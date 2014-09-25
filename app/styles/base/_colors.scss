@@ -29,7 +29,7 @@ $userDefined: map-merge($userDefined, (
 
   text--light:                        lighten(map-get($userDefined, text), 40),
   text--lighter:                      lighten(map-get($userDefined, text), 85),
-  btn-text--light:                    lighten(map-get($userDefined, btn-text), 40),
+  btn-text--light:                    lightlien(map-get($userDefined, btn-text), 40),
   border--light:                      lighten(map-get($userDefined, border), 40),
   border--dark:                       darken(map-get($userDefined, border), 64%),
   placeholder--focus:                 lighten(map-get($userDefined, placeholder), 56),

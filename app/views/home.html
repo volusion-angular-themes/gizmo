@@ -16,13 +16,9 @@
 </div>
 
 <div class="container-fluid">
-	<div class="th-now-trending">
-		<div class="row">
-			<div class="col-sm-6 col-md-3 th-no-padding" data-ng-repeat="product in featuredProducts">
-				<a ng-href="{{product.url}}">
-					<div data-ng-include=" 'views/partials/product-tile.html' "></div>
-				</a>
-			</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-3 th-no-padding" data-ng-repeat="product in featuredProducts"
+				 data-ng-include=" 'views/partials/product-tile.html' ">
 		</div>
 	</div>
 </div>
@@ -32,7 +28,6 @@
 		<div class="th-promo__image"><img src="/images/demo/lenovo.jpg" class="img-responsive" alt=""></div>
 		<header class="th-promo__header">
 			<h1 class="th-promo__title">Lenovo</h1>
-
 			<h2 class="th-promo__body">Thinkpad Yoga Starting at $400</h2>
 		</header>
 		<footer>

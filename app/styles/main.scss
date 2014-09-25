@@ -1,59 +1,17 @@
 // Core variables and mixins
 @import 'compass';
-@import 'style-guide/theme-vars'; // Custom Theme Variables & Configuration
-@import 'core/base/mixins';
+@import 'base/helpers';
+
+// Import our fonts and customized Bootstrap variables
+@import 'base/fonts';
+// @import 'base/sprites';
+@import 'base/bootstrap-variables';
 
 // Import Bootstrap-Sass from Bower - we don't edit these
 @import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 
-// Core CSS
-@import 'core/scaffolding';
-@import 'core/type';
-@import 'core/grid';
-@import 'core/buttons';
+// Import all 'th' (theme) stylesheets
+@import 'th-import';
 
-// Components
-@import 'components/navs';
-@import 'components/navbar';
-@import 'components/breadcrumbs';
-
-// Volusion
-@import 'components/vn/dropzone';
-@import 'components/vn/faceted-search';
-@import 'components/vn/product-options';
-@import 'components/vn/showcase';
-@import 'components/vn/sort-search';
-
-// Theme Components
-@import 'components/th/helpers';
-@import 'components/th/sprites-icons';
-@import 'components/th/sprites-social';
-@import 'components/th/sprites-brands';
-@import 'components/th/sprites-stars';
-@import 'components/th/search';
-@import 'components/th/cart-summary';
-@import 'components/th/checkout';
-@import 'components/th/footer';
-@import 'components/th/elist';
-@import 'components/th/social';
-@import 'components/th/promo';
-@import 'components/th/featured';
-@import 'components/th/product-tile';
-@import 'components/th/tile-details';
-@import 'components/th/tile-options';
-@import 'components/th/slider';
-@import 'components/th/top-bar';
-@import 'components/th/features-list';
-@import 'components/th/feature';
-@import 'components/th/mobile-menu';
-@import 'components/th/product-slide';
-@import 'components/th/product-panels';
-@import 'components/th/product-views';
-@import 'components/th/product-details';
-@import 'components/th/category-graphic';
-@import 'components/th/reviews';
-@import 'components/th/review-stars';
-@import 'components/th/social-share';
-
-// Theme - Gizmo
-@import 'core/forms';
+// Customize Bootstrap default styling
+@import 'base/bootstrap-style';

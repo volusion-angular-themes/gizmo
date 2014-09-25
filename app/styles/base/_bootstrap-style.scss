@@ -1,0 +1,142 @@
+//
+// Gizmo by Volusion
+//
+// ========================================================================
+
+body {
+	font-size   : 1.4rem;
+}
+
+a, a:hover, a:active {
+	text-decoration : none;
+}
+
+// Necessary for Angular-UI-Bootstrap Elements
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+
+.container-fluid {
+	&--nopadding {
+		padding : 0;
+	}
+}
+
+.fa.fa-star, .fa.fa-star-o { color: gold }
+
+
+// Alerts =================================================================
+
+// Breadcrumbs ============================================================
+
+// Buttons ================================================================
+
+.th-btn--dark {
+	@extend %font-smoothing;
+	background-color : map-get($colors, bg--dark);
+	color            : map-get($colors, text--lighter);
+
+	&:hover {
+		background-color : map-get($colors, brand-primary);
+		color            : map-get($colors, text--lighter);
+	}
+}
+
+.btn {
+	@extend %animate-all;
+	@include font($size : 1.1rem,$line-height : 2.5,$family : ($font-family-buttons));
+	text-transform : uppercase;
+	letter-spacing : 0.2rem;
+	border-width   : 2px;
+
+	&.btn-xs {
+		font-size : 0.7rem;
+	}
+
+	&.btn-sm {
+		font-size : 0.9rem;
+	}
+
+	&.btn-lg {
+		font-size : 1.2rem;
+	}
+
+	&.btn-primary,
+	&.btn-success {
+		@extend %font-smoothing;
+	}
+}
+
+
+// Dropdowns ==============================================================
+
+.dropdown-menu {
+	@extend %font-smoothing;    // use if dropdowns have dark background
+}
+
+// Forms ==================================================================
+
+form {
+	input[type="email"], input[type="text"] {
+		@extend %placeholder-text;
+
+		&:focus {
+			@extend %placeholder-text-focus;
+		}
+	}
+}
+
+// List groups ============================================================
+
+// Input groups ============================================================
+
+// Navbar =================================================================
+
+	// View _navbar.scss for navbar styles
+
+// Navs ===================================================================
+
+.nav.nav-tabs {
+	> li {
+		> a {
+			@extend %no-border-radius, %tab-shadow;
+			@include font($size : 1.4rem, $family : Roboto-Condensed-Bold);
+			border-color   : map-get($colors, border);
+			text-transform : uppercase;
+			margin-right   : 0;
+			margin-left    : 2px;
+
+			&:hover {
+				color : map-get($colors, link-hover);
+				@include background($color : map-get($colors, body-bg));
+			}
+
+			@include respond-to(sm-and-up) {
+				padding     : 20px 55px;
+				margin-left : 25px;
+			}
+
+			@include respond-to(md-and-up) {
+				padding-left  : 75px;
+				padding-right : 75px;
+			}
+		}
+
+		&:first-child > a {
+			margin-left : 0;
+		}
+
+		&.active {
+			> a {
+				@include background($color : map-get($colors, body-bg));
+				border-bottom-color : map-get($colors, body-bg);
+				color               : map-get($colors, link-active);
+			}
+		}
+	}
+}
+
+
+// Page Header ============================================================
+
+// Panels =================================================================
