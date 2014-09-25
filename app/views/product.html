@@ -50,13 +50,13 @@
 					<div ng-if="product.productManufacturer" class="th-product-details__manufacturer">{{product.productManufacturer}}</div>
 					<div class="th-product-details__name">{{product.name}}</div>
 					<div class="th-product-details__price">
-							<span data-ng-show="product.pricing.regularPrice > 0">
-								<span
-										data-ng-class="{strike: product.pricing.salePrice > 0}">{{product.pricing.regularPrice | currency}}</span>
-							</span>
-							<span class="th-product-details__price--sale" data-ng-show="product.pricing.salePrice > 0">
-								<span>{{product.pricing.salePrice | currency}}</span>
-							</span>
+						<span data-ng-show="product.pricing.regularPrice > 0">
+							<span
+									data-ng-class="{strike: product.pricing.salePrice > 0}">{{product.pricing.regularPrice | currency}}</span>
+						</span>
+						<span class="th-product-details__price--sale" data-ng-show="product.pricing.salePrice > 0">
+							<span>{{product.pricing.salePrice | currency}}</span>
+						</span>
 					</div>
 					<!--<div class="th-product-details__model"><b>Model:</b> Lenovo Yoga</div>-->
 					<div class="th-product-details__product-code"><b>SKU:</b> {{product.code}}</div>
@@ -90,51 +90,45 @@
 							</div>
 						</div>
 					</div>
-				<div class="row">
-					<div class="col-md-6 th-product-details__quantity">
-						<div data-vn-block="th-qty-counter" class="input-group">
-								<span class="input-group-btn">
-									<button data-vn-element="btn" class="btn btn-default"
-													data-ng-click="decrementQty()"
-													data-ng-disabled="cartItem.qty <= 1">
-										<span class="glyphicon glyphicon-minus"></span>
-									</button>
-								</span>
-							<input data-vn-element="input"
-										 class="form-control"
-										 data-ng-model="cartItem.qty"
-										 data-ng-change="changeQty()">
-								<span class="input-group-btn">
-									<button data-vn-element="btn"
-													class="btn btn-default"
-													data-ng-click="incrementQty()">
-										<span class="glyphicon glyphicon-plus"></span>
-									</button>
-								</span>
+					<div class="row">
+						<div class="col-md-6 th-product-details__quantity">
+							<div data-vn-block="th-qty-counter" class="input-group">
+									<span class="input-group-btn">
+										<button data-vn-element="btn" class="btn btn-default"
+														data-ng-click="decrementQty()"
+														data-ng-disabled="cartItem.qty <= 1">
+											<span class="glyphicon glyphicon-minus"></span>
+										</button>
+									</span>
+								<input data-vn-element="input"
+											 class="form-control"
+											 data-ng-model="cartItem.qty"
+											 data-ng-change="changeQty()">
+									<span class="input-group-btn">
+										<button data-vn-element="btn"
+														class="btn btn-default"
+														data-ng-click="incrementQty()">
+											<span class="glyphicon glyphicon-plus"></span>
+										</button>
+									</span>
+							</div>
+						</div>
+
+						<div class="th-product-details__cta col-md-6">
+							<button class="btn btn-primary btn-lg btn-block th-product-details__button"
+											data-ng-class="{ '-disabled' : buttonDisabled }"
+											data-translate="product.addToCart"
+											data-ng-click="addToCart()"
+											data-popover="{{ popoverText }}"
+											data-popover-placement="bottom"
+											data-analytics-category="element click"
+											data-analytics-label="Add to Cart"
+											data-analytics-location="body-product"
+											data-analytics-description="Add to Cart Button">
+								Add to Cart
+							</button>
 						</div>
 					</div>
-
-					<div class="th-product-details__cta col-md-6">
-
-
-								<button class="btn btn-primary btn-lg btn-block th-product-details__button"
-												data-ng-class="{ '-disabled' : buttonDisabled }"
-												data-translate="product.addToCart"
-												data-ng-click="addToCart()"
-												data-popover="{{ popoverText }}"
-												data-popover-placement="bottom"
-												data-analytics-category="element click"
-												data-analytics-label="Add to Cart"
-												data-analytics-location="body-product"
-												data-analytics-description="Add to Cart Button">
-									Add to Cart
-								</button>
-
-
-					</div>
-
-				</div>
-
 				</div>
 			</div>
 		</div>
@@ -144,116 +138,90 @@
 		<div class="th-product-panels">
 			<tabset justified="true">
 				<tab heading="Features">
-					<div class="th-product-panels__panel">
-						<div class="th-product-features">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-12">
-										<ul class="th-features-list">
-											<li class="th-features-list__item" data-ng-show="product.descriptions.detail">
-												<div class="th-feature">
-													<h3 class="th-feature__title" data-translate="product.description">Description</h3>
-													<p class="th-feature__description" itemprop="description"
-														 data-ng-bind-html="product.descriptions.detail | vnLegacyLinkify | html"></p>
-												</div>
-											</li>
-											<li class="th-features-list__item" data-ng-show="product.descriptions.features">
-												<div class="th-feature">
-													<h3 class="th-feature__title" data-translate="product.features">Features</h3>
-													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.features | vnLegacyLinkify | html"></p>
-												</div>
-											</li>
-										</ul>
-									</div>
+					<div class="container-fluid th-product-panels__panel">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="th-product-feature" data-ng-show="product.descriptions.detail">
+									<h3 class="th-product-feature__title" data-translate="product.description">Description</h3>
+									<p class="th-product-feature__description" itemprop="description"
+										 data-ng-bind-html="product.descriptions.detail | vnLegacyLinkify | html"></p>
+								</div>
+								<div class="th-product-feature" data-ng-show="product.descriptions.features">
+									<h3 class="th-product-feature__title" data-translate="product.features">Features</h3>
+									<p class="th-product-feature__description"
+									   data-ng-bind-html="product.descriptions.features | vnLegacyLinkify | html"></p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</tab>
 				<tab heading="Technical Specs">
-					<div class="th-product-panels__panel">
-						<div class="th-product-features">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-12">
-										<ul class="th-features-list">
-											<li class="th-features-list__item" data-ng-show="product.descriptions.techSpecs">
-												<div class="th-feature">
-													<h3 class="th-feature__title" data-translate="product.techSpecs">Tech Specs</h3>
-
-													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.techSpecs | vnLegacyLinkify | html"></p>
-												</div>
-											</li>
-											<li class="th-features-list__item" data-ng-show="product.descriptions.features">
-												<div class="th-feature">
-													<h3 class="th-feature__title" data-translate="product.extendedInfo">Extended Info</h3>
-
-													<p class="th-feature__description"
-														 data-ng-bind-html="product.descriptions.extendedInfo | vnLegacyLinkify | html"></p>
-												</div>
-											</li>
-										</ul>
-									</div>
+					<div class="container-fluid th-product-panels__panel">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="th-product-feature" data-ng-show="product.descriptions.techSpecs">
+									<h3 class="th-product-feature__title" data-translate="product.techSpecs">Tech Specs</h3>
+									<p class="th-product-feature__description"
+									   data-ng-bind-html="product.descriptions.techSpecs | vnLegacyLinkify | html"></p>
+								</div>
+								<div class="th-product-feature" data-ng-show="product.descriptions.extendedInfo">
+									<h3 class="th-product-feature__title" data-translate="product.extendedInfo">Extended Info</h3>
+									<p class="th-product-feature__description"
+									   data-ng-bind-html="product.descriptions.extendedInfo | vnLegacyLinkify | html"></p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</tab>
-				<tab heading="Reviews">
-					<div class="th-product-panels__panel">
-						<div class="th-product-features">
-							<div class="container-fluid">
-								<div class="row">
-									<!-- REVIEWS -->
-									<div class="th-reviews" data-ng-if="config.general.enableCustomerReviews">
-										<a legacy-link="/reviewnew.asp?productcode={{product.code}}" class="btn btn-primary th-reviews__submit-btn" data-translate="product.writeAReview">Write a Review</a>
-										<div class="th-reviews__summary col-xs-12 clearfix">
-										<span class="th-reviews__heading" data-translate="product.reviews">Reviews</span>
-										<span class="th-reviews__totals" data-ng-if="ratingsAndReviews.data.reviews.length > 0">
-											<span class="th-reviews__avg">
-												<div data-vn-rating rating-value="ratingsAndReviews.data.avgRating"
-														 maximum="ratingsAndReviews.data.maxRating"
-														 editable="isEditable" title=""></div>
-											</span>
-											<span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="th-reviews__count"><meta itemprop="worstRating" content="1">This product has received <span itemprop="ratingValue" data-ng-bind="ratingsAndReviews.data.avgRating"></span> out of <span itemprop="bestRating" data-ng-bind="ratingsAndReviews.data.maxRating"></span> stars based on <span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span> customer reviews</span>
+				<tab heading="Reviews" data-ng-if="config.general.enableCustomerReviews">
+					<div class="container-fluid th-product-panels__panel">
+						<div class="th-reviews" >
+							<div class="row th-reviews__summary">
+								<div class="col-sm-8">
+									<span class="th-reviews__heading" data-translate="product.reviews">Reviews</span>
+									<span class="th-reviews__totals" data-ng-if="ratingsAndReviews.data.reviews.length > 0">
+										<span class="th-reviews__avg">
+											<div data-vn-rating rating-value="ratingsAndReviews.data.avgRating"
+											     maximum="ratingsAndReviews.data.maxRating"
+											     editable="isEditable" title=""></div>
 										</span>
-										<div class="th-reviews__count" data-ng-if="ratingsAndReviews.data.reviews.length <= 0">Be the first to review!</div>
-										</div>
-
-										<div data-ng-if="ratingsAndReviews.data.reviews.length > 0" class="col-sm-6 th-reviews clearfix" itemprop="review" itemscope itemtype="http://schema.org/Review" data-ng-repeat="review in ratingsAndReviews.data.reviews">
-											<div class="th-reviews__helpful"><span data-ng-bind="review.helpful"></span> people found the following review helpful</div>
-											<div class="th-reviews__ratings">
-												<div class="th-reviews__star-group"
-														 data-vn-rating rating-value="review.rating"
-														 maximum="ratingsAndReviews.data.maxRating"
-														 title="" editable="isEditable"></div>
-												<span class="th-rating-text" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"><meta itemprop="worstRating" content="1"><span itemprop="ratingValue" data-ng-bind="review.rating"></span> out of <span itemprop="bestRating" data-ng-bind="ratingsAndReviews.data.maxRating"></span></span> By <span itemprop="author" class="th-review__ratings__author" data-ng-bind="review.nameOfReviewer || 'Anonymous'"></span>
-												<span itemprop="datePublished" class="th-reviews__date hidden-xs" data-ng-bind="review.date"></span>
-											</div>
-											<div itemprop="name" class="th-reviews__title" data-ng-bind="review.title"></div>
-											<div itemprop="description" class="th-reviews__body" data-ng-bind="review.body">
-											</div>
-											<div class="th-reviews__helpful">
-												<span data-translate="product.wasThisReviewHelpfulToYou">Was this review helpful for you?</span>
-												<a legacy-link="/reviewhelpful.asp?ProductCode={{product.code}}&ID={{review.id}}&yes=yes" class="btn btn-default" data-translate="common.yes">Yes</a>
-												<a legacy-link="/reviewhelpful.asp?ProductCode={{product.code}}&ID={{review.id}}&yes=no" class="btn btn-default" data-translate="common.no">No</a>
-											</div>
-										</div>
-									</div><!-- /reviews -->
+										<span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="th-reviews__count"><meta itemprop="worstRating" content="1">This product has received <span itemprop="ratingValue" data-ng-bind="ratingsAndReviews.data.avgRating"></span> out of <span itemprop="bestRating" data-ng-bind="ratingsAndReviews.data.maxRating"></span> stars based on <span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span> customer reviews</span>
+									</span>
+									<div class="th-reviews__count" data-ng-if="ratingsAndReviews.data.reviews.length <= 0">Be the first to review!</div>
+								</div>
+								<div class="col-sm-4">
+									<a legacy-link="/reviewnew.asp?productcode={{product.code}}" class="btn btn-primary th-reviews__submit-btn" data-translate="product.writeAReview">Write a Review</a>
 								</div>
 							</div>
-						</div>
+							<div class="row">
+								<div data-ng-if="ratingsAndReviews.data.reviews.length > 0" class="col-sm-6 th-reviews clearfix" itemprop="review" itemscope itemtype="http://schema.org/Review" data-ng-repeat="review in ratingsAndReviews.data.reviews">
+									<div class="th-reviews__helpful"><span data-ng-bind="review.helpful"></span> people found the following review helpful</div>
+									<div class="th-reviews__ratings">
+										<div class="th-reviews__star-group"
+												 data-vn-rating rating-value="review.rating"
+												 maximum="ratingsAndReviews.data.maxRating"
+												 title="" editable="isEditable"></div>
+										<span class="th-rating-text" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"><meta itemprop="worstRating" content="1"><span itemprop="ratingValue" data-ng-bind="review.rating"></span> out of <span itemprop="bestRating" data-ng-bind="ratingsAndReviews.data.maxRating"></span></span> By <span itemprop="author" class="th-review__ratings__author" data-ng-bind="review.nameOfReviewer || 'Anonymous'"></span>
+										<span itemprop="datePublished" class="th-reviews__date hidden-xs" data-ng-bind="review.date"></span>
+									</div>
+									<div itemprop="name" class="th-reviews__title" data-ng-bind="review.title"></div>
+									<div itemprop="description" class="th-reviews__body" data-ng-bind="review.body"></div>
+									<div class="th-reviews__helpful">
+										<span data-translate="product.wasThisReviewHelpfulToYou">Was this review helpful for you?</span>
+										<a legacy-link="/reviewhelpful.asp?ProductCode={{product.code}}&ID={{review.id}}&yes=yes" class="btn btn-default" data-translate="common.yes">Yes</a>
+										<a legacy-link="/reviewhelpful.asp?ProductCode={{product.code}}&ID={{review.id}}&yes=no" class="btn btn-default" data-translate="common.no">No</a>
+									</div>
+								</div>
+							</div>
+						</div><!-- /th-reviews -->
 					</div>
 				</tab>
 			</tabset>
 		</div>
 	</div>
 
-	<hr>
-
 	<div class="hidden-xs container-fluid container-fluid--nopadding">
+		<hr>
 		<div class="th-slider">
 			<div class="th-slider__title">Our Customers also liked:</div>
 			<div class="th-slider__belt">
