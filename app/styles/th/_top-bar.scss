@@ -1,16 +1,6 @@
 .th-top-bar {
-	background-color : map-get($colors, bg--lighter);
+	background-color : $gray-bg--lighter;
 	padding          : 20px 0;
-
-	.breadcrumb {
-//  margin: 0;
-		padding : 0;
-
-		a:hover {
-			color           : $text-color;
-			text-decoration : underline;
-		}
-	}
 
 	h1 {
 		@include respond-to(xs) {
@@ -32,8 +22,8 @@
 	&--category {
 		// @extend %tab-shadow; TODO consider styling this more
 		@include font($size : 1.6rem,$family : (Roboto-Light));
-		border-top     : 1px solid map-get($colors, border);
-		border-left     : 1px solid map-get($colors, border);
+		border-top     : 1px solid $legend-border-color;
+		border-left     : 1px solid $legend-border-color;
 		padding: 20px;
 
 		@include respond-to(xs) {

@@ -1,18 +1,18 @@
 .th-footer {
 	@extend %font-smoothing;
-	background-color : map-get($colors, bg--darker);
-	color            : map-get($colors, white);
+	background-color : $gray-bg--darker;
+	color            : white;
 
 	a {
-		color : map-get($colors, white);
+		color : white;
 		&:hover { color: $link-hover-color };
 	}
 
 	&__newsletter-block {
-		background-color : map-get($colors, bg--dark);
+		background-color : $gray-bg--dark;
 
 		@include respond-to(md-and-up) {
-			border-left : 1px solid map-get($colors, border--dark);
+			border-left : 1px solid $border--dark;
 		}
 
 	}
@@ -43,7 +43,7 @@
 		padding : 20px 0;
 
 		@include respond-to(md-and-up) {
-			border-top : 1px solid map-get($colors, border--dark);
+			border-top : 1px solid $border--dark;
 			padding    : 15px 0;
 		}
 		&__text {

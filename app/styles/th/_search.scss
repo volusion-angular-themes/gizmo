@@ -1,11 +1,11 @@
 .th-search {
 	@extend %inline-block;
-	background-color : map-get($colors, bg--dark);
-	border-left      : 1px solid map-get($colors, border--dark);
+	background-color : $gray-bg--dark;
+	border-left      : 1px solid $border--dark;
+	padding          : 12px 15px;
 	position         : absolute;
 	top              : 0;
 	right            : 66px;
-	padding          : 12px 15px;
 
 	@include respond-to(md-and-up) {
 		padding : 23px 25px;

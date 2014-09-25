@@ -22,7 +22,7 @@
 }
 
 %inner-shadow {
-	@include box-shadow(rgba(map-get($colors, bg), 0.1) -27px -27px 27px inset);
+	@include box-shadow(rgba($gray-bg, 0.1) -27px -27px 27px inset);
 }
 
 %tab-shadow {
@@ -48,7 +48,7 @@
 }
 
 .th-no-padding {
-	padding : 0;
+	padding : 0 !important;
 }
 
 @mixin respond-to($viewport-size) {

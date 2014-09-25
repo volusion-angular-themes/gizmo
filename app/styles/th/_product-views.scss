@@ -16,12 +16,12 @@
 		}
 
 		&--thumbnail {
-			border : 1px solid map-get($colors, border);
+			border : 1px solid $legend-border-color;
 			max-height : 125px;
 
 				&:hover {
 				@extend %animate-color;
-				border-color : map-get($colors, brand-primary);
+				border-color : $brand-primary;
 			}
 		}
 	}

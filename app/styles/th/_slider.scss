@@ -7,9 +7,7 @@
 	}
 
 	&--dark {
-		@include background(
-		$color : map-get($colors, bg)
-		);
+		@include background($color : $gray-bg);
 	}
 
 	&__slide {
@@ -29,7 +27,7 @@
 
 	&__title {
 		@include font($size : 1.8rem, $family : Roboto-Light);
-		color          : map-get($colors, text);
+		color          : $text-color;
 		text-transform : uppercase;
 
 		@include respond-to(sm-and-up) {
@@ -37,7 +35,7 @@
 		}
 
 		&--light {
-			color : map-get($colors, text--light);
+			color : $text--light;
 		}
 
 	}

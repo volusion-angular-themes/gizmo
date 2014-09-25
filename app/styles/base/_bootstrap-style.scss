@@ -29,16 +29,26 @@ a, a:hover, a:active {
 
 // Breadcrumbs ============================================================
 
+.breadcrumb {
+	margin: 0;
+	padding : 0;
+
+	a:hover {
+		color           : $text-color;
+		text-decoration : underline;
+	}
+}
+
 // Buttons ================================================================
 
 .th-btn--dark {
 	@extend %font-smoothing;
-	background-color : map-get($colors, bg--dark);
-	color            : map-get($colors, text--lighter);
+	background-color : $gray-bg--dark;
+	color            : $text--lighter;
 
 	&:hover {
-		background-color : map-get($colors, brand-primary);
-		color            : map-get($colors, text--lighter);
+		background-color : $brand-primary;
+		color            : $text--lighter;
 	}
 }
 
@@ -101,14 +111,14 @@ form {
 		> a {
 			@extend %no-border-radius, %tab-shadow;
 			@include font($size : 1.4rem, $family : Roboto-Condensed-Bold);
-			border-color   : map-get($colors, border);
+			border-color   : $legend-border-color;
 			text-transform : uppercase;
 			margin-right   : 0;
 			margin-left    : 2px;
 
 			&:hover {
-				color : map-get($colors, link-hover);
-				@include background($color : map-get($colors, body-bg));
+				color : $link-hover-color;
+				@include background($color : $body-bg);
 			}
 
 			@include respond-to(sm-and-up) {
@@ -128,9 +138,9 @@ form {
 
 		&.active {
 			> a {
-				@include background($color : map-get($colors, body-bg));
-				border-bottom-color : map-get($colors, body-bg);
-				color               : map-get($colors, link-active);
+				@include background($color : $body-bg);
+				border-bottom-color : $body-bg;
+				color               : $link-hover-color;
 			}
 		}
 	}

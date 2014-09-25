@@ -18,14 +18,13 @@
 		&__link {
 			@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
 			@extend %animate-all;
+			border-bottom  : thin inset $gray-bg--dark;
 			color          : white;
-			border-bottom  : thin inset map-get($colors, border--dark);
 			font-size      : 1.6rem;
 			font-family    : 'roboto-condensed-bold';
 			padding        : 12px 15px !important;
 			text-transform : uppercase;
 
-			// This targets the class that is added to the parent 'li' with Bootstrap JS
 			.open & {
 				color            : inherit;
 				background-color : inherit !important;
@@ -41,6 +40,10 @@
 						content : "\2212";
 					}
 				}
+
+			&:hover,
+			&:focus {
+				background-color : $gray-bg--dark;
 			}
 		}
 

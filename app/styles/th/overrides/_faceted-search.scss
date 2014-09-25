@@ -1,5 +1,5 @@
 .vn-faceted-search {
-	border-top     : 1px solid map-get($colors, border);
+	border-top     : 1px solid $legend-border-color;
 	padding-top    : 10px;
 	padding-bottom : 10px;
 
@@ -55,8 +55,8 @@
 	}
 
 	.panel-default {
-		border-top    : 1px solid map-get($colors, border);
-		border-bottom : 1px solid map-get($colors, border);
+		border-top    : 1px solid $panel-default-border;
+		border-bottom : 1px solid $panel-default-border;
 		@include respond-to(sm-and-up) {
 			border     : none;
 			box-shadow : none;
@@ -140,7 +140,7 @@
 		border        : 2px solid transparent;
 
 		&:hover {
-			border-color : map-get($colors, border);
+			border-color : $legend-border-color;
 		}
 
 		&--selected {

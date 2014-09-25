@@ -56,11 +56,11 @@
 	&__link {
 		@include font($size : 1.0rem, $family : 'Montserrat-Bold');
 		text-transform : uppercase;
-		color          : map-get($colors, text--light);
+		color          : $text--light;
 	}
 
 	&__stock-status {
-		border       : 1px solid map-get($colors, border);
+		border       : 1px solid $legend-border-color;
 		border-width : 1px 0;
 		padding      : 10px 0;
 	}
@@ -81,20 +81,16 @@
 
 	&__quantity {
 		@include font($size : 1.6rem, $family : 'Montserrat-Bold');
-		color : map-get($colors, btn-text);
+		color : $btn-default-color;
 		margin-top    : 15px;
 		margin-bottom : 15px;
 
 		input {
 			border-width: 2px;
-			border-color: map-get($colors, btn-border);
+			border-color: $btn-default-border;
 			height     : 43px;
 			text-align : center;
 		}
-	}
-
-	&__options {
-
 	}
 
 }

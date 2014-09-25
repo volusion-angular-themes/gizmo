@@ -38,7 +38,7 @@
 		margin         : 30px 0 10px;
 
 		&--accent {
-			color : map-get($colors, brand-primary);
+			color : $brand-primary;
 		}
 
 		@include respond-to(sm-and-up) {
@@ -70,7 +70,7 @@
 
 	&__accent {
 		font-style : normal;
-		color      : map-get($colors, brand-primary);
+		color      : $brand-primary;
 	}
 
 }
@@ -100,7 +100,7 @@
 	}
 
 	&__title {
-		@include translucent-text(map-get($colors, text--lighter), 0.7);
+		@include translucent-text($text--lighter, 0.7);
 		margin    : 0;
 		font-size : 1.1rem;
 
@@ -115,7 +115,7 @@
 
 	&__body {
 		font-size : 3.9rem;
-		color     : map-get($colors, text--lighter);
+		color     : $text--lighter;
 
 		@include respond-to(sm-and-up) {
 			font-size : 7.3rem;
@@ -133,13 +133,13 @@
 		bottom       : 6%;
 		left         : 50%;
 		margin-left  : -110px;
-		color        : map-get($colors, text--lighter);
-		border-color : map-get($colors, border--light);
+		color        : $text--lighter;
+		border-color : $border--light;
 
 		&:hover {
 			background   : transparent;
-			color        : map-get($colors, brand-primary);
-			border-color : map-get($colors, brand-primary);
+			color        : $brand-primary;
+			border-color : $brand-primary;
 		}
 	}
 

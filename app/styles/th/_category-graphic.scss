@@ -1,6 +1,6 @@
 .th-category-graphic {
 	@include font-smoothing(true); // remove if using dark color and light background
-	color       : map-get($colors, text--lighter);
+	color       : $text--lighter;
 	position : relative;
 	height   : 117px;
 

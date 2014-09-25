@@ -1,6 +1,6 @@
 .th-product-tile {
-	border: 1px solid map-get($colors, border);
 	color: $text-color;
+	border: 1px solid $legend-border-color;
 	height: 336px;
 	overflow: hidden;
 	padding: 20px;
@@ -62,7 +62,7 @@
 	&:hover {
 		.th-product-tile__info {
 			@extend %animate-all, %remove-shadow;
-			@include translucent-bg(map-get($colors, white), 0.8);
+			@include translucent-bg(white, 0.8);
 			height: 336px;
 			width: 100%;
 

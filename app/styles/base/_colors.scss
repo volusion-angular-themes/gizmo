@@ -1,3 +1,20 @@
+$text--light:                        lighten($text-color, 40);
+$text--lighter:                      lighten($text-color, 85);
+$btn-text--light:                    lighten($btn-default-color, 40);
+$border--light:                      lighten($legend-border-color, 40);
+$border--dark:                       darken($legend-border-color, 64%);
+$gray-bg:                            #4b4b51;
+$gray-bg--dark:                      adjust_hue(desaturate(darken($gray-bg, 12), 1), 45);
+$gray-bg--darker:                    adjust_hue(saturate(darken($gray-bg, 19), 1), 50);
+$gray-bg--light:                     adjust_hue(saturate(lighten($gray-bg, 32), 4), 0);
+$gray-bg--lighter:                   lighten(desaturate($gray-bg, 3), 61);
+
+
+
+
+
+/*
+
 
 $userDefined: ( // User Defined Colors
 
@@ -201,3 +218,4 @@ $bootstrap: ( // Bootstrap Colors
 
 $colors: map-merge($userDefined, $bootstrap);
 
+*/

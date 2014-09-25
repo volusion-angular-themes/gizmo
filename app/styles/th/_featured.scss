@@ -3,10 +3,7 @@
 
 	&__title {
 		@extend %inline-block;
-		@include font(
-		$size : 2.0rem,
-		$family : (Novecentosanswide-Bold)
-		);
+		@include font($size : 2.0rem, $family : (Novecentosanswide-Bold));
 		text-transform : uppercase;
 		margin-right   : 20px;
 
@@ -18,13 +15,10 @@
 
 	&__link {
 		@extend %inline-block;
-		@include font(
-		$size : 1.1rem,
-		$family : (Montserrat-Bold)
-		);
+		@include font($size : 1.1rem, $family : (Montserrat-Bold));
 		padding        : 3px 0 0;
 		text-transform : uppercase;
-		color          : map-get($colors, brand-primary);
+		color          : $brand-primary;
 
 		@include respond-to(md-and-up) {
 			font-size : 1.3rem;
