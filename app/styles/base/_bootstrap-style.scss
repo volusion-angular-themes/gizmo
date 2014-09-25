@@ -11,17 +11,25 @@ a, a:hover, a:active {
 	text-decoration : none;
 }
 
-// Necessary for Angular-UI-Bootstrap Elements
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-
-
-
 .container-fluid {
 	&--nopadding {
 		padding : 0;
 	}
 }
 
+.row {
+	&--no-col-padding {
+		> div[class^="col-"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+// Necessary for Angular-UI-Bootstrap Elements
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+// Font Awesome review stars
 .fa.fa-star, .fa.fa-star-o { color: gold }
 
 

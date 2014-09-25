@@ -1,9 +1,6 @@
 <div class="th-product-tile">
-	<!-- TODO Style and test this code from Method
-	<span class="th-product__sale" data-ng-show="product.isOnSale"></span>
-	<span class="th-product__new" data-ng-show="product.isNew"></span>-->
 	<div class="th-product-tile__image">
-		<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="">
+		<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="{{product.name}}">
 	</div>
 	<div class="th-product-tile__info">
 		<span class="th-product-tile__name">{{product.name}}</span>
