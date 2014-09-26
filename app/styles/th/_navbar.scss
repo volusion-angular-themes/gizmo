@@ -8,9 +8,9 @@
 	}
 
 	&__toggle {
-		background-color : map-get($colors, bg--dark) !important;
+		background-color : $gray-bg--dark !important;
 		border           : 0;
-		border-right     : 1px solid map-get($colors, border--dark) !important;
+		border-right     : 1px solid $border--dark !important;
 		border-radius    : 0;
 		margin           : 0;
 		position         : absolute;

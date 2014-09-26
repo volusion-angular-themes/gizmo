@@ -5,7 +5,7 @@
 	@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
 	@extend %font-smoothing;
 	background-color : $navbar-inverse-bg;
-	border           : thin solid map-get($colors, border--dark);
+	border           : thin solid $border--dark;
 	color            : white;
 
 	&__category-list {
@@ -41,9 +41,10 @@
 					}
 				}
 
-			&:hover,
-			&:focus {
-				background-color : $gray-bg--dark;
+//				&:hover,
+//				&:focus {
+//					background-color : $gray-bg--dark;
+//				}
 			}
 		}
 
@@ -51,7 +52,7 @@
 			@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
 			@extend %animate-all;
 			color            : white;
-			background-color : map-get($colors, border--dark);
+			background-color : $border--dark;
 			border-bottom    : thin inset $navbar-inverse-bg;
 			font-size        : 1.4rem;
 			font-family      : 'roboto-condensed-regular';

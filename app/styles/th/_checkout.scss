@@ -1,10 +1,7 @@
-/*border-left      : 1px solid map-get($colors, border--dark);
-background-color : map-get($colors, bg--dark);*/
-
 .th-checkout {
 	@extend %font-smoothing;
 	background-color : $navbar-inverse-bg;
-	border-left      : 1px solid map-get($colors, border--dark);
+	border-left      : 1px solid $border--dark;
 	color            : white;
 	overflow         : hidden;
 	position         : fixed;
@@ -19,7 +16,7 @@ background-color : map-get($colors, bg--dark);*/
 
 	&__brand {
 		padding       : 3px 10px;
-		border-bottom : 1px solid map-get($colors, border--dark);
+		border-bottom : 1px solid $border--dark;
 		height        : 46px;
 		position      : relative;
 
@@ -41,8 +38,8 @@ background-color : map-get($colors, bg--dark);*/
 	}
 
 	&__nav {
-		background-color : map-get($colors, bg--dark);
-		border-bottom: 1px solid map-get($colors, border--dark);
+		background-color : $gray-bg--dark;
+		border-bottom: 1px solid $border--dark;
 
 
 		&__btn {
@@ -63,7 +60,7 @@ background-color : map-get($colors, bg--dark);*/
 			}
 
 			&--keepshopping {
-				background-color : map-get($colors, bg--dark);
+				background-color : $gray-bg--dark;
 				&:hover { @extend %opacity-75 }
 
 				&:before {
@@ -86,7 +83,7 @@ background-color : map-get($colors, bg--dark);*/
 	}
 
 	&__subtotal {
-		border-bottom : 1px solid map-get($colors, border--dark);
+		border-bottom : 1px solid $border--dark;
 		margin-top: 5px;
 		margin-bottom: 5px;
 		max-width: 400px;
@@ -116,7 +113,7 @@ background-color : map-get($colors, bg--dark);*/
 	}
 
 	&__coupons {
-		border-bottom : 1px solid map-get($colors, border--dark);
+		border-bottom : 1px solid $border--dark;
 		margin-top: 5px;
 		margin-bottom: 5px;
 		max-width: 400px;
@@ -128,7 +125,7 @@ background-color : map-get($colors, bg--dark);*/
 		}
 
 		&__coupon-tile {
-			background-color: map-get($colors, bg--dark);
+			background-color: $gray-bg--dark;
 			padding-top: 10px;
 			padding-bottom : 10px;
 
