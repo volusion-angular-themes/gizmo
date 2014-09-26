@@ -1,57 +1,65 @@
-.snap-content {
-	background-color: $body-bg;
-}
-
-.snap-drawer {
-	width: 266px;
-}
+.snap-content { background-color : $body-bg }
+.snap-drawer  { width : 266px }
 
 .th-mobile-menu {
+	@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
 	@extend %font-smoothing;
+	background-color : $navbar-inverse-bg;
+	border           : thin solid map-get($colors, border--dark);
 	color            : white;
-	background-color : #1b1c1e;
-	border-right     : none;
 
-	&__list {
-		margin-top    : 20px;
-		margin-bottom : 30px;
-
-		&__header {
-			@include font($size : 1.6rem, $family : (Novecentosanswide-Bold));
-			letter-spacing : 1px;
-			margin-bottom  : 15px;
-			padding-left   : 15px;
-			text-transform : uppercase;
-		}
-
+	&__category-list {
 		ul {
-			list-style : none;
-			margin     : 0;
-			padding    : 0;
+			margin         : 0;
+			padding-top    : 0;
+			padding-bottom : 0;
 		}
 
 		&__link {
-			border-bottom  : thin inset map-get($colors, border--dark);
+			@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
+			@extend %animate-all;
 			color          : white;
-			display        : inline-block;
-			font-size      : 1.4rem;
-			line-height    : 17px;
-			padding        : 10px 10px 10px 0;
-			position       : relative;
+			border-bottom  : thin inset map-get($colors, border--dark);
+			font-size      : 1.6rem;
+			font-family    : 'roboto-condensed-bold';
+			padding        : 12px 15px !important;
 			text-transform : uppercase;
-			&:hover,
-			&:focus {
-				background-color : map-get($colors, border--dark);
+
+			// This targets the class that is added to the parent 'li' with Bootstrap JS
+			.open & {
+				color            : inherit;
+				background-color : inherit !important;
+			}
+
+			// Plus and Minus Icons
+			span.glyphicon {
+				font-size : 12px;
+				top       : 3px;
+				&:before {
+					content : "\2b";
+					.open & {
+						content : "\2212";
+					}
+				}
 			}
 		}
 
-		span.caret {
-			margin : 6px 10px 0 0;
+		&__sublink {
+			@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
+			@extend %animate-all;
+			color            : white;
+			background-color : map-get($colors, border--dark);
+			border-bottom    : thin inset $navbar-inverse-bg;
+			font-size        : 1.4rem;
+			font-family      : 'roboto-condensed-regular';
+			padding          : 10px 15px !important;
+			text-transform   : uppercase;
 		}
 	}
 
 	&__footer-link-block {
-		margin-top    : 15px;
+		font-family   : 'Source-Sans-Pro-Regular';
+		margin-top    : 10px;
 		margin-bottom : 15px;
 		&:last-child {
 			margin-bottom : 30px
@@ -59,18 +67,16 @@
 
 		li {
 			&:first-child {
-				font-family: 'Source-Sans-Pro-Bold';
-				padding : 6px 15px
+				font-family : 'roboto-condensed-bold';
+				margin     : 6px 15px
 			}
 
 			a {
+				@extend %animate-all;
 				color   : white;
-				padding : 3px 20px;
-				&:last-child {
-					padding-bottom : 0
-				}
+				margin : 3px 15px;
+				padding: 0;
 
-				&:focus,
 				&:hover {
 					background : none;
 					color      : $link-hover-color;

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-9 col-md-7 col-md-offset-3 col-lg-8 col-lg-offset-2"
 					 ng-class="{ 'isMobileAndHidden': true == !isMobileAndHidden }">
-				<h1><span ng-if="products.length <= 0">No</span> Search results for "{{searchTerms}}"</h1>
+				<h1><span ng-if="products.length <= 0">No r</span><span ng-if="products.length > 0">{{cursor.total}} R</span>esult<span ng-if="products.length !== 1">s</span> for "{{searchTerms}}"</h1>
 			</div>
 			<div vn-sort-search
 					 class="hidden-xs col-sm-3 col-md-2 vn-sort-desktop-search"
@@ -39,8 +39,10 @@
 		</div>
 		<div class="col-sm-9 col-lg-10" ng-class="{ 'isMobileAndHidden': true == !isMobileAndHidden }">
 			<div class="row">
-				<div class="th-no-padding col-sm-6 col-md-4 col-lg-3" data-ng-repeat="product in products track by product.id"
-						 data-ng-include=" 'views/partials/product-tile.html' ">
+				<div class="col-sm-6 col-md-4 col-lg3 th-no-padding" data-ng-repeat="product in products track by product.id">
+					<a ng-href="{{product.url}}">
+						<div data-ng-include=" 'views/partials/product-tile.html' "></div>
+					</a>
 				</div>
 			</div>
 		</div>

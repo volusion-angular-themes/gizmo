@@ -1,0 +1,250 @@
+/*border-left      : 1px solid map-get($colors, border--dark);
+background-color : map-get($colors, bg--dark);*/
+
+.th-checkout {
+	@extend %font-smoothing;
+	background-color : $navbar-inverse-bg;
+	border-left      : 1px solid map-get($colors, border--dark);
+	color            : white;
+	overflow         : hidden;
+	position         : fixed;
+	top              : 0;
+	bottom           : 0;
+	padding-bottom   : 120px;
+
+	a {
+		color: white;
+		&:hover { color: $link-hover-color }
+	}
+
+	&__brand {
+		padding       : 3px 10px;
+		border-bottom : 1px solid map-get($colors, border--dark);
+		height        : 46px;
+		position      : relative;
+
+		&--image {
+			display : block;
+			margin  : auto;
+			height  : 36px;
+		}
+
+		&--search {
+			margin : 0;
+			float  : left;
+
+			span {
+				background-color : black;
+				height           : 4px !important;
+			}
+		}
+	}
+
+	&__nav {
+		background-color : map-get($colors, bg--dark);
+		border-bottom: 1px solid map-get($colors, border--dark);
+
+
+		&__btn {
+			@extend %font-smoothing;
+			border         : 0;
+			border-radius: 0;
+			font-family    : $font-family-main-menu;
+			font-size: 14px;
+			height: 49px;
+			letter-spacing: normal;
+			outline        : 0;
+			@include respond-to(md-and-up) {
+				height: 72px;
+			}
+
+			&[disabled] {
+				@extend .disabled;
+			}
+
+			&--keepshopping {
+				background-color : map-get($colors, bg--dark);
+				&:hover { @extend %opacity-75 }
+
+				&:before {
+					font-family  : 'Glyphicons Halflings';
+					font-size    : 12px;
+					content      : "\e079";
+					margin-right : 2px;
+				}
+			}
+
+			&--checkout {
+				&:after {
+					font-family  : 'Glyphicons Halflings';
+					font-size    : 12px;
+					content      : "\e080";
+					margin-left  : 2px;
+				}
+			}
+		}
+	}
+
+	&__subtotal {
+		border-bottom : 1px solid map-get($colors, border--dark);
+		margin-top: 5px;
+		margin-bottom: 5px;
+		max-width: 400px;
+		padding-bottom: 5px;
+
+		> .row {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		&--label {
+			float: left;
+			margin-top: 12px;
+			text-transform : uppercase;
+		}
+
+		&--price {
+			float: right;
+			font-size : 3rem;
+		}
+
+		&__apply-coupon {
+			&--button {
+				letter-spacing: normal;
+			}
+		}
+	}
+
+	&__coupons {
+		border-bottom : 1px solid map-get($colors, border--dark);
+		margin-top: 5px;
+		margin-bottom: 5px;
+		max-width: 400px;
+
+		&--label {
+			margin-top: 5px;
+			margin-bottom: 10px;
+			text-transform : uppercase;
+		}
+
+		&__coupon-tile {
+			background-color: map-get($colors, bg--dark);
+			padding-top: 10px;
+			padding-bottom : 10px;
+
+			&.-last {
+			}
+
+			&--close-btn {
+				text-align: right;
+
+				button {
+					background: 0;
+					border     : 0;
+					outline    : 0;
+				}
+			}
+
+			&--name {
+				line-height: 1.2;
+			}
+
+			&--value {
+				text-align: right;
+			}
+		}
+	}
+
+	&__noitems {
+		&--label {
+			text-transform : uppercase;
+			text-align     : center;
+			margin-top     : 15px;
+		}
+	}
+
+	&__items {
+		padding    : 5px 10px;
+		overflow-y : scroll;
+		height     : 100%;
+
+		&--label {
+			text-transform : uppercase;
+		}
+
+		&__item {
+
+			position       : relative;
+			margin-bottom  : 10px;
+			padding-bottom : 10px;
+			border-bottom  : 1px solid $gray-lighter;
+
+			&--close {
+				position : absolute;
+				right    : 0px;
+
+				button {
+					border     : 1px solid $gray-lighter;
+					background : none;
+					padding    : 2px;
+					height     : 22px;
+					width      : 22px;
+					outline    : none;
+					outline    : 0;
+
+					span {
+						&:before {
+							font-family : 'Glyphicons Halflings';
+							content     : "\e014";
+						}
+					}
+				}
+			}
+
+			&--image {
+				max-height   : 80px;
+				max-width    : 80px;
+				float        : left;
+				margin-right : 10px;
+			}
+
+			&--name {
+				@include ellipsis(true);
+				padding-right : 25px;
+			}
+
+			&--qty {
+
+				float : left;
+
+				button {
+					width      : 80px;
+					text-align : center;
+					position   : relative;
+
+					.caret {
+						position : absolute;
+						right    : 10px;
+						top      : 12px;
+					}
+				}
+
+				.dropdown-menu {
+					height     : 100px;
+					overflow-y : scroll;
+					width      : 80px;
+					margin-top : -11px;
+					text-align : center;
+					min-width  : 80px;
+				}
+			}
+
+			&--subtotal {
+				float     : right;
+				font-size : 1.5rem;
+				/*font-family : $font-family-condensed-reg;*/
+			}
+		}
+
+	}
+}
