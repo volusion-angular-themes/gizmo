@@ -1,43 +1,115 @@
-.th-search {
-	@extend %inline-block;
-	background-color : $gray-bg--dark;
-	border-left      : 1px solid $border--dark;
-	padding          : 12px 15px;
-	position         : absolute;
-	top              : 0;
-	right            : 66px;
+@mixin vcenterer {
+	position  : absolute;
+	top       : 50%;
+	transform : translateY(-50%);
+}
 
-	@include respond-to(md-and-up) {
-		padding : 23px 25px;
-		right   : 80px;
+@mixin hcenterer {
+	position  : absolute;
+	left      : 50%;
+	transform : translateX(-50%);
+}
+
+@mixin centerer {
+	position  : absolute;
+	top       : 50%;
+	left      : 50%;
+	transform : translate(-50%, -50%);
+}
+
+@keyframes search-input-hide {
+	0% {
+		@include transform(translateX(-100%));
+	}
+
+	100% {
+		@include transform(translateX(0%));
+	}
+}
+
+@-webkit-keyframes search-input-hide {
+	0% {
+		@include transform(translateX(0%));
+	}
+
+	100% {
+		@include transform(translateX(200%));
+	}
+}
+
+
+@keyframes search-input-show {
+	0% {
+		@include transform(translateX(100%));
+	}
+
+	100% {
+		@include transform(translateX(0%));
+	}
+}
+
+@-webkit-keyframes search-input-show {
+	0% {
+		@include transform(translateX(100%));
+	}
+
+	100% {
+		@include transform(translateX(0%));
+	}
+}
+
+
+.th-search {
+	background-color : map-get($colors, bg--dark);
+	border-left      : 1px solid map-get($colors, border--dark);
+	position         : absolute !important;
+	right            : 79px;
+	top              : 0;
+	color            : #ffffff !important;
+	min-height       : 71px;
+	min-width        : 71px;
+	&:hover {
+		color : #ababab !important;
+	}
+
+	&__trigger {
+		@include vcenterer;
+		color   : inherit;
+		padding : 27px !important;
 
 		&:hover {
-			padding : 23px 15px;
+			color : inherit;
 		}
 	}
 
-	&__input {
-		@extend %border-radius;
-		border  : 0;
-		outline : 0;
-		padding : 3px 0;
-		width   : 0;
-	}
+	&__popout {
+		@extend %inline-block;
+		padding-left : 275px;
+		z-index: -9;
 
-	&__submit {
-		background : none;
-		border     : 0;
-		color      : white;
-	}
+		&.ng-hide-remove {
+			-webkit-animation : search-input-show 0.2s ease-in-out;
+			animation         : search-input-show 0.2s ease-in-out;
+			display           : block !important;
+		}
+		&.ng-hide-add {
+			-webkit-animation : search-input-hide 0.2s ease-in-out;
+			animation         : search-input-hide 0.2s ease-in-out;
+			display           : block !important;
+		}
 
-	&:hover {
-		@extend %animate-all;
-		right : 0;
+		&--input {
+			@extend %inline-block;
+			position : absolute;
+			left     : 72px;
+			top      : 24px;
+		}
 
-		.th-search__input {
-			@extend %animate-all;
-			padding : 3px 5px;
-			width   : 75%;
+		&--submit {
+			@extend %inline-block;
+			position : absolute;
+			top      : 25px;
+			right    : 15px;
 		}
 	}
 
