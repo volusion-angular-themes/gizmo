@@ -1,0 +1,33 @@
+// Declare Custom Fonts Here (update any .svg file's id to 'font'!)
+// Set to font's file name
+
+@include app-font('Montserrat');
+@include app-font('Montserrat-Bold');
+
+@include app-font('Roboto-Light');
+@include app-font('Roboto-Regular');
+@include app-font('Roboto-Bold');
+@include app-font('Roboto-Light-Italic');
+@include app-font('Roboto-Italic');
+@include app-font('Roboto-Bold-Italic');
+
+@include app-font('Roboto-Condensed-Light');
+@include app-font('Roboto-Condensed-Regular');
+@include app-font('Roboto-Condensed-Bold');
+
+@include app-font('Source-Sans-Pro-Regular');
+@include app-font('Source-Sans-Pro-Bold');
+@include app-font('Source-Sans-Pro-Light');
+@include app-font('Source-Sans-Pro-Light-Italic');
+@include app-font('Source-Sans-Pro-Bold-Italic');
+
+@include app-font('Novecentosanswide-Bold');
+
+
+// Custom Font Variables
+$font-family-buttons:    "Montserrat-Bold";
+$font-family-main-menu:  "Roboto-Condensed-Bold";
+
+// $font-family-glyphs: 				"Glyphicons Halflings";
+
+// Primary Fonts are assigned to Bootstrap variables. See file '_bootstrap-style.scss'

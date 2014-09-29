@@ -1,0 +1,99 @@
+.th-product-details {
+	padding : 15px 0 0 0;
+
+	@include respond-to(xs) { text-align: center }
+	@include respond-to(md-and-up) { padding-top : 40px }
+
+	&__manufacturer {
+		@include font($size : 1.5rem, $line-height : 0.9, $family : Roboto-Light);
+		text-transform : uppercase;
+
+		@include respond-to(md-and-up) {
+			font-size     : 2.0rem;
+			margin-bottom : 5px;
+		}
+
+	}
+
+	&__name {
+		@include font( $size : 3.5rem, $line-height : 0.9, $family : Roboto-Light );
+
+		@include respond-to(md-and-up) {
+			font-size : 4.6rem;
+		}
+
+	}
+
+	&__price {
+		@include font($size : 2.9rem, $family : Roboto-Light);
+		color : $brand-primary;
+
+		&--sale {
+			color : $brand-primary;
+			margin-left : 5px;
+		}
+
+		.strike {
+			color: $text-color;
+			position : relative;
+
+			&:before {
+				@include rotate(-20deg);
+				border-top : 2px solid $text-color;
+				content    : "";
+				left       : 0;
+				margin-left : -5px;
+				margin-right : -5px;
+				position   : absolute;
+				top        : 50%;
+				right      : 0;
+			}
+		}
+	}
+
+	&__product-code {
+		margin-top    : 5px;
+		margin-bottom : 5px;
+	}
+
+	&__link {
+		@include font($size : 1.0rem, $family : 'Montserrat-Bold');
+		text-transform : uppercase;
+		color          : $text--light;
+	}
+
+	&__stock-status {
+		border       : 1px 0 solid $legend-border-color;
+//		border-width : 1px 0;
+		padding      : 10px 0;
+	}
+
+	&__price, &__review-summary, &__description, &__social {
+		margin : 12px 0;
+
+		@include respond-to(md-and-up) {
+			margin : 14px 0;
+		}
+
+	}
+
+	&__cta {
+		margin-top    : 10px;
+		margin-bottom : 10px;
+	}
+
+	&__quantity {
+		@include font($size : 1.6rem, $family : 'Montserrat-Bold');
+		color : $btn-default-color;
+		margin-top    : 15px;
+		margin-bottom : 15px;
+
+		input {
+			border-width: 2px;
+			border-color: $btn-default-border;
+			height     : 43px;
+			text-align : center;
+		}
+	}
+
+}

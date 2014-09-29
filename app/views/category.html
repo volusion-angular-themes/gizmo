@@ -43,14 +43,14 @@
 			</div>
 		</div>
 		<div class="col-sm-9 col-lg-10">
-			<div class="row">
-				<div class="col-xs-12 th-top-bar--category" data-ng-if="category.description">
+			<div class="row" data-ng-if="category.description">
+				<div class="col-xs-12 th-top-bar--category">
 					<span data-ng-bind-html="category.description | vnLegacyLinkify | html"></span>
 				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3 th-no-padding" data-ng-repeat="product in products track by product.id">
-					<a ng-href="{{product.url}}">
-						<div data-ng-include=" 'views/partials/product-tile.html' "></div>
-					</a>
+			</div>
+			<div class="row row--no-col-padding">
+				<div class="col-sm-6 col-md-4 col-lg-3" data-ng-repeat="product in products track by product.id"
+						 data-ng-include=" 'views/partials/product-tile.html' ">
 				</div>
 			</div>
 		</div>

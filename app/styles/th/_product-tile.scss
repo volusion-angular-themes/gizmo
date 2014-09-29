@@ -1,0 +1,82 @@
+.th-product-tile {
+	color: $text-color;
+	border: 1px solid $legend-border-color;
+	height: 336px;
+	overflow: hidden;
+	padding: 20px;
+	position: relative;
+
+	@include respond-to(sm-and-up) {
+		height: 405px;
+	}
+
+	&__tag {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	&__image {
+		img {
+			@extend %position-absolute-center;
+		}
+	}
+
+	&__info {
+		@extend %inner-shadow;
+		height: 100%;
+		position: absolute;
+		padding: 20px;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	&__name {
+		@include font( $size: 1.5rem, $family: (Roboto-Condensed-Bold) );
+		text-transform: uppercase;
+	}
+
+	&__price {
+		@include font($size : 2.9rem, $family : (Roboto-Light));
+
+		&--sale {
+			color : $brand-info;
+			margin-left: 5px;
+		}
+
+		.strike {
+			position : relative;
+
+			&:before {
+				@include rotate(-20deg);
+				border-top : 2px solid $brand-info;
+				content    : "";
+				position   : absolute;
+				left       : 0;
+				margin-left : -5px;
+				margin-right : -5px;
+				right      : 0;
+				top        : 50%;
+			}
+		}
+	}
+
+	&:hover {
+		.th-product-tile__info {
+			@extend %animate-all, %remove-shadow;
+			@include translucent-bg(white, 0.8);
+			height: 336px;
+			width: 100%;
+
+			@include respond-to(sm-and-up) {
+				height: 404px;
+			}
+		}
+
+		.th-product-tile__details {
+			@extend %animate-all;
+			height: auto;
+		}
+	}
+}

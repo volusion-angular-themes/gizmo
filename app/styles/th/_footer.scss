@@ -1,0 +1,60 @@
+.th-footer {
+	@extend %font-smoothing;
+	background-color : $gray-bg--darker;
+	color            : white;
+
+	a {
+		color : white;
+		&:hover { color: $link-hover-color };
+	}
+
+	&__newsletter-block {
+		background-color : $gray-bg--dark;
+
+		@include respond-to(md-and-up) {
+			border-left : 1px solid $border--dark;
+		}
+
+	}
+
+	&__link-block {
+		ul {
+			padding    : 0;
+			margin     : 20px 0;
+			list-style : none;
+
+			li {
+				&:first-child {
+					cursor : auto;
+					font-family: 'Source-Sans-Pro-Bold';
+					padding : 15px 0 10px;
+				}
+				a {
+					padding : 5px 0;
+					&:hover {
+						background-color : transparent;
+					}
+				}
+			}
+		}
+	}
+
+	&__subfooter {
+		padding : 20px 0;
+
+		@include respond-to(md-and-up) {
+			border-top : 1px solid $border--dark;
+			padding    : 15px 0;
+		}
+		&__text {
+			font-size  : 1.2rem;
+			text-align : center;
+
+			@include respond-to(md-and-up) {
+				padding-left : 15px;
+				text-align   : left;
+			}
+		}
+	}
+
+}

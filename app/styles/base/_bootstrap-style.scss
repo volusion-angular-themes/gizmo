@@ -1,0 +1,160 @@
+//
+// Gizmo by Volusion
+//
+// ========================================================================
+
+body {
+	font-size   : 1.4rem;
+}
+
+a, a:hover, a:active {
+	text-decoration : none;
+}
+
+.container-fluid {
+	&--nopadding {
+		padding : 0;
+	}
+}
+
+.row {
+	&--no-col-padding {
+		> div[class^="col-"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+// Necessary for Angular-UI-Bootstrap Elements
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+// Font Awesome review stars
+.fa.fa-star, .fa.fa-star-o { color: gold }
+
+
+// Alerts =================================================================
+
+// Breadcrumbs ============================================================
+
+.breadcrumb {
+	margin: 0;
+	padding : 0;
+
+	a:hover {
+		color           : $text-color;
+		text-decoration : underline;
+	}
+}
+
+// Buttons ================================================================
+
+.th-btn--dark {
+	@extend %font-smoothing;
+	background-color : $gray-bg--dark;
+	color            : $text--lighter;
+
+	&:hover {
+		background-color : $brand-primary;
+		color            : $text--lighter;
+	}
+}
+
+.btn {
+	@extend %animate-all;
+	@include font($size : 1.1rem,$line-height : 2.5,$family : ($font-family-buttons));
+	text-transform : uppercase;
+	letter-spacing : 0.2rem;
+	border-width   : 2px;
+
+	&.btn-xs {
+		font-size : 0.7rem;
+	}
+
+	&.btn-sm {
+		font-size : 0.9rem;
+	}
+
+	&.btn-lg {
+		font-size : 1.2rem;
+	}
+
+	&.btn-primary,
+	&.btn-success {
+		@extend %font-smoothing;
+	}
+}
+
+
+// Dropdowns ==============================================================
+
+.dropdown-menu {
+	@extend %font-smoothing;    // use if dropdowns have dark background
+}
+
+// Forms ==================================================================
+
+form {
+	input[type="email"], input[type="text"] {
+		@extend %placeholder-text;
+
+		&:focus {
+			@extend %placeholder-text-focus;
+		}
+	}
+}
+
+// List groups ============================================================
+
+// Input groups ============================================================
+
+// Navbar =================================================================
+
+	// View _navbar.scss for navbar styles
+
+// Navs ===================================================================
+
+.nav.nav-tabs {
+	> li {
+		> a {
+			@extend %no-border-radius, %tab-shadow;
+			@include font($size : 1.4rem, $family : Roboto-Condensed-Bold);
+			border-color   : $legend-border-color;
+			text-transform : uppercase;
+			margin-right   : 0;
+			margin-left    : 2px;
+
+			&:hover {
+				color : $link-hover-color;
+				@include background($color : $body-bg);
+			}
+
+			@include respond-to(sm-and-up) {
+				padding     : 20px 55px;
+				margin-left : 25px;
+			}
+
+			@include respond-to(md-and-up) {
+				padding-left  : 75px;
+				padding-right : 75px;
+			}
+		}
+
+		&:first-child > a {
+			margin-left : 0;
+		}
+
+		&.active {
+			> a {
+				@include background($color : $body-bg);
+				border-bottom-color : $body-bg;
+				color               : $link-hover-color;
+			}
+		}
+	}
+}
+
+
+// Page Header ============================================================
+
+// Panels =================================================================

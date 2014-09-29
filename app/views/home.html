@@ -4,41 +4,40 @@
 		<h2 class="th-promo__body th-promo--cover__body">Engage<br>in the<br><em class="th-promo__accent">Music</em></h2>
 	</header>
 	<footer>
-		<button class="btn btn-default btn-lg th-promo__cta th-promo--cover__cta">Start Shopping Now</button>
+		<a data-ng-href="/all-products" class="btn btn-default btn-lg th-promo__cta th-promo--cover__cta" role="button">Start Shopping Now</a>
 	</footer>
 </section>
 
 <div class="container-fluid">
-	<div class="th-featured">
-		<div class="th-featured__title">Now Trending</div>
-		<a href="#" class="th-featured__link">See all</a>
-	</div>
-</div>
 
-<div class="container-fluid">
-	<div class="th-now-trending">
-		<div class="row">
-			<div class="col-sm-6 col-md-3 th-no-padding" data-ng-repeat="product in featuredProducts">
-				<a ng-href="{{product.url}}">
-					<div data-ng-include=" 'views/partials/product-tile.html' "></div>
-				</a>
-			</div>
+	<div class="row th-featured">
+		<div class="col-xs-12">
+			<div class="th-featured__title">Now Trending</div>
+			<a data-ng-href="/all-products" class="th-featured__link">See all</a>
 		</div>
 	</div>
-</div>
 
-<div class="container">
-	<section class="th-promo">
-		<div class="th-promo__image"><img src="/images/demo/lenovo.jpg" class="img-responsive" alt=""></div>
-		<header class="th-promo__header">
-			<h1 class="th-promo__title">Lenovo</h1>
+	<div class="row row--no-col-padding">
+		<div class="col-sm-6 col-md-3" data-ng-repeat="product in featuredProducts"
+				 data-ng-include=" 'views/partials/product-tile.html' ">
+		</div>
+	</div>
 
-			<h2 class="th-promo__body">Thinkpad Yoga Starting at $400</h2>
-		</header>
-		<footer>
-			<button class="btn btn-primary btn-lg th-promo__cta">Shop Now</button>
-		</footer>
+	<section class="row th-promo">
+		<div class="col-sm-6 th-promo__image">
+			<img ng-src="{{themeSettings.pages.home.tiles.tiles.tile1.imageUrl}}"
+			     class="img-responsive center-block" alt="{{themeSettings.pages.home.tiles.tiles.tile1.imageName}}">
+		</div>
+		<div class="col-sm-6 th-promo__copy">
+			<h1 class="th-promo__title">{{themeSettings.pages.home.tiles.tiles.tile1.promoTitle}}</h1>
+			<h2 class="th-promo__body">{{themeSettings.pages.home.tiles.tiles.tile1.promoBody}}</h2>
+			<a data-ng-href="{{themeSettings.pages.home.tiles.tiles.tile1.linkTo}}"
+			        class="btn btn-primary btn-lg th-promo__cta" role="button">
+				Shop Now
+			</a>
+		</div>
 	</section>
+
 </div>
 
 <div class="container-fluid container-fluid--nopadding hidden-xs">

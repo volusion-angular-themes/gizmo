@@ -1,0 +1,15 @@
+.th-cart-summary {
+	position         : absolute;
+	top              : 0;
+	right            : 0;
+	background-color : $gray-bg--dark;
+	border-left      : 1px solid $border--dark;
+
+	&__icon {
+		padding : 18px 23px;
+
+		@include respond-to(md-and-up) {
+			padding : 29px 30px;
+		}
+	}
+}

@@ -1,5 +1,5 @@
 {
-	"general": {
+	"general"     : {
 		"header": {
 			"content": {
 				"topPromo": "<a href=\"#\" class=\"top-promo\">Free shipping on all orders over $25!</a>"
@@ -18,7 +18,7 @@
 			}
 		}
 	},
-	"pages"  : {
+	"pages"       : {
 		"home": {
 			"content1"        : "",
 			"content2"        : "",
@@ -60,32 +60,35 @@
 				"isEnabled": true,
 				"tiles"    : {
 					"tile1": {
-						"imageUrl": "/images/homepage/tile1.jpg",
-						"linkTo"  : "/all-products"
+						"imageUrl"  : "/images/demo/lenovo.jpg",
+						"imageName" : "Lenovo Thinkpad",
+						"linkTo"    : "/all-products",
+						"promoBody" : "Thinkpad Yoga Starting at $400",
+						"promoTitle": "Lenovo"
 					},
 					"tile2": {
-						"imageUrl": "/images/homepage/tile2.jpg",
+						"imageUrl": "",
 						"linkTo"  : "/all-products"
 					},
 					"tile3": {
-						"imageUrl": "/images/homepage/tile3.jpg",
+						"imageUrl": "",
 						"linkTo"  : "/all-products"
 					},
 					"tile4": {
-						"imageUrl": "/images/homepage/tile4.jpg",
+						"imageUrl": "",
 						"linkTo"  : "/all-products"
 					},
 					"tile5": {
-						"imageUrl": "/images/homepage/tile5.jpg",
+						"imageUrl": "",
 						"linkTo"  : "/all-products"
 					},
 					"tile6": {
-						"imageUrl": "/images/homepage/tile6.jpg",
+						"imageUrl": "",
 						"linkTo"  : "/all-products"
 					}
 				}
 			}
 		}
 	},
-	"itemsPerPage" : 4
+	"itemsPerPage": 4
 }

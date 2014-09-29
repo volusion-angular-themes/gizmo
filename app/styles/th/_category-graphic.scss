@@ -1,0 +1,41 @@
+.th-category-graphic {
+	@include font-smoothing(true); // remove if using dark color and light background
+	color       : $text--lighter;
+	position : relative;
+	height   : 117px;
+
+	@include background(
+	$repeat : no-repeat,
+	$position : center center,
+	$size : cover
+	);
+
+	@include respond-to(sm-and-up) {
+		height : 171px;
+	}
+
+	@include respond-to(md-and-up) {
+		height : 278px;
+	}
+
+	&__title {
+		@include font(
+		$size : 3.5rem,
+		$line-height : 0.9,
+		$family : (Roboto-Light)
+		);
+		padding-top : 45px;
+		text-align  : center;
+
+		@include respond-to(sm-and-up) {
+			font-size   : 4.5rem;
+			padding-top : 55px;
+			text-align  : right;
+		}
+
+		@include respond-to(md-and-up) {
+			padding-top : 105px;
+		}
+	}
+
+}

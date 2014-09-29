@@ -1,9 +1,0 @@
-form {
-	input[type="email"], input[type="text"] {
-		@extend %placeholder-text;
-
-/*		&:focus {
-			@extend %placeholder-text-focus;
-		}*/
-	}
-}

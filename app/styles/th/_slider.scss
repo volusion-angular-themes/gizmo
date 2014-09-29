@@ -1,0 +1,66 @@
+.th-slider {
+	text-align : center;
+	padding    : 15px 0;
+
+	@include respond-to(sm-and-up) {
+		padding : 20px 0 45px;
+	}
+
+	&--dark {
+		@include background($color : $gray-bg);
+	}
+
+	&__slide {
+		@extend %inline-block;
+		padding : 0 15px;
+		margin  : 0 auto;
+
+		@include respond-to(sm-and-up) {
+			padding : 0 25px;
+			margin  : 0;
+		}
+
+		@include respond-to(md-and-up) {
+			padding : 0 35px;
+		}
+	}
+
+	&__title {
+		@include font($size : 1.8rem, $family : Roboto-Light);
+		color          : $text-color;
+		text-transform : uppercase;
+
+		@include respond-to(sm-and-up) {
+			font-size : 2.4rem;
+		}
+
+		&--light {
+			color : $text--light;
+		}
+
+	}
+
+	&__belt {
+		text-align  : center;
+		position    : relative;
+		padding     : 15px 0;
+		white-space : nowrap;
+
+		@include respond-to(sm-and-up) {
+			padding : 30px 0;
+		}
+
+	}
+
+	&__next {
+		right : 0;
+		@include center-by($height : icons-sprite-height(next));
+	}
+
+	&__previous {
+		left : 0;
+		@include center-by($height : icons-sprite-height(previous));
+	}
+
+}
+

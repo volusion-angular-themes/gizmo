@@ -1,0 +1,35 @@
+.th-top-bar {
+	background-color : $gray-bg--lighter;
+	padding          : 20px 0;
+
+	h1 {
+		@include respond-to(xs) {
+			font-size: 2.8rem;
+			margin-top: 10px;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		@include respond-to(sm) {
+			margin-left: 10px;
+		}
+	}
+
+
+	.mobile-filters {
+		text-align: left;
+	}
+
+	&--category {
+		// @extend %tab-shadow; TODO consider styling this more
+		@include font($size : 1.6rem,$family : (Roboto-Light));
+		border-top     : 1px solid $legend-border-color;
+		border-left     : 1px solid $legend-border-color;
+		padding: 20px;
+
+		@include respond-to(xs) {
+			font-size: 1.2rem;
+			padding: 10px;
+			text-align: center;
+		}
+	}
+}

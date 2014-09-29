@@ -1,0 +1,161 @@
+%inline-block { @include inline-block }
+
+%opacity-75  { @include opacity(0.75) }
+%opacity-100 { @include opacity(1) }
+
+%border-radius    { @include border-radius(3px) }
+%no-border-radius { @include border-radius(0) }
+
+%animate-all   { @include transition(all, 0.2s, ease-in-out) }
+%animate-color { @include transition(color, 0.2s, ease-in-out) }
+
+%placeholder-text {
+	@include input-placeholder {
+		color : $input-color-placeholder;
+	}
+}
+
+%placeholder-text-focus {
+	@include input-placeholder {
+		color : lighten($input-color-placeholder, 56);
+	}
+}
+
+%inner-shadow {
+	@include box-shadow(rgba($gray-bg, 0.1) -27px -27px 27px inset);
+}
+
+%tab-shadow {
+	@include background-image(linear-gradient(#fff 57%, #f2f2f2 95%));
+}
+
+%remove-shadow {
+	@include box-shadow(none);
+}
+
+%position-absolute-center {
+	position : absolute;
+	top      : 0;
+	left     : 0;
+	right    : 0;
+	bottom   : 0;
+	margin   : auto;
+}
+
+%font-smoothing {
+	-moz-osx-font-smoothing : grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+@mixin respond-to($viewport-size) {
+	@if $viewport-size == xs {
+		@media only screen and (max-width : $screen-xs-max) {
+			@content;
+		}
+	} @else if ($viewport-size == sm) {
+		@media only screen and (min-width : $screen-sm-min) and (max-width : $screen-sm-max) {
+			@content;
+		}
+	} @else if ($viewport-size == sm-and-up) {
+		@media only screen and (min-width : $screen-sm-min) {
+			@content;
+		}
+	} @else if ($viewport-size == sm-and-down) {
+		@media only screen and (max-width : $screen-sm-max) {
+			@content;
+		}
+	} @else if ($viewport-size == md) {
+		@media only screen and (min-width : $screen-md-min) and (max-width : $screen-md-max) {
+			@content;
+		}
+	} @else if ($viewport-size == md-and-up) {
+		@media only screen and (min-width : $screen-md-min) {
+			@content;
+		}
+	} @else if ($viewport-size == lg) {
+		@media only screen and (min-width : $screen-lg-min) {
+			@content;
+		}
+	}
+}
+
+@mixin app-font($name, $weight : normal, $style : normal) {
+	$font-files : inline-font-files('#{$name}.woff', woff),font-files('#{$name}.ttf', truetype,'#{$name}.svg#font', svg);
+	@include font-face($name, $font-files, '#{$name}.eot', $weight, $style);
+}
+
+@mixin transition($properties : all, $duration : .3s, $easing : ease-out) {
+	@if length($properties) > 1 {
+		transition-property        : $properties;
+		transition-duration        : $duration;
+		transition-timing-function : $easing;
+	} @else {
+		transition                 : $properties $duration $easing;
+	}
+}
+
+@mixin input-placeholder {
+	&.placeholder { @content }
+	&:-moz-placeholder { @content }
+	&::-moz-placeholder { @content }
+	&:-ms-input-placeholder { @content }
+	&::-webkit-input-placeholder { @content }
+}
+
+@mixin font-smoothing($value: true) {
+	@if $value {
+		-moz-osx-font-smoothing : grayscale;
+		-webkit-font-smoothing  : antialiased;
+	} @else {
+		-moz-osx-font-smoothing : auto;
+		-webkit-font-smoothing  : auto;
+	}
+}
+
+// example: @include translucent-bg(@includeSmoke, 0.7);
+@mixin translucent-bg($color, $opacity) {
+	background-color : $color;
+	background-color : transparentize($color, 1 - $opacity);
+}
+
+// example: @include translucent-bg(@includeSmoke, 0.7);
+@mixin translucent-text($color, $opacity) {
+	color : $color;
+	color : transparentize($color, 1 - $opacity);
+}
+
+@mixin background($color : null, $image : null, $repeat : null, $attachment : null, $position : null, $size : null) {
+	background : $color $image $repeat $attachment $position;
+	@if $size {
+		@include background-size($size);
+	}
+}
+
+@mixin font($weight : null, $style : null, $variant : null, $size : null, $line-height : null, $family : null) {
+	$font : $weight $style $variant;
+	@if $size and $line-height {
+		$font : $font $size/#{$line-height};
+	} @else if $size {
+		$font : $font $size;
+	}
+	font : $font $family;
+	@if $line-height and not $size {
+		line-height : $line-height;
+	}
+}
+
+@mixin center-by($width : 0, $height : 0) {
+	@if $width == 0 and $height == 0 {
+		@warn "center-by() requires width or height above zero.";
+	}
+	display  : block;
+	position : absolute;
+	@if $width > 0 {
+		left        : 50%;
+		margin-left : $width / -2;
+	}
+	@if $height > 0 {
+		top        : 50%;
+		margin-top : $height / -2;
+	}
+}
