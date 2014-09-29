@@ -58,10 +58,9 @@
 	}
 }
 
-
 .th-search {
-	background-color : map-get($colors, bg--dark);
-	border-left      : 1px solid map-get($colors, border--dark);
+	background-color : $gray-bg--dark;
+	border-left      : 1px solid $border--dark;
 	position         : absolute !important;
 	right            : 79px;
 	top              : 0;

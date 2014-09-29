@@ -4,6 +4,7 @@
 	right            : 0;
 	background-color : $gray-bg--dark;
 	border-left      : 1px solid $border--dark;
+	z-index: 9;
 
 	&__icon {
 		padding : 18px 23px;
