@@ -1,6 +1,6 @@
 <div class="th-product-tile">
 	<div class="th-product-tile__image">
-		<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="{{product.name}}">
+		<img vn-product-image product="product" default-image="defaultProductImage" class="img-responsive" alt="{{product.name}}">
 	</div>
 	<div class="th-product-tile__info">
 		<span class="th-product-tile__name">{{product.name}}</span>
