@@ -1,4 +1,7 @@
 .th-navbar {
+	margin-bottom: 0;
+}
+#th-main-menu {
 	@extend %font-smoothing;
 	border : 0;
 	margin : 0;
@@ -25,7 +28,7 @@
 		}
 	}
 
-	&__menu {
+	ul {
 		> li > a {
 			@extend %animate-all;
 			@include respond-to(md-and-up) {
