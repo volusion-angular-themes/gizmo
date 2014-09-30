@@ -1,5 +1,10 @@
-.snap-content { background-color : $body-bg }
-.snap-drawer  { width : 266px }
+.snap-content {
+	background-color : $body-bg
+}
+
+.snap-drawer {
+	width : 266px
+}
 
 .th-mobile-menu {
 	@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
@@ -8,78 +13,22 @@
 	border           : thin solid $border--dark;
 	color            : white;
 
-	&__category-list {
-		ul {
-			margin         : 0;
-			padding-top    : 0;
-			padding-bottom : 0;
-		}
-
-		&__link {
-			@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
-			@extend %animate-all;
-			border-bottom  : thin inset $gray-bg--dark;
-			color          : white;
-			font-size      : 1.6rem;
-			font-family    : 'roboto-condensed-bold';
-			padding        : 12px 15px !important;
-			text-transform : uppercase;
-
-			.open & {
-				color            : inherit;
-				background-color : inherit !important;
-			}
-
-			// Plus and Minus Icons
-			span.glyphicon {
-				font-size : 12px;
-				top       : 3px;
-				&:before {
-					content : "\2b";
-					.open & {
-						content : "\2212";
-					}
-				}
-
-//				&:hover,
-//				&:focus {
-//					background-color : $gray-bg--dark;
-//				}
-			}
-		}
-
-		&__sublink {
-			@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
-			@extend %animate-all;
-			color            : white;
-			background-color : $border--dark;
-			border-bottom    : thin inset $navbar-inverse-bg;
-			font-size        : 1.4rem;
-			font-family      : 'roboto-condensed-regular';
-			padding          : 10px 15px !important;
-			text-transform   : uppercase;
-		}
-	}
-
 	&__footer-link-block {
 		font-family   : 'Source-Sans-Pro-Regular';
-		margin-top    : 10px;
-		margin-bottom : 15px;
-		&:last-child {
-			margin-bottom : 30px
-		}
+		margin-top    : 13px;
+		margin-bottom : 24px;
 
 		li {
 			&:first-child {
 				font-family : 'roboto-condensed-bold';
-				margin     : 6px 15px
+				margin      : 0 15px 12px;
 			}
 
 			a {
 				@extend %animate-all;
 				color   : white;
-				margin : 3px 15px;
-				padding: 0;
+				margin  : 6px 15px;
+				padding : 0;
 
 				&:hover {
 					background : none;
@@ -88,4 +37,77 @@
 			}
 		}
 	}
+}
+
+.th-mobile-list {
+	margin         : 0;
+	padding-top    : 0;
+	padding-bottom : 0;
+
+	&__item--header {
+		display : none !important
+	}
+}
+
+.nav {
+	> .th-mobile-list__item {
+		> .th-mobile-list__link {
+			@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
+			@extend %animate-all;
+			border-bottom  : thin inset $gray-bg--dark;
+			color          : white;
+			font-size      : 1.6rem;
+			font-family    : 'roboto-condensed-bold';
+			padding        : 15px !important;
+			text-transform : uppercase;
+
+			// Override styles to remove caret
+			.caret {
+				border-top   : inherit;
+				border-right : inherit;
+				border-left  : inherit;
+				height       : auto;
+				margin-left  : 0;
+				width        : auto;
+			}
+		}
+	}
+}
+
+.th-mobile-list__link {
+	// Plus and Minus Icons
+	> span {
+		@extend .glyphicon;
+		font-size : 12px;
+		top       : 3px;
+		&:before {
+			content : "\2b";
+			.open & {
+				content : "\2212";
+			}
+		}
+	}
+}
+
+.th-dropdown-toggle {
+	.open & {
+		color            : inherit;
+		background-color : inherit !important;
+
+		&:hover {
+			color : $link-hover-color !important;
+		}
+	}
+}
+
+.th-mobile-list--sub > li > a {
+	@include box-shadow(rgba($navbar-inverse-bg,0.8) -25px 0 20px -20px inset);
+	@extend %animate-all;
+	color            : white;
+	background-color : $border--dark;
+	border-bottom    : thin inset $navbar-inverse-bg;
+	font-size        : 1.4rem;
+	font-family      : 'roboto-condensed-regular';
+	padding          : 10px 15px !important;
+	text-transform   : uppercase;
 }
