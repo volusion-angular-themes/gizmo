@@ -19,11 +19,11 @@
 
 @keyframes search-input-hide {
 	0% {
-		@include transform(translateX(-100%));
+		@include transform(translateX(0%));
 	}
 
 	100% {
-		@include transform(translateX(0%));
+		@include transform(translateX(200%));
 	}
 }
 
