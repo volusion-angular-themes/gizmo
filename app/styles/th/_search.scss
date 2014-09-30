@@ -27,28 +27,7 @@
 	}
 }
 
-@-webkit-keyframes search-input-hide {
-	0% {
-		@include transform(translateX(0%));
-	}
-
-	100% {
-		@include transform(translateX(200%));
-	}
-}
-
-
 @keyframes search-input-show {
-	0% {
-		@include transform(translateX(100%));
-	}
-
-	100% {
-		@include transform(translateX(0%));
-	}
-}
-
-@-webkit-keyframes search-input-show {
 	0% {
 		@include transform(translateX(100%));
 	}
@@ -84,14 +63,20 @@
 	&__popout {
 		@extend %inline-block;
 		padding-left : 275px;
-		z-index: -9;
+		z-index      : -9;
 
 		&.ng-hide-remove {
+			-moz-animation    : search-input-show 0.2s ease-in-out;
+			-ms-animation     : search-input-show 0.2s ease-in-out;
+			-o-animationL     : search-input-show 0.2s ease-in-out;
 			-webkit-animation : search-input-show 0.2s ease-in-out;
 			animation         : search-input-show 0.2s ease-in-out;
 			display           : block !important;
 		}
 		&.ng-hide-add {
+			-moz-animation    : search-input-hide 0.2s ease-in-out;
+			-ms-animation     : search-input-hide 0.2s ease-in-out;
+			-o-animationL     : search-input-hide 0.2s ease-in-out;
 			-webkit-animation : search-input-hide 0.2s ease-in-out;
 			animation         : search-input-hide 0.2s ease-in-out;
 			display           : block !important;
