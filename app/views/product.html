@@ -5,7 +5,7 @@
 				<li><a href="/">Home</a></li>
 				<li data-ng-repeat="category in product.categories">
 					<!--'Breadcrumb' data in API needs refactoring-->
-					<a href="{{category.url}}">{{category.name}}</a>
+					<a data-ng-href="{{category.url}}">{{category.name}}</a>
 				</li>
 				<li class="active">{{product.name}}</li>
 			</ol>
@@ -17,8 +17,8 @@
 				<div class="row">
 					<div class="col-xs-3 col-sm-2">
 						<div class="th-product-views">
-							<a data-ng-click="product.image=image" ng-repeat="image in currentImageCollection | filter: '!youtube.com'">
-								<img data-ng-src="{{ image.medium }}" class="img-responsive th-product-views__image th-product-views__image--thumbnail" alt="">
+							<a data-ng-click="product.image=image" data-ng-repeat="image in currentImageCollection | filter: '!youtube.com'">
+								<img data-ng-src="{{ image.medium }}" class="img-responsive th-product-views__image th-product-views__image--thumbnail" alt="{{image.name}}">
 							</a>
 						</div>
 					</div>
@@ -51,15 +51,15 @@
 					<div class="th-product-details__price">
 						<span data-ng-show="product.pricing.regularPrice > 0">
 							<span data-ng-class="{strike: product.pricing.salePrice > 0}"
-							      ng-bind-html="product.pricing.regularPrice | vnFormattedCurrency"></span>
+							      data-ng-bind-html="product.pricing.regularPrice | vnFormattedCurrency"></span>
 						</span>
 						<span class="th-product-details__price--sale" data-ng-show="product.pricing.salePrice > 0">
-							<span ng-bind-html="product.pricing.salePrice | vnFormattedCurrency"></span>
+							<span data-ng-bind-html="product.pricing.salePrice | vnFormattedCurrency"></span>
 						</span>
 					</div>
 					<!--<div class="th-product-details__model"><b>Model:</b> Lenovo Yoga</div>-->
 					<div class="th-product-details__product-code"><b>SKU:</b> {{product.code}}</div>
-					<div class="th-product-details__review-summary" ng-hide="!ratingsAndReviews.data.avgRating">
+					<div class="th-product-details__review-summary" data-ng-hide="!ratingsAndReviews.data.avgRating">
 						<span class="th-review-stars">
 							<span class="th-reviews__avg">
 								<span data-vn-rating rating-value="ratingsAndReviews.data.avgRating"
@@ -71,8 +71,8 @@
 						<a href="#" class="th-product-details__link">See Reviews (<span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span>)</a>
 					</div>
 					<div class="th-product-details__stock-status">
-						<span ng-if="(product.availability.quantityInStock > 0)">In Stock.</span>
-						<span ng-if="(product.availability.quantityInStock <= 0)" class="text-danger">Out of Stock.</span>
+						<span data-ng-if="(product.availability.quantityInStock > 0)">In Stock.</span>
+						<span data-ng-if="(product.availability.quantityInStock <= 0)" class="text-danger">Out of Stock.</span>
 						&nbsp;{{product.availability.description}}
 					</div>
 					<div class="th-product-details__description" itemprop="description"

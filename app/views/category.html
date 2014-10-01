@@ -19,7 +19,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-3 col-lg-2 vn-faceted-search"
-				 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }"
+		     data-ng-class="{ isMobileAndVisible: true == isMobileAndVisible }"
 				 data-ng-hide="!hasFacetsOrCategories">
 
 			<!--Sort By button-->
@@ -35,7 +35,7 @@
 
 			<!-- Mobile Filtering & Sorting Controls -->
 			<div class="row mobile-filters" data-ng-hide="mobileDisplay"
-					 ng-class="{ isMobileAndVisible: true == isMobileAndVisible }">
+			     data-ng-class="{ isMobileAndVisible: true == isMobileAndVisible }">
 				<div class="col-xs-6 visible-xs-block" data-ng-click="toggleSearch()">
 					<button class="btn btn-default pull-right vn-facet-search-control">Filter</button>
 				</div>

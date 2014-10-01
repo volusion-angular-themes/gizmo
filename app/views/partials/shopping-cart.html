@@ -123,7 +123,7 @@
 						{{ item.qty }}<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li ng-repeat="choice in getArray(choices) track by $index">
+						<li data-ng-repeat="choice in getArray(choices) track by $index">
 							<a role="menuitem"
 							   tabindex="-1"
 							   href
