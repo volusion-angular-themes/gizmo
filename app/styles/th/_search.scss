@@ -1,22 +1,3 @@
-@mixin vcenterer {
-	position  : absolute;
-	top       : 50%;
-	transform : translateY(-50%);
-}
-
-@mixin hcenterer {
-	position  : absolute;
-	left      : 50%;
-	transform : translateX(-50%);
-}
-
-@mixin centerer {
-	position  : absolute;
-	top       : 50%;
-	left      : 50%;
-	transform : translate(-50%, -50%);
-}
-
 @keyframes search-input-hide {
 	0% {
 		@include transform(translateX(0%));
@@ -44,16 +25,16 @@
 	right            : 79px;
 	top              : 0;
 	color            : #ffffff !important;
-	min-height       : 71px;
-	min-width        : 71px;
+	min-height       : 72px;
+	min-width        : 78px;
 	&:hover {
 		color : #ababab !important;
 	}
 
 	&__trigger {
-		@include vcenterer;
 		color   : inherit;
-		padding : 27px !important;
+		padding : 26px 32px !important;
+		position : absolute;
 
 		&:hover {
 			color : inherit;

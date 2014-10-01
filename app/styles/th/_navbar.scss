@@ -1,13 +1,11 @@
 .th-navbar {
-	margin-bottom: 0;
-}
-#th-main-menu {
 	@extend %font-smoothing;
-	border : 0;
-	margin : 0;
+	border   : 0;
+	height   : 50px;
+	margin   : 0;
 
 	@include respond-to(md-and-up) {
-		min-height : 73px
+		height : 73px
 	}
 
 	&__toggle {
@@ -23,46 +21,40 @@
 
 		&:hover {
 			.icon-bar {
-				@extend %opacity-75
+				background-color: $link-hover-color;
 			}
 		}
 	}
 
-	ul {
-		> li > a {
-			@extend %animate-all;
+	&__logo {
+		img {
+			margin-top : 6px;
+
 			@include respond-to(md-and-up) {
-				@include font($family : $font-family-main-menu, $size : 1.5rem);
-				text-transform : uppercase;
-				padding        : 26px 20px 27px;
+				margin-top: 14px;
 			}
-			@include respond-to(lg) {
-				padding : 26px 30px 27px;
-			}
-
-			.caret {
-				margin-left : 8px;
-			}
-		}
-		> li:hover > a {
-			color            : $navbar-inverse-link-hover-color;
-			background-color : $navbar-inverse-link-hover-bg
 		}
 	}
+}
 
-	&__brand {
-		padding : 0 15px;
-
-		@include respond-to(sm-and-down) {
-			float : none;
-
-			img {
-				margin     : 0 auto;
-				max-height : 50px;
-			}
-		}
+.navbar-nav {
+	> li > a {
+		@extend %animate-all;
 		@include respond-to(md-and-up) {
-			padding-top : 8px;
+			@include font($family : $font-family-main-menu, $size : 1.5rem);
+			text-transform : uppercase;
+			padding        : 26px 20px 27px;
 		}
+		@include respond-to(lg) {
+			padding : 26px 30px 27px;
+		}
+
+		.caret {
+			margin-left : 8px;
+		}
+	}
+	> li:hover > a {
+		color            : $navbar-inverse-link-hover-color;
+		background-color : $navbar-inverse-link-hover-bg
 	}
 }
