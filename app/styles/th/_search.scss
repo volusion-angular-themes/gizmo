@@ -21,23 +21,25 @@
 .th-search {
 	background-color : $gray-bg--dark;
 	border-left      : 1px solid $border--dark;
+	color            : $text-color;
+	min-height       : 72px;
+	min-width        : 78px;
 	position         : absolute !important;
 	right            : 79px;
 	top              : 0;
-	color            : #ffffff !important;
-	min-height       : 72px;
-	min-width        : 78px;
+
 	&:hover {
-		color : #ababab !important;
+		color: inherit;
 	}
 
 	&__trigger {
-		color   : inherit;
+		color   : white;
+		cursor: pointer;
 		padding : 26px 32px !important;
 		position : absolute;
 
 		&:hover {
-			color : inherit;
+			color : $link-hover-color;
 		}
 	}
 
