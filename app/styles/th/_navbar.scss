@@ -27,11 +27,21 @@
 	}
 
 	&__logo {
-		img {
-			margin-top : 6px;
+		height: 50px;
+		max-width: 100%;
+		position: relative;
 
-			@include respond-to(md-and-up) {
-				margin-top: 14px;
+		@include respond-to(md-and-up) {
+			height: 73px;
+		}
+
+		img {
+			@extend %position-absolute-center;
+			max-height: 100%;
+			max-width: 100%;
+
+			@include respond-to(xs){
+				padding: 3px;
 			}
 		}
 	}
