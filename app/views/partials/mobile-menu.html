@@ -4,7 +4,7 @@
 		 data-ng-controller="HeaderCtrl">
 
 	<div class="hidden-md hidden-lg container-fluid th-search--mobile-menu"
-			 ng-controller="SearchCtrl">
+	     data-ng-controller="SearchCtrl">
 	<div class="row">
 			<div class="col-xs-12">
 			<form class="form-inline th-search--mobile-menu__form"
@@ -26,31 +26,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="th-mobile-menu__category-list">
-		<ul class="nav navbar-nav list-unstyled">
-			<li class="dropdown" ng-repeat="category in smartCategories">
-				<a href="#" class="dropdown-toggle navbar-link th-mobile-menu__category-list__link"
-				   ng-if="category.subCategories.length"
-				   data-toggle="dropdown">
-					{{category.name}}
-					<span class="glyphicon pull-right"></span>
-				</a>
-				<a data-ng-href="{{category.url}}" class="navbar-link th-mobile-menu__category-list__link" ng-if="!category.subCategories.length">
-					{{category.name}}
-				</a>
-				<ul class="dropdown-menu" data-ng-if="category.subCategories.length">
-					<li>
-						<a data-ng-href="{{category.url}}" class="th-mobile-menu__category-list__sublink">
-							All {{category.name}}
-						</a>
-					</li>
-					<li data-ng-repeat="subCategory in category.subCategories">
-						<a class="th-mobile-menu__category-list__sublink"
-							 data-ng-href="{{subCategory.url}}">{{subCategory.name}}</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
+	<div class="th-mobile-menu__list">
+		<div vn-nav-mobile></div>
 	</div>
 
 	<div class="th-mobile-menu__footer-link-block" data-ng-bind-html="themeSettings.general.footer.content.column1 | vnLegacyLinkify | html"></div>

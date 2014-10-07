@@ -1,20 +1,20 @@
 <div class="th-product-tile">
 	<div class="th-product-tile__image">
-		<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="{{product.name}}">
+		<img vn-product-image product="product" default-image="defaultProductImage" class="img-responsive" alt="{{product.name}}">
 	</div>
 	<div class="th-product-tile__info">
 		<span class="th-product-tile__name">{{product.name}}</span>
 
 		<div class="th-product-tile__price">
 			<span data-ng-show="product.pricing.regularPrice > 0">
-				<span data-ng-class="{strike: product.pricing.salePrice > 0}" ng-bind-html="product.pricing.regularPrice | vnFormattedCurrency"></span>
+				<span data-ng-class="{strike: product.pricing.salePrice > 0}" data-ng-bind-html="product.pricing.regularPrice | vnFormattedCurrency"></span>
 			</span>
 			<span class="th-product-tile__price--sale" data-ng-show="product.pricing.salePrice > 0">
-				<span ng-bind-html="product.pricing.salePrice | vnFormattedCurrency"></span>
+				<span data-ng-bind-html="product.pricing.salePrice | vnFormattedCurrency"></span>
 			</span>
 		</div>
 		<div class="th-tile-details th-product-tile__details">
-			<div class="th-review-stars" ng-if="product.avgRating">
+			<div class="th-review-stars" data-ng-if="product.avgRating">
 				<span class="th-reviews__avg">
 					<span data-vn-rating rating-value="product.avgRating"
 								maximum="ratingsAndReviews.data.maxRating"
