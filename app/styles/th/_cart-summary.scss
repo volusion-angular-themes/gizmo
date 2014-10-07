@@ -1,17 +1,24 @@
 .th-cart-summary {
-	cursor : pointer;
+	cursor           : pointer;
 	position         : absolute;
 	top              : 0;
 	right            : 0;
 	background-color : $gray-bg--dark;
 	border-left      : 1px solid $border--dark;
-	z-index: 9;
+	z-index          : 9;
 
 	&__icon {
-		padding : 18px 23px;
+		@extend %animate-all;
+		color   : white;
+		padding : 15px 25px 14px 24px;
+
+		&:hover {
+			color : $link-hover-color;
+		}
 
 		@include respond-to(md-and-up) {
-			padding : 29px 30px;
+			font-size : 1.6rem;
+			padding : 25px 31px;
 		}
 	}
 }
