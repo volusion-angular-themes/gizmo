@@ -1,0 +1,30 @@
+<div class="th-search" role="search">
+	<a id="search-toggle"
+	   data-ng-click="showSearch = !showSearch"
+	   ng-show="allowCollapse"
+	   type="button"
+	   class="th-search__trigger"
+	   data-ng-class="{ '-position' : !showSearch }">
+		<span class="glyphicon glyphicon-search"></span>
+	</a>
+
+	<div data-ng-show="showSearch"
+		 class="th-search__popout pull-left">
+		<form class='form-inline'
+			  role='search'
+			  name="frmSearch"
+			  data-ng-submit="doSearch()"
+			  novalidate>
+			<div class='form-group'>
+				<input type='text'
+					   data-ng-model='searchTerm'
+					   class='th-search__popout--input'
+					   placeholder='Search...'>
+				<button type='button'
+						data-ng-click="doSearch()"
+						class='btn btn-xs btn-primary th-search__popout--submit'>Go!
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
