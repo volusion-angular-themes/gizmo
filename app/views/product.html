@@ -1,5 +1,5 @@
 <div class="clearfix" itemscope itemtype="http://schema.org/Product">
-	<div class="visible-md-block visible-lg-block th-top-bar">
+	<div class="hidden-xs th-top-bar">
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="/">Home</a></li>
@@ -67,7 +67,7 @@
 										  editable="isEditable" title=""></span>
 							</span>
 						</span>
-						<!-- TODO Link this with the reviews tab // data-ng-click="tabs[2].active = true"-->
+						<!-- TODO Link this with the reviews tab -->
 						<a href="#" class="th-product-details__link">See Reviews (<span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span>)</a>
 					</div>
 					<div class="th-product-details__stock-status">
@@ -153,7 +153,7 @@
 						</div>
 					</div>
 				</tab>
-				<tab heading="Technical Specs">
+				<tab heading="Technical Specs" data-ng-if="product.descriptions.techSpecs || product.descriptions.extendedInfo">
 					<div class="container-fluid th-product-panels__panel">
 						<div class="row">
 							<div class="col-md-12">

@@ -16,7 +16,7 @@
 	}
 
 	&__name {
-		@include font( $size : 3.5rem, $line-height : 0.9, $family : Roboto-Light );
+		@include font( $size : 3.5rem, $line-height : 1, $family : Roboto-Light );
 
 		@include respond-to(md-and-up) {
 			font-size : 4.6rem;

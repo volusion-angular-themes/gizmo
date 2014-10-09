@@ -2,6 +2,11 @@
 	background-color : $gray-bg--lighter;
 	padding          : 20px 0;
 
+	@include respond-to(sm){
+		padding-top : 10px;
+		padding-bottom: 10px;
+	}
+
 	h1 {
 		@include respond-to(xs) {
 			font-size: 2.8rem;
