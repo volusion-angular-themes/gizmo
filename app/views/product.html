@@ -17,7 +17,7 @@
 				<div class="row">
 					<div class="col-xs-3 col-sm-2">
 						<div class="th-product-views">
-							<a data-ng-click="product.image=image" data-ng-repeat="image in currentImageCollection | filter: '!youtube.com'">
+							<a data-ng-click="product.image=image" data-ng-repeat="image in product.currentImageCollection | filter: '!youtube.com'">
 								<img data-ng-src="{{ image.medium }}" class="img-responsive th-product-views__image th-product-views__image--thumbnail" alt="{{image.name}}">
 							</a>
 						</div>
