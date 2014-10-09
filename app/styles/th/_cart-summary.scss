@@ -10,7 +10,7 @@
 	&__icon {
 		@extend %animate-all;
 		color   : white;
-		padding : 15px 25px 14px 24px;
+		padding : 15px 25px;
 
 		&:hover {
 			color : $link-hover-color;
