@@ -14,6 +14,11 @@
 			<div class="th-category-graphic__title">{{category.name}}</div>
 		</div>
 	</div>
+	<div class="visible-xs-block" data-ng-if="category.description">
+		<div class="col-xs-12 th-top-bar--category">
+			<span data-ng-bind-html="category.description | vnLegacyLinkify | html"></span>
+		</div>
+	</div>
 </div>
 
 <div class="container-fluid">
@@ -43,8 +48,8 @@
 			</div>
 		</div>
 		<div class="col-sm-9 col-lg-10">
-			<div class="row" data-ng-if="category.description">
-				<div class="col-xs-12 th-top-bar--category">
+			<div class="row hidden-xs" data-ng-if="category.description">
+				<div class="col-sm-12 th-top-bar--category">
 					<span data-ng-bind-html="category.description | vnLegacyLinkify | html"></span>
 				</div>
 			</div>
