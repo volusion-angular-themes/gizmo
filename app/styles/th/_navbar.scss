@@ -35,6 +35,10 @@
 			height: 73px;
 		}
 
+		a:hover {
+			@extend %opacity-75;
+		}
+
 		img {
 			@extend %position-absolute-center;
 			max-height: 100%;

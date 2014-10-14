@@ -3,7 +3,7 @@
 	padding    : 15px 0;
 
 	@include respond-to(sm-and-up) {
-		padding : 20px 0 45px;
+		padding : 20px 0 40px;
 	}
 
 	&--dark {
@@ -28,6 +28,7 @@
 	&__title {
 		@include font($size : 1.8rem, $family : Roboto-Light);
 		color          : $text-color;
+		margin-bottom: 20px;
 		text-transform : uppercase;
 
 		@include respond-to(sm-and-up) {

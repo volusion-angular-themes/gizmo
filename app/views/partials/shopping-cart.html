@@ -32,13 +32,17 @@
 			</div>
 	</div>
 
-	<div class="container-fluid th-checkout__subtotal" data-ng-if="!cartEmpty">
+	<div class="container-fluid th-checkout__subtotal" data-ng-if="cartEmpty">
 		<div class="row">
 			<div class="col-xs-12 text-center th-checkout__noitems--label"
-			     data-translate="shopping-card.lblYourCartIsEmpty"
-			     data-ng-if="cartEmpty">
+			     data-translate="shopping-card.lblYourCartIsEmpty">
 				Your cart is empty
 			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid th-checkout__subtotal" data-ng-if="!cartEmpty">
+		<div class="row">
 			<div class="col-xs-12">
 				<span class="th-checkout__subtotal--label" data-translate="shopping-card.lblSubtotal">Subtotal:></span>
 				<span class="th-checkout__subtotal--price">{{ calcSubtotal | currency }}</span>

@@ -41,8 +41,10 @@
 		</div>
 		<div class="col-sm-9 col-lg-10" data-ng-class="{ 'isMobileAndHidden': true == !isMobileAndHidden }">
 			<div class="row row--no-col-padding">
-				<div class="col-sm-6 col-md-4 col-lg-3" data-ng-repeat="product in products track by product.id"
-						 data-ng-include=" 'views/partials/product-tile.html' ">
+				<div class="col-sm-6 col-md-4 col-lg-3" data-ng-repeat="product in products track by product.id">
+					<a data-ng-href="{{product.url}}">
+						<div data-ng-include=" 'views/partials/product-tile.html' "></div>
+					</a>
 				</div>
 			</div>
 		</div>

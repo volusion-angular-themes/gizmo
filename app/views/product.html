@@ -1,5 +1,5 @@
 <div class="clearfix" itemscope itemtype="http://schema.org/Product">
-	<div class="visible-md-block visible-lg-block th-top-bar">
+	<div class="hidden-xs th-top-bar">
 		<div class="container">
 			<ol class="breadcrumb">
 				<li><a href="/">Home</a></li>
@@ -17,7 +17,7 @@
 				<div class="row">
 					<div class="col-xs-3 col-sm-2">
 						<div class="th-product-views">
-							<a data-ng-click="product.image=image" data-ng-repeat="image in currentImageCollection | filter: '!youtube.com'">
+							<a data-ng-click="product.image=image" data-ng-repeat="image in product.currentImageCollection | filter: '!youtube.com'">
 								<img data-ng-src="{{ image.medium }}" class="img-responsive th-product-views__image th-product-views__image--thumbnail" alt="{{image.name}}">
 							</a>
 						</div>
@@ -67,7 +67,7 @@
 										  editable="isEditable" title=""></span>
 							</span>
 						</span>
-						<!-- TODO Link this with the reviews tab // data-ng-click="tabs[2].active = true"-->
+						<!-- TODO Link this with the reviews tab -->
 						<a href="#" class="th-product-details__link">See Reviews (<span itemprop="reviewCount" data-ng-bind="ratingsAndReviews.cursor.total"></span>)</a>
 					</div>
 					<div class="th-product-details__stock-status">
@@ -133,10 +133,10 @@
 	</div>
 
 	<div class="container">
-		<div class="th-product-panels">
+		<div class="th-tab-panel">
 			<tabset justified="true">
 				<tab heading="Features">
-					<div class="container-fluid th-product-panels__panel">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="th-product-feature" data-ng-show="product.descriptions.detail">
@@ -153,8 +153,8 @@
 						</div>
 					</div>
 				</tab>
-				<tab heading="Technical Specs">
-					<div class="container-fluid th-product-panels__panel">
+				<tab heading="Technical Specs" data-ng-if="product.descriptions.techSpecs || product.descriptions.extendedInfo">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="th-product-feature" data-ng-show="product.descriptions.techSpecs">
@@ -172,7 +172,7 @@
 					</div>
 				</tab>
 				<tab heading="Reviews" data-ng-if="config.general.enableCustomerReviews">
-					<div class="container-fluid th-product-panels__panel">
+					<div class="container-fluid">
 						<div class="th-reviews" >
 							<div class="row th-reviews__summary">
 								<div class="col-sm-8">
@@ -218,33 +218,57 @@
 		</div>
 	</div>
 
+	<hr>
+
 	<div class="hidden-xs container-fluid container-fluid--nopadding">
-		<hr>
-		<div class="th-slider">
-			<div class="th-slider__title">Our Customers also liked:</div>
-			<div class="th-slider__belt">
-				<a href="#">
-					<div class="th-icon th-icon--next th-slider__next">
-						<div class="th-icon__foreground"></div>
-					</div>
-				</a>
-				<a href="#">
-					<div class="th-icon th-icon--previous th-slider__previous">
-						<div class="th-icon__foreground"></div>
-					</div>
-				</a>
-				<div class="th-slider__slide" data-ng-repeat="product in relatedProducts | filter: '!' + product.id">
-					<div class="th-product-slide">
-						<a data-ng-href="{{ product.url }}" class="th-product-slide__image">
-							<img data-ng-src="{{ getImagePath(product.imageCollections) }}" class="img-responsive" alt="{{ product.name }}">
-						</a>
-						<div class="th-product-slide__name">
-							<a data-ng-href="{{ product.url }}">{{product.name}}</a>
+		<!-- Related Product Slider -->
+		<div id="relatedProductsSlider" class="carousel slide th-slider" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="item active">
+					<div class="th-slider__title" data-tab-heading data-translate="product.related"></div>
+					<div class="row">
+						<div class="col-md-2 th-product-slide"
+						     data-ng-repeat="product in relatedProducts | filter: '!' + product.id">
+							<a data-ng-href="{{ product.url }}">
+								<img data-ng-src="{{ getImagePath(product.imageCollections) }}"
+								     class="img-responsive th-product-slide__image" alt="{{ product.name }}">
+								<div class="th-product-slide__name">
+									{{product.name}}
+								</div>
+								<div class="th-product-slide__price"
+								     ng-bind-html="product.pricing.calculatedPrice | vnFormattedCurrency"></div>
+							</a>
 						</div>
-						<div class="th-product-slide__price" ng-bind-html="product.pricing.calculatedPrice | vnFormattedCurrency"></div>
+					</div>
+				</div>
+				<div class="item" ng-if="accessories.length > 0">
+					<div class="th-slider__title" data-tab-heading data-translate="product.accessories"></div>
+					<div class="row">
+						<div class="col-md-2 th-product-slide" data-ng-repeat="product in accessories">
+							<a data-ng-href="{{ product.url }}">
+								<img data-ng-src="{{ getImagePath(product.imageCollections) }}"
+								     class="img-responsive th-product-slide__image" alt="{{ product.name }}">
+								<div class="th-product-slide__name">
+									{{product.name}}
+								</div>
+								<div class="th-product-slide__price"
+								     ng-bind-html="product.pricing.calculatedPrice | vnFormattedCurrency"></div>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
+			<!--Slider controls-->
+			<a class="" href="#relatedProductsSlider" role="button" data-slide="prev">
+				<div class="th-icon th-icon--previous th-slider__previous">
+					<div class="th-icon__foreground"></div>
+				</div>
+			</a>
+			<a class="" href="#relatedProductsSlider" role="button" data-slide="next">
+				<div class="th-icon th-icon--next th-slider__next">
+					<div class="th-icon__foreground"></div>
+				</div>
+			</a>
 		</div>
 	</div>
 </div>

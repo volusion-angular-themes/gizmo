@@ -1,0 +1,7 @@
+.th-tab-panel {
+	margin : 15px 0;
+
+	@include respond-to(md-and-up) {
+		min-height: 500px;
+	}
+}

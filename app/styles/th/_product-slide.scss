@@ -1,11 +1,21 @@
 .th-product-slide {
+	display: inline-block;
+	float: none;
 
 	a {
-		margin: 0 auto;
+
+		&:hover {
+			color: inherit;
+
+			img {
+				@extend %opacity-75;
+			}
+		}
 	}
 
 	&__image {
 		display : block;
+		margin: 0 auto;
 		width   : 150px;
 		height  : 150px;
 		@include background($repeat : no-repeat, $position : center center);

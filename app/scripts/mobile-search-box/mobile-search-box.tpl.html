@@ -1,0 +1,22 @@
+<div class="hidden-md hidden-lg container-fluid th-search--mobile-menu">
+	<div class="row">
+		<div class="col-xs-12">
+			<form class="form-inline th-search--mobile-menu__form"
+			      role="search"
+			      name="frmSearch"
+			      data-ng-submit="doSearch()"
+			      novalidate>
+				<label class="sr-only" for="search">Search</label>
+				<input type="text" id="search"
+				       class="form-control th-search--mobile-menu__input"
+				       placeholder="Search..."
+				       data-ng-model='searchTerm'>
+				<button type="button"
+				        class="th-search--mobile-menu__submit"
+				        data-ng-click="doSearch()">
+					<span class="glyphicon glyphicon-search th-search--mobile-menu__icon"></span>
+				</button>
+			</form>
+		</div>
+	</div>
+</div>

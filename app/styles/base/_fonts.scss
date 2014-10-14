@@ -1,6 +1,11 @@
 // Declare Custom Fonts Here (update any .svg file's id to 'font'!)
 // Set to font's file name
 
+@mixin app-font($name, $weight : normal, $style : normal) {
+	$font-files : inline-font-files('#{$name}.woff', woff),font-files('#{$name}.ttf', truetype,'#{$name}.svg#font', svg);
+	@include font-face($name, $font-files, '#{$name}.eot', $weight, $style);
+}
+
 @include app-font('Montserrat');
 @include app-font('Montserrat-Bold');
 
@@ -28,6 +33,5 @@
 $font-family-buttons:    "Montserrat-Bold";
 $font-family-main-menu:  "Roboto-Condensed-Bold";
 
-// $font-family-glyphs: 				"Glyphicons Halflings";
 
 // Primary Fonts are assigned to Bootstrap variables. See file '_bootstrap-style.scss'
