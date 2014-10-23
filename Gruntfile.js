@@ -306,6 +306,7 @@ module.exports = function(grunt) {
 						'!<%= yeoman.dist %>/images/marketing-assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
 						'!<%= yeoman.dist %>/images/homepage/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
 						'!<%= yeoman.dist %>/images/theme/tcp-no-image.{png,jpg,jpeg,gif,webp,svg}',
+						'!<%= yeoman.dist %>/images/theme/logo*.png',
 						'<%= yeoman.dist %>/fonts/*'
 					]
 				}
@@ -482,7 +483,7 @@ module.exports = function(grunt) {
 							'.htaccess',
 							'*.html',
 							'views/{,*/}*.html',
-							'images/{,*/}*.{webp}',
+							'images/**/*',
 							'fonts/*',
 							'translations/{,*/}*.json',
 							'settings/{,*/}*',
