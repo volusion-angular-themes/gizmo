@@ -7,7 +7,7 @@
 					<!--'Breadcrumb' data in API needs refactoring-->
 					<a data-ng-href="{{category.url}}">{{category.name}}</a>
 				</li>
-				<li class="active">{{product.name}}</li>
+				<li class="active">{{fbData.pName}}</li>
 			</ol>
 		</div>
 	</div>
@@ -25,7 +25,7 @@
 					<div class="col-xs-9 col-sm-10">
 						<div class="th-product-views">
 							<img data-ng-src="{{product.image.large}}" class="img-responsive th-product-views__image th-product-views__image"
-									 alt="{{product.name}}">
+									 alt="{{fbData.pName}}">
 						</div>
 						<div class="visible-md visible-lg text-center th-social-share th-product-details__social">
 							<div class="th-social-share__item">
@@ -47,15 +47,18 @@
 			<div class="col-sm-5">
 				<div class="th-product-details">
 					<div ng-if="product.productManufacturer" class="th-product-details__manufacturer">{{product.productManufacturer}}</div>
-					<div class="th-product-details__name">{{product.name}}</div>
+					<div class="th-product-details__name">{{fbData.pName}}</div>
 					<div class="th-product-details__price">
-						<span data-ng-show="product.pricing.regularPrice > 0">
-							<span data-ng-class="{strike: product.pricing.salePrice > 0}"
-							      data-ng-bind-html="product.pricing.regularPrice | vnFormattedCurrency"></span>
+						<span>
+							<span>{{ fbData.pPrice }}</span>
 						</span>
-						<span class="th-product-details__price--sale" data-ng-show="product.pricing.salePrice > 0">
-							<span data-ng-bind-html="product.pricing.salePrice | vnFormattedCurrency"></span>
-						</span>
+						<!--<span data-ng-show="product.pricing.regularPrice > 0">-->
+							<!--<span data-ng-class="{strike: product.pricing.salePrice > 0}"-->
+							      <!--data-ng-bind-html="product.pricing.regularPrice | vnFormattedCurrency"></span>-->
+						<!--</span>-->
+						<!--<span class="th-product-details__price--sale" data-ng-show="product.pricing.salePrice > 0">-->
+							<!--<span data-ng-bind-html="product.pricing.salePrice | vnFormattedCurrency"></span>-->
+						<!--</span>-->
 					</div>
 					<!--<div class="th-product-details__model"><b>Model:</b> Lenovo Yoga</div>-->
 					<div class="th-product-details__product-code"><b>SKU:</b> {{product.code}}</div>
@@ -75,8 +78,12 @@
 						<span data-ng-if="(product.availability.quantityInStock <= 0)" class="text-danger">Out of Stock.</span>
 						&nbsp;{{product.availability.description}}
 					</div>
+					<!--<div class="th-product-details__description" itemprop="description"-->
+							 <!--data-ng-bind-html="product.descriptions.short | vnLegacyLinkify | html">-->
+					<!--</div>-->
+
 					<div class="th-product-details__description" itemprop="description"
-							 data-ng-bind-html="product.descriptions.short | vnLegacyLinkify | html">
+						 data-ng-bind-html=" | vnLegacyLinkify | html">
 					</div>
 
 					<div class="row">
@@ -141,9 +148,18 @@
 							<div class="col-md-12">
 								<div class="th-product-feature" data-ng-show="product.descriptions.detail">
 									<h3 class="th-product-feature__title" data-translate="product.description">Description</h3>
-									<p class="th-product-feature__description" itemprop="description"
-										 data-ng-bind-html="product.descriptions.detail | vnLegacyLinkify | html"></p>
+									<p class="th-product-feature__description"
+									   itemprop="description"
+									   data-ng-if="!product.hasFirebaseLink"
+									   data-ng-bind-html="product.descriptions.detail | vnLegacyLinkify | html"></p>
+									<p class="th-product-feature__description"
+									   itemprop="description"
+									   data-ng-if="product.hasFirebaseLink"
+									   data-ng-bind-html="fbData.pDesc | vnLegacyLinkify | html"></p>
 								</div>
+
+
+
 								<div class="th-product-feature" data-ng-show="product.descriptions.features">
 									<h3 class="th-product-feature__title" data-translate="product.features">Features</h3>
 									<p class="th-product-feature__description"
@@ -231,9 +247,9 @@
 						     data-ng-repeat="product in relatedProducts | filter: '!' + product.id">
 							<a data-ng-href="{{ product.url }}">
 								<img data-ng-src="{{ getImagePath(product.imageCollections) }}"
-								     class="img-responsive th-product-slide__image" alt="{{ product.name }}">
+								     class="img-responsive th-product-slide__image" alt="{{ firebaseName }}">
 								<div class="th-product-slide__name">
-									{{product.name}}
+									{{firebaseName}}
 								</div>
 								<div class="th-product-slide__price"
 								     ng-bind-html="product.pricing.calculatedPrice | vnFormattedCurrency"></div>
@@ -247,9 +263,9 @@
 						<div class="col-md-2 th-product-slide" data-ng-repeat="product in accessories">
 							<a data-ng-href="{{ product.url }}">
 								<img data-ng-src="{{ getImagePath(product.imageCollections) }}"
-								     class="img-responsive th-product-slide__image" alt="{{ product.name }}">
+								     class="img-responsive th-product-slide__image" alt="{{ firebaseName }}">
 								<div class="th-product-slide__name">
-									{{product.name}}
+									{{firebaseName}}
 								</div>
 								<div class="th-product-slide__price"
 								     ng-bind-html="product.pricing.calculatedPrice | vnFormattedCurrency"></div>
