@@ -20,7 +20,7 @@ angular.module('gizmoApp')
 		.directive('mobileSearchBox', ['vnSearchManager', function (vnSearchManager) {
 
 			return {
-				templateUrl: 'scripts/mobile-search-box/mobile-search-box.tpl.html',
+				templateUrl: 'views/partials/mobile-search-box.tpl.html',
 				restrict   : 'AE',
 				replace    : true,
 				scope      : {
