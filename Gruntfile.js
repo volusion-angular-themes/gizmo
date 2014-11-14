@@ -83,14 +83,14 @@ module.exports = function(grunt) {
 				files: ['<%= yeoman.app %>/*.html', '<%= yeoman.app %>/views/**/*.html'],
 				tasks: ['htmlmin:server'],
 				options: {
-					livereload: true
+					livereload: 35701
 				}
 			},
 			js: {
 				files: ['<%= yeoman.app %>/scripts/{,*/}*.js', '<%= yeoman.app %>/bower_components/vn-toolbox-common/dist/vn-toolbox-common.js'],
 				tasks: ['newer:jshint:all'],
 				options: {
-					livereload: true
+					livereload: 35701
 				}
 			},
 			jsTest: {
@@ -125,10 +125,10 @@ module.exports = function(grunt) {
 		// The actual grunt server settings
 		connect: {
 			options: {
-				port: 9000,
+				port: 9200,
 				// Change this to '0.0.0.0' to access the server from outside.
 				hostname: 'localhost',
-				livereload: 35729
+				livereload: 35701
 			},
 			rules: [
 				{ from: '^/(bower_components|fonts|images|scripts|styles|translations|views)(/.*)$', to: '/$1$2' },
@@ -164,7 +164,7 @@ module.exports = function(grunt) {
 			},
 			test: {
 				options: {
-					port: 9001,
+					port: 2001,
 					base: [
 						'.tmp',
 						'test',
@@ -306,6 +306,7 @@ module.exports = function(grunt) {
 						'!<%= yeoman.dist %>/images/marketing-assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
 						'!<%= yeoman.dist %>/images/homepage/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
 						'!<%= yeoman.dist %>/images/theme/tcp-no-image.{png,jpg,jpeg,gif,webp,svg}',
+						'!<%= yeoman.dist %>/images/theme/logo*.png',
 						'<%= yeoman.dist %>/fonts/*'
 					]
 				}
@@ -437,7 +438,7 @@ module.exports = function(grunt) {
 				}
 			},
 			templates: {
-				src: ['<%= yeoman.app %>/views/{,*/}*.html'],
+				src: ['<%= yeoman.app %>/views/{,*/}*.html', '<%= yeoman.app %>/scripts/**/*.html'],
 				dest: '.tmp/templates.js'
 			}
 		},
@@ -482,7 +483,7 @@ module.exports = function(grunt) {
 							'.htaccess',
 							'*.html',
 							'views/{,*/}*.html',
-							'images/{,*/}*.{webp}',
+							'images/**/*',
 							'fonts/*',
 							'translations/{,*/}*.json',
 							'settings/{,*/}*',
@@ -541,7 +542,9 @@ module.exports = function(grunt) {
 			'compass:server',
 			'configure:' + target,
 			'autoprefixer',
+			'html2js',
 			'htmlmin:server',
+			//'connect',
 			'connect:livereload',
 			'watch'
 		]);

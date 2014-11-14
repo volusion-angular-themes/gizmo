@@ -17,6 +17,7 @@ angular.module('gizmoApp', [
 	'pascalprecht.translate',
 	'snap',
 	'textAngular',
+	'firebase',
 
 	// Volusion modules
 	'config',
@@ -126,8 +127,8 @@ angular.module('gizmoApp', [
 			});
 	}])
 
-.run(['snapRemote', '$rootScope', '$window', 'themeSettings', 'vnCart', 'ContentMgr', 'translate', 'vnModalService', 'vnViewPortWatch',
-	function (snapRemote, $rootScope, $window, themeSettings, vnCart, ContentMgr, translate, vnModalService, vnViewPortWatch) {
+.run(['snapRemote', '$rootScope', '$window', 'themeSettings', 'vnCart', 'ContentMgr', 'translate', 'vnModalService', 'vnViewPortWatch', 'vnEnvironment',
+	function (snapRemote, $rootScope, $window, themeSettings, vnCart, ContentMgr, translate, vnModalService, vnViewPortWatch, vnEnvironment) {
 
 		'use strict';
 
@@ -166,4 +167,6 @@ angular.module('gizmoApp', [
 			function (state) {
 				$rootScope.snapMenuState = state;
 			}, true);
+
+		vnEnvironment.name = 'iFrame'; // Toggle this to simulate the theme running in sitebuilder.
 	}]);
