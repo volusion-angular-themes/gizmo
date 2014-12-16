@@ -1,7 +1,7 @@
 'use strict';
 
 // ReSharper disable WrongExpressionStatement
-describe.skip('Provider: translate', function() {
+xdescribe('Provider: translate', function() {
 
 	describe('config method', function() {
 

@@ -504,13 +504,13 @@ module.exports = function(grunt) {
 		// Test settings
 		karma: {
 			jasmine: {
-				configFile: 'karma.conf.jasmine.js',
+				configFile: 'test/karma.conf.jasmine.js',
 				singleRun: true
-			},
-			mocha: {
-				configFile: 'karma.conf.mocha.js',
-				singleRun: true
-			}
+			}//,
+			//mocha: {
+			//	configFile: 'test/karma.conf.mocha.js',
+			//	singleRun: true
+			//}
 		}
 	});
 

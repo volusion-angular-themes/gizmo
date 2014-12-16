@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: MainCtrl', function() {
+xdescribe('Controller: MainCtrl', function() {
 
 	// load the controller's module
 	beforeEach(module('Volusion.controllers', 'ngResource', 'ngSanitize', 'config', 'Volusion.toolboxCommon', 'Volusion.services'));
