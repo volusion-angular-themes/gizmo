@@ -271,8 +271,7 @@ module.exports = function(grunt) {
 				javascriptsDir: '<%= yeoman.app %>/scripts',
 				fontsDir: '<%= yeoman.app %>/fonts',
 				importPath: [
-					'<%= yeoman.app %>/bower_components',
-					'<%= yeoman.app %>/bower_components/bootstrap-sass-official/assets/stylesheets'
+					'./bower_components'
 				],
 				httpImagesPath: '/images',
 				httpGeneratedImagesPath: '/images/generated',
@@ -504,13 +503,13 @@ module.exports = function(grunt) {
 		// Test settings
 		karma: {
 			jasmine: {
-				configFile: 'karma.conf.jasmine.js',
+				configFile: 'test/karma.conf.jasmine.js',
 				singleRun: true
-			},
-			mocha: {
-				configFile: 'karma.conf.mocha.js',
-				singleRun: true
-			}
+			}//,
+			//mocha: {
+			//	configFile: 'test/karma.conf.mocha.js',
+			//	singleRun: true
+			//}
 		}
 	});
 

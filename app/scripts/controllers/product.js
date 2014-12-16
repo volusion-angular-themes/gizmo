@@ -1,6 +1,6 @@
 angular.module('Volusion.controllers')
-		.controller('ProductCtrl', ['$rootScope', '$scope', 'vnApi', '$location', '$routeParams', '$filter', '$anchorScroll', '$translate', 'vnCart', 'vnAppMessageService', 'vnProduct', 'snapRemote', 'notifications', 'vnEnvironment',
-			function ($rootScope, $scope, vnApi, $location, $routeParams, $filter, $anchorScroll, $translate, vnCart, vnAppMessageService, vnProduct, snapRemote, notifications, vnEnvironment) {
+		.controller('ProductCtrl', ['$rootScope', '$scope', 'vnApi', '$location', '$routeParams', '$filter', '$anchorScroll', '$translate', 'vnCart', 'vnAppMessageService', 'vnProduct', 'snapRemote', 'notifications',
+			function ($rootScope, $scope, vnApi, $location, $routeParams, $filter, $anchorScroll, $translate, vnCart, vnAppMessageService, vnProduct, snapRemote, notifications) {
 
 				'use strict';
 
@@ -82,11 +82,6 @@ angular.module('Volusion.controllers')
 								pageUrl  : fullUrl,
 								imageUrl : ($scope.product.imageCollections.length !== 0 && $scope.product.imageCollections[0].images.length !== 0) ? $scope.product.imageCollections[0].images[0].medium : ''
 							};
-
-							if('iFrame' === vnEnvironment.name) {
-								var fireRef = $scope.product.firebaseData.$asObject();
-								fireRef.$bindTo($scope, 'fbData');
-							}
 
 							vnProduct.setSocialSharing(fullUrl, pageTitle);
 							vnProduct.setEditable(false);

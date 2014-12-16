@@ -46,7 +46,6 @@ angular.module('gizmoApp')
 			$scope.save = function () {
 				if (environment === 'dev') {
 					console.info('would be saved if you were in production');
-					window.alert('would be saved if you were in production, but since you\'re not:=, simply copy the debug output to your themeSettings.json file manually.');
 				} else {
 					$http.put(apiUrl, $scope.settings)
 						.success(function () {
