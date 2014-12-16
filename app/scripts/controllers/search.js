@@ -16,7 +16,7 @@ angular.module('gizmoApp')
 
 			$scope.clearAllFilters = function () {
 				vnProductParams.resetParams();
-				vnProductParams.setSort('relevance'); // Is default when
+				vnProductParams.setSort('relevance');
 				vnProductParams.updateSearch($routeParams.q);
 				$scope.minPrice = '';
 				$scope.maxPrice = '';
