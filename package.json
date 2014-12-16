@@ -1,9 +1,9 @@
 {
   "name": "Gizmo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
-    "connect-modrewrite": "~0.7.0",
+    "connect-modrewrite": "^0.7.9",
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "~2.0.0",
     "grunt-connect-rewrite": "~0.2.1",
