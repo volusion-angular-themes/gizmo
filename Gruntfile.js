@@ -178,24 +178,6 @@ module.exports = function(grunt) {
 
 						return middlewares;
 					}
-					//middleware: function(connect, options) {
-					//	var middlewares = [];
-					//	var directory = options.directory || options.base[options.base.length - 1];
-					//	if (!Array.isArray(options.base)) {
-					//		options.base = [options.base];
-					//	}
-					//	// Setup the proxy to the backend for api calls
-					//	//middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
-					//	//enable modrewrite for html5mode
-					//	middlewares.push(require('connect-modrewrite')(['^[^\\.]*$ /index.html [L]']));
-					//	options.base.forEach(function(base) {
-					//		// Serve static files.
-					//		middlewares.push(connect.static(base));
-					//	});
-					//	// Make directory browse-able.
-					//	middlewares.push(connect.directory(directory));
-					//	return middlewares;
-					//}
 				}
 			},
 			test: {
