@@ -1,6 +1,6 @@
 {
   "name": "Gizmo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {},
   "devDependencies": {
     "connect-modrewrite": "^0.7.9",
